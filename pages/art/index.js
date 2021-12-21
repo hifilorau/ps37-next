@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import collage from '../../public/images/collage.png'
 import Link from 'next/link'
 import Footer from '../../components/footer.jsx'
 import {Container, Button} from '@mui/material/';
