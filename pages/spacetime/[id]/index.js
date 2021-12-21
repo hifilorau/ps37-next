@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
 import {Container, LinearProgress, Button} from '@mui/material/';
-import StOwner from '../StOwner'
+import StOwner from '../../../components/spacetime/StOwner'
 import styles from '../../../styles/Spacetime.module.css'
 import spacetimeImg from '../../../public/images/spacetime.jpg'
 import Image from 'next/image'
