@@ -1,5 +1,5 @@
 
-import '../Future/future.css'
+// import '../Future/future.css'
 
 const MetaInfo = ({meta, info}) => {
   console.log('META', meta)

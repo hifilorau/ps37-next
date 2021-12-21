@@ -1,0 +1,82 @@
+
+
+
+.contentContainer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 3;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: .5;
+  padding: .5em;
+
+
+}
+
+.art-page h1 {
+  text-align: center;
+}
+
+.artPage h2 {
+  color:  yellow;
+}
+
+.art-content-image {
+  min-height: 300px;
+}
+
+.art-beatloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  /* height: 300px; */
+}
+
+.image-loader-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-height: 300px;
+}
+
+.artContainer {
+  min-height: 90vh;
+}
+
+.artContainer a {
+  color: yellow;
+}
+
+.artSection {
+  width: 325px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  /* background: rgba(0,0,0, .75); */
+  z-index: 2;
+  transition: .5s;
+}
+
+.contentContainer:hover {
+  background: rgba(0,0,0, .5) !important;
+
+}
+
+.title {
+  float: right;
+}
+
+.title h4 {
+  font-size: 23px;
+}
+
+.exhibitList {
+  margin-top: 3.5em;
+}

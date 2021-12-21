@@ -6,7 +6,14 @@ const Footer = ({fixed}) => {
   return (
   <div className={!fixed ? "footer" : "footer block-footer"}>
     <ul className="footer-list">
-      <li><Link href="/events">EVENTS</Link></li>
+      <li className="flex-footer-link"> 
+
+          <Link href="/events">EVENTS</Link>
+    
+
+          <Link href="/art">ART</Link>  
+        
+      </li>
       <li>
         <Link href="/"> 
          <div className="footer-img"><Image src={logo} /></div>

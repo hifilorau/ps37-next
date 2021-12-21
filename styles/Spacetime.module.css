@@ -1,0 +1,106 @@
+
+.spacetime_container h1 {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spacetime_container {
+  background: #e5bf98;
+  background: #111;
+  color: white;
+  min-height: 100vh;
+  /* text-align: center;
+  max-width: 800px;
+  margin: 0 auto; */
+}
+
+.content {
+  max-width: 950px;
+  padding-top: 1em;
+  min-height: 92vh;
+}
+
+
+.spacetime_container a, .connect {
+  color: purple;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.mainImg {
+  /* margin: 0 auto; */
+  max-width: 550px !important;
+  min-width: 325px;
+}
+
+.tombstone {
+  margin-left: 1em;
+  min-width: 350px;
+  padding-bottom: 40px;
+}
+
+.tombstone button {
+  color: purple;
+  border-color: purple;
+}
+
+.tombstone button:hover {
+  color: purple;
+  border-color: purple;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  /* flex-wrap:wrap; */
+}
+
+/* 
+owner */
+
+.group {
+  display: flex;
+  margin: .5em 0;
+}
+
+.label {
+  font-weight: 700;
+  margin-right: .25em;
+}
+
+.fullscreen {
+  background: black;
+  height: 100vh;
+  display: fixed;
+  text-align: center
+}
+
+.imgWrap {
+  padding: 1em;
+  /* height: 100vh; */
+
+}
+
+.imgWrap img {
+  height: 90vh !important;
+  width: auto !important;
+}
+
+.collectionUl {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0 !important;
+  padding-left: 0;
+}
+
+.collection_card {
+  margin-right: .5em !important;
+}
+
+@media only screen and (max-width:825px) {
+  .flex {
+    display: block;
+  }
+}

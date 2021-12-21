@@ -19,10 +19,10 @@ function Home() {
   return (
     <div>
   <div className="homepage-container">
-    <div className="video-wrapper">
+    {/* <div className="video-wrapper">
       <div className="video-ol"></div>
       <video className="video" src="/images/ps37-v2-comp-nl.mp4" type="video/mp4" autoPlay loop muted poster={Poster}/>
-    </div>
+    </div> */}
     <div className="landing-content-container">
 
       <div className="logo-wrapper">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Zoom from 'react-medium-image-zoom'
 import GridLoader from 'react-spinners/GridLoader'
+import 'react-medium-image-zoom/dist/styles.css'
 
 const ImageLoad = React.memo(({ src, placeholder, alt = "" }) => {
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,7 @@ export const ImageLoad2 = React.memo(({ src, placeholder, alt = "" }) => {
   //     updateSrc(src);
   //   }
   // }, [src])
-
+  console.log('SRC', src)
   return (
       <div className="image-loader-wrapper">
       {!loaded && 
@@ -57,7 +58,7 @@ export const ImageLoad2 = React.memo(({ src, placeholder, alt = "" }) => {
       <Zoom>
       <img
         style={loaded ? {} : { display: 'none' }}
-        src={src}
+        src={src.src}
         onLoad={() => setLoaded(true)}
       /> 
       </Zoom>
