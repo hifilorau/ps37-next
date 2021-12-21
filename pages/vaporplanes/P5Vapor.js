@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
-import Sketch from 'react-p5'
-// const Sketch = dynamic(() => import("react-p5"),
-//   { ssr: false }
-// ) 
+// import Sketch from 'react-p5'
+const Sketch = dynamic(() => import("react-p5"),
+  { ssr: false }
+) 
 import logo1 from '../../public/images/palms_main.svg'
 import logo2 from '../../public/images/logo-09.svg'
 import logo5 from '../../public/images/logo-12.svg'
