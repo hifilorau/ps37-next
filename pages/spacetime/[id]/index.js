@@ -86,7 +86,7 @@ const SpacetimeInstance = () => {
                   <label>Info</label>
                   <p>In addition to this digital poster, each NFT includes:</p>
                     <p>access to 5 PS37 shows in 2022, one full size poster print *pickup only, and a free edition of our next collaboration with Gabe which will be extended algorithimic collection based on this art. If we're gonna make monkey art, we're going to make the most fucked up monkey art. Somedays we have to embrace the devolution.</p>
-                    <a target="_blank" href="https://opensea.io/collection/spacetime-paradigm"><Button variant="outlined">Buy on Opensea</Button></a>
+                    <a target="_blank" href="https://opensea.io/collection/spacetime-paradigm" rel="noreferrer"><Button variant="outlined">Buy on Opensea</Button></a>
                 </div> }
               {isAuthenticated && thisOwnedNFT && <Link href="/spacetime"><Button>Go Back</Button></Link> }
             </div>

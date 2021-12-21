@@ -20,7 +20,7 @@ const EventCard = ({psEvent}) => {
       </Zoom>
       <div>{name}</div>
       <div>{date}</div>
-      <div><a className="event-link" target="_blank" href={ticket_link}>Buy Tix</a></div>
+      <div><a className="event-link" target="_blank" rel="noreferrer" href={ticket_link}>Buy Tix</a></div>
 
     </div>
   )

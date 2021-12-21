@@ -7,7 +7,7 @@ import spacetimeImg from '../../public/images/spacetime.jpg'
 import Image from 'next/image'
 import NftList from './NftList.js'
 import Footer from '../../components/footer'
-import Header from './Header'
+ v
 
 
 const myLoader = ({ src, width, quality }) => {
@@ -106,7 +106,7 @@ const Spacetime = () => {
                   <p> Owner? <span className={styles.connect} onClick={authenticate}>Connect your wallet here </span> to view your art, it's perks, or check your rewards.</p>
                   <label>Info</label>
                   <p>In addition to this digital poster, each NFT includes access to 5 PS37 shows in 2022, one full size poster print *pickup only, and a free edition of our next collaboration with Gabe which will be extended algorithimic collection based on this art. If we're gonna make monkey art, we're going to make the most fucked up monkey art. Somedays we have to embrace the devolution.</p>
-                  <a target="_blank" href="https://opensea.io/collection/spacetime-paradigm"><Button variant="outlined">Buy on Opensea</Button></a>
+                  <a target="_blank" href="https://opensea.io/collection/spacetime-paradigm" rel="noreferrer"><Button variant="outlined">Buy on Opensea</Button></a>
                 </div> 
             </div>
           </div>}
