@@ -1,11 +1,11 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
 import {Container, Button, LinearProgress} from '@mui/material/';
-import StOwner from './StOwner'
+import StOwner from '../../components/spacetime/StOwner'
 import styles from '../../styles/Spacetime.module.css'
 import spacetimeImg from '../../public/images/spacetime.jpg'
 import Image from 'next/image'
-import NftList from './NftList.js'
+import NftList from '../../components/spacetime/NftList.js'
 import Footer from '../../components/footer'
 import STHeader from './Header'
 

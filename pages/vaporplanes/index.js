@@ -13,7 +13,7 @@ import GridLoader from 'react-spinners/GridLoader'
 // import { create } from 'ipfs-http-client'
 // import '../Future/future.css'
 // import { connectWallet, getCurrentWalletConnected, mintNFT } from "../../utils/interact.js"
-import MetaInfo from './Meta.js'
+import MetaInfo from '../../components/Meta.js'
 // import P5Vapor from './P5Vapor.jsx'
 // const client = create('https://ipfs.infura.io:5001/api/v0')
 const contractAddress = "0x90fa9714C8e7961F8D703A0a7085D5F29F269c23"
@@ -260,7 +260,7 @@ const fadeOut = () => {
 
   return (
     <div>
-		 {/* {!isLoading && <P5Vapor />}  */}
+		 {!isLoading && <P5Vapor />} 
 
 			
     </div>
