@@ -4,14 +4,14 @@ import dynamic from 'next/dynamic'
 const Sketch = dynamic(() => import("react-p5"),
   { ssr: false }
 ) 
-import logo1 from '../../public/images/palms_main.svg'
+const logo1 = '/images/palms_main.svg'
 import logo2 from '../../public/images/logo-09.svg'
-import logo5 from '../../public/images/logo-12.svg'
+const logo5 =  '/images/logo-12.svg'
 import logo6 from '../../public/images/logo-13.svg'
 import logo7 from '../../public/images/logo-14.svg'
 import Link from 'next/link'
-import logo from '../../public/images/ps37-text-purp-09.png'
-import igLogo from '../../public/images/ig_logo.png'
+const logo =  '/images/ps37-text-purp-09.png'
+const igLogo = '/images/ig_logo.png'
 
 // import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 // import { create } from 'ipfs-http-client'
@@ -704,8 +704,8 @@ const fadeOut = () => {
 					css={override} size={40} />
 					
 					
-					<h4>What took a god 7 days..</h4>
-					<p>creating new plane</p>
+					<h4>What took a god 7 days...</h4>
+					{/* <p>creating new plane</p> */}
 				</div>  
 			</div>
 			 

@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import collage from '../../public/images/collage.png'
-import collagePH from '../../public/images/planet-palms.png'
-import {ImageLoad2} from '../../components/ImageLoad'
 import Link from 'next/link'
 import Footer from '../../components/footer.jsx'
 import {Container, Button} from '@mui/material/';
@@ -49,23 +47,7 @@ const Art = () => {
       <h4>T</h4>
       </div>
 
-      {/* <div className="r/t-section">
-        <div className="a-section-info content-container ">
-          <h2>Vapor Planes</h2>
-          <p>
-            Take a deep breath, chill out, and imagine living on another plane. Vapor Planes is an ongoing PS37 virtual exhibit exploring chance, universe creation, and digital art as both value, and a means of utility. Does that make it stonks? I fucking hope not. 
-          </p>
-          <p>3737 of them will ultimately live on the blockchain, providing additional access to the space, discounted tickets, space rental, and some other cool shit that we haven't thought of  yet obviously. So if you are into supporting the space, owning an official piece of PS37 metamerch, or just huge nerdery, put on your damn MetaMask and hand over some of that crypto.</p>
-          <Link href="/vaporplanes">Go to VaporPlanes</Link>
-        </div>
-        <div className="content-container art-content-image">
-        <ImageLoad2 
-          src={collage}
-          placeholder={""}
-          alt="Vapor Planes Collage"
-          />
-          </div>
-      </div> */}
+
       <div className={styles.exhibitList}>
 
 
@@ -84,8 +66,23 @@ const Art = () => {
           </div>
         </div>
 
-
-
+        <div className={styles.artSection}>
+          {/* <div className={styles.overlay}></div> */}
+          {/* <Overlay /> */}
+       
+    
+          <div className={styles.VPContentContainer}>
+            <div>
+              <h2 style={{color: 'purple'}}>Vapor Planes</h2>
+              <p>Building new vapor plane universes with Javascript.</p>
+            </div>
+            {/* <h4>Hifilorau</h4> */}
+          </div>
+          <div className={styles.videoWrapper}>
+                <video src="/images/vapor_planes_preview.mp4" mute autoPlay loop/>
+              </div>
+              <Link style={{color: 'purple'}} href="/vaporplanes">Create Now</Link>
+        </div>
       </div>
       {/* <div className="art-section">
         <div className="a-section-info content-container ">

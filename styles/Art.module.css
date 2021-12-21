@@ -11,8 +11,11 @@
   justify-content: space-around;
   transition: .5;
   padding: .5em;
+}
 
-
+.VPContentContainer {
+  padding: .5em;
+  color: white;
 }
 
 .art-page h1 {
@@ -54,6 +57,9 @@
 .artSection {
   width: 325px;
   position: relative;
+  height: 420px;
+  margin-right: 2em;
+  background:rgba(0,0,0, .5);
 }
 
 .overlay {
@@ -79,4 +85,10 @@
 
 .exhibitList {
   margin-top: 3.5em;
+  display: flex;
+}
+
+.videoWrapper video {
+  width: 100%;
+  height: auto;
 }
