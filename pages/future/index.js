@@ -1,7 +1,7 @@
 import React from 'react'
-import Sketch from 'react-p5'
-import logo from '../../images/ps37-key-05.png'
-import './future.css'
+// import Sketch from 'react-p5'
+// import logo from '../public/images/ps37-key-05.png'
+// import './future.css'
 const Future = () => {
   
 //   let move;
