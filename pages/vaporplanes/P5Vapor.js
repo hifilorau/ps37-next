@@ -732,7 +732,7 @@ const fadeOut = () => {
 					<Link href="/"> 
          		<div className="vaporlink-img"><img src={logo} /></div>
       		</Link>
-					<a href="https://instagram.com/ps37durham/?hl=en" target="_blank" className="vp-social">
+					<a href="https://instagram.com/ps37durham/?hl=en" target="_blank" el="noreferrer" className="vp-social">
 						<img src={igLogo} />
 						 </a>
 				</div>
