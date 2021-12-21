@@ -7,7 +7,7 @@ import spacetimeImg from '../../../public/images/spacetime.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Header from '../Header'
+import STHeader from '../Header'
 
 const SpacetimeInstance = () => {
   const { authenticate, isAuthenticated, isAuthenticating, user, logout } = useMoralis();
@@ -72,7 +72,7 @@ const SpacetimeInstance = () => {
     <Container>
       <div className={styles.content}>
           
-         <Header />
+         <STHeader />
           <div className={styles.flex}>
             <div className={styles.mainImg}>
               <Image src={spacetimeImg} alt="Spacetime Paradigm by Gabe Eng-Goetz"/>

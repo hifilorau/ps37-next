@@ -6,7 +6,7 @@ import styles from '../../styles/Spacetime.module.css'
 
 
 
-const Header = () => {
+const STHeader = () => {
   const { authenticate, isAuthenticated, user, logout, isAuthenticating } = useMoralis();
 
   const renderConnect = () => {
@@ -28,4 +28,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default STHeader

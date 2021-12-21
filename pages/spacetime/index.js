@@ -7,7 +7,7 @@ import spacetimeImg from '../../public/images/spacetime.jpg'
 import Image from 'next/image'
 import NftList from './NftList.js'
 import Footer from '../../components/footer'
- v
+import STHeader from './Header'
 
 
 const myLoader = ({ src, width, quality }) => {
@@ -87,7 +87,7 @@ const Spacetime = () => {
     <div className={styles.spacetime_container}>
     <Container>
       <div className={styles.content}>
-         <Header />
+         <STHeader />
 
           {!isAuthenticated && 
           <div className={styles.flex}>
