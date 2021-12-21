@@ -11,12 +11,12 @@ const STHeader = () => {
 
   const renderConnect = () => {
     if (isAuthenticated) {
-      return <Button onClick={logout}>Logout</Button>
+      return <Button variant="outlined" onClick={logout}>Logout</Button>
     }
     if (isAuthenticating) {
-      return <Button><LinearProgress /></Button>
+      return <Button variant="outlined"><LinearProgress /></Button>
     } 
-    else return <Button onClick={authenticate}>Connect </Button>
+    else return <Button variant="outlined" onClick={authenticate}>Connect </Button>
   }
 
   return (
