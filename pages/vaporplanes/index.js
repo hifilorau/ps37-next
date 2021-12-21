@@ -260,7 +260,7 @@ const fadeOut = () => {
 
   return (
     <div>
-		 {!isLoading && <P5Vapor />} 
+		 {/* {!isLoading && <P5Vapor />}  */}
 
 			
     </div>

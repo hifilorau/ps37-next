@@ -744,7 +744,7 @@ const fadeOut = () => {
 					
 				<p> Vapor Plane NFTs will provide additional benefits and access to PS37 including future airdrops, NFT tickets to IRL or metaverse events, as well as merchandise, art printsgi, and discounts on event tickets and space rental.</p>
 			</div> 
-			<MetaInfo meta={nftAttributes} info={info} />
+			{nftAttributes && info && <MetaInfo meta={nftAttributes} info={info} /> }
 
 			
     </div>
