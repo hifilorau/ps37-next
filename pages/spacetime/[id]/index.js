@@ -3,7 +3,7 @@ import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
 import {Container, LinearProgress, Button} from '@mui/material/';
 import StOwner from '../../../components/spacetime/StOwner'
 import styles from '../../../styles/Spacetime.module.css'
-import spacetimeImg from '../../../public/images/spacetime.jpg'
+import spacetimeImg from '../../../public/images/spacetime-min.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

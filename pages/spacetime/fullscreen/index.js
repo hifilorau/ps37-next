@@ -1,5 +1,5 @@
 
-import spacetimeImg from '../../../public/images/spacetime.jpg'
+import spacetimeImg from '../../../public/images/spacetime-min.jpg'
 import Image from 'next/image'
 import styles from '../../../styles/Spacetime.module.css'
 import Zoom from 'react-medium-image-zoom'
