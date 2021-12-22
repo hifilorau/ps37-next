@@ -84,6 +84,7 @@ z-index: -1
   transform: translate(-50%, -50%);
   width: 100%;
   pointer-events: disable;
+  z-index: 2000000;
 }
 
 .logo-landing {

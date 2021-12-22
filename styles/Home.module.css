@@ -1,6 +1,18 @@
 
 
+.home {
+  width: 100vw;
+  min-height: 100vh;
+  background: black;
+}
 
+.snow {
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
 .container {
   padding: 0 2rem;
