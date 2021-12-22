@@ -132,7 +132,7 @@ function snowflake() {
 
 
 
-        <div className={styles.artSection2}>
+        <div className={styles.artSection}>
           {/* <div className={styles.overlay}></div> */}
           {/* <Overlay /> */}
        

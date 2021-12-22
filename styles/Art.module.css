@@ -92,6 +92,14 @@
   margin-bottom: 90px;
 }
 
+.videoWrapper {
+  overflow: hidden;
+}
+
+.VPContentContainer {
+  background: lavender;
+}
+
 .exhibitList {
   margin-top: 3.5em;
   display: flex;
