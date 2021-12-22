@@ -352,3 +352,23 @@ a {
     justify-content: center;
   }
 }
+
+@media only screen and (max-width: 500px)  {
+  .footer-list {
+    grid-template-columns: 1fr;
+    padding-bottom: 1em;
+  }
+
+  .footer-list a {
+    /* color: white; */
+  }
+
+  .flex-footer-link {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+  .flex-footer-link a{
+    /* flex-direction: column; */
+    margin-bottom: 1em;
+  }
+}

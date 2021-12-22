@@ -1,9 +1,6 @@
 import styles from '../../styles/Spacetime.module.css'
-import Image from 'next/image'
 import Link from 'next/link'
 import {Card, CardMedia, CardContent, Typography, CardActions, Button} from '@mui/material/';
-import spacetimeImg from '../../public/images/spacetime.jpg'
-
 
 const NftList = ({nfts}) => {
 

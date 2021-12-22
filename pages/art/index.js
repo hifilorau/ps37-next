@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Footer from '../../components/footer.jsx'
 import {Container, Button} from '@mui/material/';
 import styles from '../../styles/Art.module.css'
-import spacetimeImg from '../../public/images/spacetime.jpg'
+import spacetimeImg from '../../public/images/spacetime-min.jpg'
 import Image from 'next/image'
 import Overlay from './overlay'
 import { style } from '@mui/system'

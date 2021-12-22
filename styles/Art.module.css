@@ -60,6 +60,7 @@
   height: 420px;
   margin-right: 2em;
   background:rgba(0,0,0, .5);
+  margin-bottom: 1em;
 }
 
 .overlay {
@@ -86,6 +87,7 @@
 .exhibitList {
   margin-top: 3.5em;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .videoWrapper video {
