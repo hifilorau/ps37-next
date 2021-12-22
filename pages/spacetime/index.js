@@ -90,7 +90,7 @@ const Spacetime = () => {
             <FeaturedImage image={spacetimeImg}/>
       
             <div className={styles.tombstone}>
-                <div>
+                <div style={{height: '100%'}}>
                   <p> Owner? <span className={styles.connect} onClick={authenticate}>Connect your wallet here </span> to view your art, it's perks, or check your rewards.</p>
                   <TombstoneInfo />
                 </div> 
@@ -112,7 +112,7 @@ const Spacetime = () => {
           </div>
     
           <div className={styles.tombstone}>
-              <div>
+              <div style={{height: '100%'}}>
                 <p> You don't own have one of these sick ass monkeys yet? What's wrong with you?</p>
                 <TombstoneInfo />
               </div> 

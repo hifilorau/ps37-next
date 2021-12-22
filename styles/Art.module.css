@@ -62,7 +62,7 @@
 .artSection {
   /* width: 325px; */
   position: relative;
-  /* height: 420px; */
+  height: 420px;
   margin-right: 2em;
   /* background:rgba(0,0,0, .5); */
   margin-bottom: 1em;
@@ -101,4 +101,11 @@
 .videoWrapper video {
   width: 100%;
   height: auto;
+}
+
+@media only screen and (max-width: 645px) {
+  .artSection {
+    display: block;
+    height: auto;
+  }
 }

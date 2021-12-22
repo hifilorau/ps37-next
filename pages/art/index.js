@@ -113,7 +113,9 @@ function snowflake() {
           {/* <div className={styles.overlay}></div> */}
           <div>
             <Overlay />
-            <Image src={spacetimeImg}/>
+            <div style={{width: '336px'}}>
+            <Image  src={spacetimeImg}/>
+            </div>
           </div>
     
           <div className={styles.contentContainer}>
