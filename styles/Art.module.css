@@ -96,6 +96,7 @@
   margin-top: 3.5em;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 3em;
 }
 
 .videoWrapper video {
