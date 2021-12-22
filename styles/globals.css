@@ -58,6 +58,12 @@ h1 {
   font-size: 28px;
 }
 
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
 .homepage-container {
   height: 100vh;
   /* background: black; */

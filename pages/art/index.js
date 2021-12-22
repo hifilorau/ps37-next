@@ -111,8 +111,10 @@ function snowflake() {
 
         <div className={styles.artSection}>
           {/* <div className={styles.overlay}></div> */}
-          <Overlay />
-          <Image src={spacetimeImg} />
+          <div>
+            <Overlay />
+            <Image src={spacetimeImg} primary/>
+          </div>
     
           <div className={styles.contentContainer}>
             <div>
@@ -125,7 +127,10 @@ function snowflake() {
           </div>
         </div>
 
-        <div className={styles.artSection}>
+
+
+
+        <div className={styles.artSection2}>
           {/* <div className={styles.overlay}></div> */}
           {/* <Overlay /> */}
        
@@ -133,14 +138,14 @@ function snowflake() {
           <div className={styles.VPContentContainer}>
             <div>
               <h2 style={{color: 'purple'}}>Vapor Planes</h2>
-              <p>Building new vapor plane universes with Javascript.</p>
+              <p style={{color: '#333'}}>Building new vapor plane universes with Javascript.</p>
+              <Link href="/vaporplanes"><a className={styles.altLink}>Play Now</a></Link>
             </div>
             {/* <h4>Hifilorau</h4> */}
           </div>
           <div className={styles.videoWrapper}>
-                <video src="/images/vapor_planes_preview.mp4" mute autoPlay loop/>
+                <video src="/images/vapor_planes_preview.mp4" muted autoPlay loop/>
               </div>
-              <Link style={{color: 'purple'}} href="/vaporplanes">Create Now</Link>
         </div>
       </div>
       {/* <div className="art-section">

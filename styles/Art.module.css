@@ -2,8 +2,8 @@
 
 
 .contentContainer {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  /* position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; */
   z-index: 3;
   color: white;
   display: flex;
@@ -54,13 +54,19 @@
   color: yellow;
 }
 
+
+.artContainer .altLink {
+  color: purple !important;
+}
+
 .artSection {
-  width: 325px;
+  /* width: 325px; */
   position: relative;
-  height: 420px;
+  /* height: 420px; */
   margin-right: 2em;
-  background:rgba(0,0,0, .5);
+  /* background:rgba(0,0,0, .5); */
   margin-bottom: 1em;
+  display: flex;
 }
 
 .overlay {
@@ -71,8 +77,9 @@
   transition: .5s;
 }
 
-.contentContainer:hover {
-  background: rgba(0,0,0, .5) !important;
+.contentContainer{
+  /* background: rgba(0,0,0, .5) !important; */
+  background: #d0646b;
 
 }
 
@@ -82,6 +89,7 @@
 
 .title h4 {
   font-size: 23px;
+  margin-bottom: 90px;
 }
 
 .exhibitList {

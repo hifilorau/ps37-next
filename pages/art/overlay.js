@@ -16,16 +16,16 @@ const Overlay = () => {
 
   useEffect(() => {
     // timeOut
-    clearInterval(timeOut)
+    // clearInterval(timeOut)
   }, [bgColor])
 
-  const timeOut = setInterval(() => {
-    freak()
-  }, 100)
+  // const timeOut = setInterval(() => {
+  //   freak()
+  // }, 100)
 
   // timeOut
 
-  return (<div className={styles.overlay} style={{background: bgColor}}>
+  return (<div className={""} style={{background: bgColor}}>
 
   </div>)
 }
