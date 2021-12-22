@@ -377,4 +377,11 @@ a {
     /* flex-direction: column; */
     margin-bottom: 1em;
   }
+
+  .logo-wrapper {
+    max-width: 250px;
+  }
+  .tagline {
+    font-size: 2em;
+  }
 }
