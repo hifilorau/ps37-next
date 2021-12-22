@@ -8,6 +8,8 @@ import Image from 'next/image'
 import NftList from '../../components/spacetime/NftList.js'
 import Footer from '../../components/footer'
 import STHeader from './Header'
+import TombstoneInfo from '../../components/spacetime/TombstoneInfo'
+import FeaturedImage from '../../components/spacetime/STimage'
 
 
 const myLoader = ({ src, width, quality }) => {
@@ -32,7 +34,7 @@ const Spacetime = () => {
   const [NFTs, setNFTs] = useState([])
   const [moralisLoading, setMoralisLoading] = useState([])
   const [isSpacetimeOwner, setIsSpacetimeOwner] =useState(false)
-  const [isStOwner, setIsStOwner] = useState({})
+  const [isOwner, setIsOwner] = useState(false)
   const [ownerNFTs, setOwnerNFTs] = useState([])
 
 
@@ -51,6 +53,7 @@ const Spacetime = () => {
     console.log('MERGED MOFO', merged)
     if (ownerArray.length > 0) {
       setOwnerNFTs(merged)
+      setIsOwner(true)
     }
   }
 
@@ -73,45 +76,49 @@ const Spacetime = () => {
   }
   }, [owners, NFTs, isAuthenticated])
   
-  const renderConnect = () => {
-    if (isAuthenticated) {
-      return <Button onClick={logout}>Logout</Button>
-    }
-    if (isAuthenticating) {
-      return <Button><LinearProgress /></Button>
-    } 
-    else return <Button onClick={authenticate}>Connect </Button>
-  }
+ 
 
   return (
     <div className={styles.spacetime_container}>
-    <Container>
+    <Container className={styles.container}>
       <div className={styles.content}>
          <STHeader />
 
           {!isAuthenticated && 
           <div className={styles.flex}>
            
-            <div className={styles.mainImg}>
-              <Image 
-              src={spacetimeImg} 
-              alt="Spacetime Paradigm by Gabe Eng-Goetz"
-              priority={true}
-              // loader={myLoader}
-              />
-            </div>
+            <FeaturedImage image={spacetimeImg}/>
       
             <div className={styles.tombstone}>
                 <div>
                   <p> Owner? <span className={styles.connect} onClick={authenticate}>Connect your wallet here </span> to view your art, it's perks, or check your rewards.</p>
-                  <label>Info</label>
-                  <p>In addition to this digital poster, each NFT includes access to 5 PS37 shows in 2022, one full size poster print *pickup only, and a free edition of our next collaboration with Gabe which will be extended algorithimic collection based on this art. If we're gonna make monkey art, we're going to make the most fucked up monkey art. Somedays we have to embrace the devolution.</p>
-                  <a target="_blank" href="https://opensea.io/collection/spacetime-paradigm" rel="noreferrer"><Button variant="outlined">Buy on Opensea</Button></a>
+                  <TombstoneInfo />
                 </div> 
             </div>
           </div>}
 
-        {ownerNFTs  &&  isAuthenticated && <NftList nfts={ownerNFTs}/>}
+        {isAuthenticated && isOwner && <NftList nfts={ownerNFTs}/>}
+        {!isOwner && isAuthenticated && 
+          
+          <div className={styles.flex}>
+           
+          <div className={styles.mainImg}>
+            <Image 
+            src={spacetimeImg} 
+            alt="Spacetime Paradigm by Gabe Eng-Goetz"
+            priority={true}
+            // loader={myLoader}
+            />
+          </div>
+    
+          <div className={styles.tombstone}>
+              <div>
+                <p> You don't own have one of these sick ass monkeys yet? What's wrong with you?</p>
+                <TombstoneInfo />
+              </div> 
+          </div>
+        </div>
+        }
        
 
       </div>

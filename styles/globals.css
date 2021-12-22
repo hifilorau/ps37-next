@@ -320,6 +320,8 @@ a {
 .footer-img {
   width: 100px;
   margin: 0 auto;
+  position: relative;
+  top: -10px;
 }
 
 .footer-img img {

@@ -117,7 +117,8 @@ function snowflake() {
           <div className={styles.contentContainer}>
             <div>
               <h2>Spacetime Paradigm</h2>
-              <p>Primates standing on the edge of the unknown. We evolve, we devolve, along the way we made some NFTs. Gabe's art is a force of nature, we're hoping this is just the beginning.</p>
+              <div>Coming Soon - Q1 2022</div>
+              <p>Primates standing on the edge of the unknown. We evolve, we devolve, along the way we made some NFTs. Gabe Eng-Goetz's art is a force of nature, and we're releasing it along with some perks, including a free print of your unique piece.</p>
               <Link href="/spacetime">Visit Spacetime Paradigm</Link>
             </div>
             <h4>GabeGets</h4>

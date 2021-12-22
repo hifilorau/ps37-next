@@ -10,6 +10,14 @@
   color: #eddc96;
 }
 
+.spacetime_container label {
+  font-weight: 700;
+}
+
+.container {
+  margin-bottom: 2em;
+}
+
 .spacetime_container {
   background: #e5bf98;
   background: #111;
@@ -35,7 +43,7 @@
 
 .mainImg {
   /* margin: 0 auto; */
-  max-width: 550px !important;
+  max-width: 450px !important;
   min-width: 325px;
 }
 

@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import STHeader from '../Header'
+import Footer from '../../../components/footer'
 
 const SpacetimeInstance = () => {
   const { authenticate, isAuthenticated, isAuthenticating, user, logout } = useMoralis();
@@ -38,9 +39,10 @@ const SpacetimeInstance = () => {
     })
 
     const thisNFT = merged.find(x => x.token_id === id);
-
     if (ownerArray.length > 0) {
       setThisOwnedNFT(thisNFT)
+    } else {
+      console.log('REROUTE', router.push('/spacetime'))
     }
    
   }
@@ -69,7 +71,7 @@ const SpacetimeInstance = () => {
 
   return (
     <div className={styles.spacetime_container}>
-    <Container>
+    <Container className={styles.container}>
       <div className={styles.content}>
           
          <STHeader />
@@ -94,6 +96,7 @@ const SpacetimeInstance = () => {
       </div>
       
     </Container>
+    <Footer fixed={true}/>
   </div>
   )  
 }

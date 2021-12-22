@@ -51,7 +51,7 @@ class Snowflake {
     // x position follows a circle
     let w = 0.6; // angular speed
     let angle = w * time + this.initialangle;
-    this.posX = width / 2 + this.radius/2.2 * p5.sin(angle);
+    this.posX = width / 2 + this.radius/2.5 * p5.sin(angle);
 
     // different size snowflakes fall at slightly different y speeds
     this.posY += p5.pow(this.size, 0.5);
