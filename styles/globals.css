@@ -384,4 +384,8 @@ a {
   .tagline {
     font-size: 2em;
   }
+  .homepage-container {
+    height: 70vh;
+  }
+
 }
