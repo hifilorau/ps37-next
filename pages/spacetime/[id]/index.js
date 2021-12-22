@@ -25,7 +25,7 @@ const SpacetimeInstance = () => {
   console.log('TOKEN ID', id)
 
 
-
+ 
 
 
 
@@ -61,9 +61,9 @@ const SpacetimeInstance = () => {
     if (owners && isAuthenticated) {
       console.log('DATA !', owners)
       isSpacetimeOwnerCheck();
-      // setIsSpacetimeOwner(isSpaceTimeOwnerCheck())
-  }
-  }, [owners, NFTs])
+  // setIsSpacetimeOwner(isSpaceTimeOwnerCheck())
+    }
+}, [owners, NFTs])
   
 
 

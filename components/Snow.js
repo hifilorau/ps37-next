@@ -14,12 +14,12 @@ const setup = (p5, canvasParentRef) => {
   height = p5.windowHeight
   width=   p5.windowWidth
   cnv = p5.createCanvas(width, height).parent(canvasParentRef)
-  p5.fill(44, 22, 222);
+  p5.fill(244, 232, 232);
   p5.noStroke();
 }
 
 const draw = (p5, canvasParentRef) => {
-  p5.background('white');
+  p5.background('black');
   let t = p5.frameCount / 60; // update time
   // create a random number of snowflakes each frame
   for (let i = 0; i < p5.random(5); i++) {
@@ -40,7 +40,7 @@ class Snowflake {
   this.posX = 0;
   this.posY = p5.random(-50, 0);
   this.initialangle = p5.random(0, 2 * p5.PI);
-  this.size = p5.random(2, 5);
+  this.size = p5.random(1.2, 3);
   
   // radius of snowflake spiral
   // chosen so the snowflakes are uniformly spread out in area
