@@ -10,7 +10,8 @@ return (
         {/* </Link> */}
           {/* { this.state.randomNumber == 3 ?  <div className="tagline">A Paradise in Space</div>  : null }  */}
           {/* { this.state.randomNumber !== 3 ? <div className="tagline">makerspace, office, and arthaüs</div> : null } */}
-          <div className="tagline">makerspace, event venue, and arthaüs</div> 
+          <div className="tagline">Loading top shelf content for that ass</div> 
+          {/* <div>Or the site is down</div> */}
         </div>
 </div>
 );

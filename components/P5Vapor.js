@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
+import {Container, Button, LinearProgress} from '@mui/material/';
 // import Sketch from 'react-p5'
+import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
   ssr: false,
 })
 const logo1 = '/images/palms_main.svg'
-import logo2 from '../../public/images/logo-09.svg'
 const logo5 =  '/images/logo-12.svg'
-import logo6 from '../../public/images/logo-13.svg'
-import logo7 from '../../public/images/logo-14.svg'
 import Link from 'next/link'
 const logo =  '/images/ps37-text-purp-09.png'
 const igLogo = '/images/ig_logo.png'
@@ -21,7 +20,7 @@ import GridLoader from 'react-spinners/GridLoader'
 // import { create } from 'ipfs-http-client'
 
 // import { connectWallet, getCurrentWalletConnected, mintNFT } from "../../utils/interact.js"
-import MetaInfo from './Meta.js'
+import MetaInfo from '../pages/vaporplanes/Meta.js'
 
 // const client = create('https://ipfs.infura.io:5001/api/v0')
 // const contractAddress = "0x90fa9714C8e7961F8D703A0a7085D5F29F269c23"
@@ -37,13 +36,11 @@ const P5Vapor = () => {
 
 
 ///STATE ITEMS 
-const [activatingConnector, setActivatingConnector] = useState()
+const { authenticate, isAuthenticated, user, logout, isAuthenticating } = useMoralis();
 const [nftAttributes, setNftAttributes] = useState({})
 const [fileUrl, updateFileUrl] = useState(``)
 const [customSave, setCustomSave] = useState(null)
 const [info, setInfo] = useState(false)
-const [preFadeOut, setPreFadeOut] = useState(false)
-const [walletAddress, setWallet] = useState("");
 const [status, setStatus] = useState("");
 const [name, setName] = useState("");
 const [description, setDescription] = useState("");
@@ -114,6 +111,15 @@ let THEME_ARRAY = [
 	['#fffd00', '#ff0000', '#fad300', '#cb0900', '#fff700']  /// the Plane of the Eternal Flame
 ]
 
+const renderConnect = () => {
+	if (isAuthenticated) {
+		return <Button onClick={logout}>Logout</Button>
+	}
+	if (isAuthenticating) {
+		return <Button ><LinearProgress /></Button>
+	} 
+	else return <Button onClick={authenticate}>Connect </Button>
+}
 
 const setThemeAttribute = (i) => {
 	console.log('set theme', i)
@@ -716,18 +722,8 @@ const fadeOut = () => {
         <h3 onClick={resetFrame}>Create New Plane</h3>
 				{/* <h3 onClick={(e, p5) => saveMe(e, p5)}> Information</h3> */}
 				<h3 onMouseOver={() => setInfo(true)}  onMouseOut={() => setInfo(false)}> Information</h3>
-				<div id="walletButton" onClick={connectWalletPressed}>
-					<h3>
-					{walletAddress.length > 0 ? (
-						"Connected: " +
-						String(walletAddress).substring(0, 6) +
-						"..." +
-						String(walletAddress).substring(38)
-					) : (
-						<span>Connect Wallet</span>
-					)}
-					</h3>
-				</div>
+			  <h3>{renderConnect()}</h3> 
+					
 				<div className="vapor-link">
 					<Link href="/"> 
          		<div className="vaporlink-img"><img src={logo} /></div>

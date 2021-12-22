@@ -32,10 +32,16 @@
   padding: 1em;
   background: rgba(0,0,0, .5);
   transition: .5s;
+  color: orange;
+}
+
+.vaporplanes button {
+  color: orange;
+  margin: 0;
 }
 
 .vaporplanes h3:hover {
-  color: orange;
+  color: purple;
 }
 
 .vp-content {

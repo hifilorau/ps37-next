@@ -17,10 +17,9 @@ import MetaInfo from '../../components/Meta.js'
 // import P5Vapor from './P5Vapor.jsx'
 // const client = create('https://ipfs.infura.io:5001/api/v0')
 const contractAddress = "0x90fa9714C8e7961F8D703A0a7085D5F29F269c23"
+import P5Vapor from "../../components/P5Vapor"
 
-const P5Vapor = dynamic(() => import("./P5Vapor"),
-  { ssr: false }
-) 
+
 
 
 

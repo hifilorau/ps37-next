@@ -18,14 +18,14 @@ function MyApp({ Component, pageProps }) {
 
     return () => {
       router.events.off("routeChangeError", (e) => setLoading(false));
-      router.events.off("routeChangeStart", (e) => setLoading(false));
-      router.events.off("routeChangeComplete", (e) => setLoading(true));
+      router.events.off("routeChangeStart", (e) => setLoading(true));
+      router.events.off("routeChangeComplete", (e) => setLoading(false));
     };
   }, [router.events]);
 
   return (
     <MoralisProvider appId={process.env.NEXT_PUBLIC_APP_ID} serverUrl={process.env.NEXT_PUBLIC_SERVER_URL}>
-    {loading ? <Loading /> : <Component {...pageProps} />}
+    {true ? <Loading /> : <Component {...pageProps} />}
       
     </MoralisProvider>
   )
