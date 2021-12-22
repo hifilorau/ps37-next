@@ -1,12 +1,11 @@
 import '../styles/globals.css'
 import '../styles/future.css'
 // import '../styles/art.css'
+import { MoralisProvider } from 'react-moralis';
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Loading from '../components/Loading'
 
-
-import { MoralisProvider } from 'react-moralis'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

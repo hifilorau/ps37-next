@@ -7,7 +7,6 @@ const FeaturedImage = ({image}) => {
       <Image 
       src={image} 
       alt="Spacetime Paradigm by Gabe Eng-Goetz"
-      priority
       // loader={myLoader}
       />
   </div>

@@ -113,7 +113,7 @@ function snowflake() {
           {/* <div className={styles.overlay}></div> */}
           <div>
             <Overlay />
-            <Image src={spacetimeImg} primary/>
+            <Image src={spacetimeImg}/>
           </div>
     
           <div className={styles.contentContainer}>
