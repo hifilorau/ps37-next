@@ -146,7 +146,8 @@ function snowflake() {
             {/* <h4>Hifilorau</h4> */}
           </div>
           <div className={styles.videoWrapper}>
-                <video src="/images/vapor_planes_preview.mp4" muted autoPlay loop/>
+                <div className={styles.overlayVideo}></div>
+                <video src="/images/vp-web.webm" muted autoPlay loop/>
               </div>
         </div>
       </div>
