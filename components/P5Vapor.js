@@ -559,7 +559,7 @@ function displayMtns(p5) {
 
 function keyPressed(p5) {
   if (p5.keyCode === p5.UP_ARROW) {
-    p5.save('vapor_plane.png')
+    p5.save('vapor-plane.png')
   } else {
    return
   }
