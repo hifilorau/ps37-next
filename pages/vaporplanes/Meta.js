@@ -32,7 +32,7 @@ const MetaInfo = ({meta, info}) => {
         <div className="meta-value">{meta.moons}</div>
       </div>
       <div className="meta-item">
-        <div className="meta-label">Mountains:</div>
+        <div className="meta-label">Mtns:</div>
         <div className="meta-value">{meta.mountains}</div>
       </div>
       <div className="meta-item">

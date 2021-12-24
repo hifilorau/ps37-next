@@ -109,16 +109,17 @@ let THEME_ARRAY = [
 
 
 	['#fffd00', '#ff0000', '#fad300', '#cb0900', '#fff700']  /// the Plane of the Eternal Flame
-]
+] 
 
 const renderConnect = () => {
-	if (isAuthenticated) {
-		return <Button onClick={logout}>Logout</Button>
-	}
-	if (isAuthenticating) {
-		return <Button ><LinearProgress /></Button>
-	} 
-	else return <Button onClick={authenticate}>Connect </Button>
+	return <div>Press Up Arrow to Save</div> 
+	// if (isAuthenticated) {
+	// 	return <Button onClick={logout}>Logout</Button>
+	// }
+	// if (isAuthenticating) {
+	// 	return <Button ><LinearProgress /></Button>
+	// } 
+	// else return <Button onClick={authenticate}>Connect </Button>
 }
 
 const setThemeAttribute = (i) => {
@@ -728,17 +729,17 @@ const fadeOut = () => {
 					<Link href="/"> 
          		<div className="vaporlink-img"><img src={logo} /></div>
       		</Link>
-					<a href="https://instagram.com/ps37durham/?hl=en" target="_blank" rel="noreferrer" className="vp-social">
+					{/* <a href="https://instagram.com/ps37durham/?hl=en" target="_blank" rel="noreferrer" className="vp-social">
 						<img src={igLogo} />
-						 </a>
+						 </a> */}
 				</div>
 				
       </div>
 			<div className={info ? "nft-fo fade-in" : "nft-fo fade-out"}>
 				{/* <div className="close" onClick={() => setInfo(false)}>X</div> */}
-				<p>Each vapor plane is randomly generated using p5.js. There are billions of possible and unpredictable combinaations. The idea of this collection is two fold. 1. the final collection is chosen by the art which the users choose to mint. Users can create as many new planes as they like and once they find one that they like they can mint it as an NFT if they choose. 2. Purchase of NFTs will both provide additional utility and support for PS37 moving forward.</p>
+				<p>Each vapor plane is randomly generated using p5.js. There are billions of possible and unpredictable combinations. The idea of this collection is two fold. 1. the final collection is chosen by the art which the users choose to create. Users can create as many new planes as they like and once they find one that they like they can download it. (NFT mints coming soon) 2. Eventually minting of NFTs will both provide additional utility in the form of free tickets, and discounts on merch, and provide financial support for the space.</p>
 					
-				<p> Vapor Plane NFTs will provide additional benefits and access to PS37 including future airdrops, NFT tickets to IRL or metaverse events, as well as merchandise, art printsgi, and discounts on event tickets and space rental.</p>
+				{/* <p> Vapor Plane NFTs will provide additional benefits and access to PS37 including future airdrops, NFT tickets to IRL or metaverse events, as well as merchandise, art printsgi, and discounts on event tickets and space rental.</p> */}
 			</div> 
 			{nftAttributes && info && <MetaInfo meta={nftAttributes} info={info} /> }
 

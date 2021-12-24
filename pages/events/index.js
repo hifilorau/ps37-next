@@ -5,7 +5,7 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Footer from '../../components/footer.jsx'
 import Image from 'next/image'
-
+import Joystick from '../../components/Joystick'
 
 const EventCard = ({psEvent}) => {
   const {name, ticket_link, date} = psEvent.fields
@@ -46,10 +46,11 @@ const getData = async () => {
   return (
     <div>
     <div className="event-page">
-      <div className="video-wrapper">
-      <div className="video-ol"></div>
-        <video className="video" src="/images/ps37-v2-comp-nl.mp4" autoPlay loop muted poster={Poster}/>
-    </div>
+      {/* <Joystick /> */}
+      {/* <div className="video-wrapper">
+        <div className="video-ol"></div>
+          <video className="video" src="/images/ps37-v2-comp-nl.mp4" autoPlay loop muted poster={Poster}/>
+      </div> */}
     <h1>Upcoming Events</h1>
       <div className="events-wrap">
           {psEvents && psEvents.map(psEvent => {

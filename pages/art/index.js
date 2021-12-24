@@ -123,7 +123,7 @@ function snowflake() {
               <h2>Spacetime Paradigm</h2>
               <div>Coming Soon - Q1 2022</div>
               <p>Primates standing on the edge of the unknown. We evolve, we devolve, along the way we made some NFTs. Gabe Eng-Goetz's art is a force of nature, and we're releasing it along with some perks, including a free print of your unique piece.</p>
-              <Link href="/spacetime">Visit Spacetime Paradigm</Link>
+              <Link href="/art">Link Coming Soon</Link>
             </div>
             <h4>GabeGets</h4>
           </div>
@@ -140,7 +140,7 @@ function snowflake() {
           <div className={styles.VPContentContainer}>
             <div>
               <h2 style={{color: 'purple'}}>Vapor Planes</h2>
-              <p style={{color: '#333'}}>Building new vapor plane universes with Javascript.</p>
+              <p style={{color: '#333'}}>Building new universes with p5.js</p>
               <Link href="/vaporplanes"><a className={styles.altLink}>Play Now</a></Link>
             </div>
             {/* <h4>Hifilorau</h4> */}
