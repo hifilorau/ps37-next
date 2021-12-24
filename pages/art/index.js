@@ -125,7 +125,7 @@ function snowflake() {
               <p>Primates standing on the edge of the unknown. We evolve, we devolve, along the way we made some NFTs. Gabe Eng-Goetz's art is a force of nature, and we're releasing it along with some perks, including a free print of your unique piece.</p>
               <Link href="/art">Link Coming Soon</Link>
             </div>
-            <h4>Gabe Eng-Goetz</h4>
+            <a href="https://www.gabegets.com" target="_blank" rel="noreferrer"><h4>Gabe Eng-Goetz</h4></a>
           </div>
         </div>
 
