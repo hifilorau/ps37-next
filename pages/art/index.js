@@ -147,7 +147,9 @@ function snowflake() {
           </div>
           <div className={styles.videoWrapper}>
                 <div className={styles.overlayVideo}></div>
-                <video src="/images/vp-web.webm" muted autoPlay loop/>
+                      {/* on mouseEnter on mouseLeave remnder image or video*/}
+                <video src="/images/newGif.webm" muted autoPlay loop/>
+                {/* <Image src="/images/newGif.gif" layout="fill" /> */}
               </div>
         </div>
       </div>
