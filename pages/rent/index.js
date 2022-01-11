@@ -26,7 +26,7 @@ const Rent = () => {
       <div className={styles.rentPage}>
         <Container>
           <h1>Rental Packages</h1>
-          <p className={styles.generalInfo}>We have space for private events and for creatives that need somethign besides an office on an ongoing basis. For events we'll make sure it's cleaned up real nice, but keep it mind it's a warehouse and we are barely getting by. That said, more than happy to supply references, don't think we've had a bad event or a renter that left on bad terms since we first startd in 2018. Let us know if you like our wares.</p>
+          <p className={styles.generalInfo}>We have a 4000sq warehouse and super awesome backyard and patio space available for both private events as well as for creatives who need something beyond an office on an ongoing basis. For events we'll make sure it's cleaned up real nice, and for creatives well make sure you can make as big of a mess as you need. Just everyone keep in mind, we are a super scrappy operation and this is an old school Durham warehouse. That said, more than happy to supply references, we haven't had a bad event yet or a renter that left us on bad terms since we first startd in 2018.So let us know if you like our wares and you need space.</p>
           <div className={styles.rentalOptions}>
             <div className={styles.rentalOption} onClick={() => setRenting("event")}>
               <h3>Event Rental</h3>
@@ -178,5 +178,5 @@ const PhotographyRent = () => {
 }
 
 const FormLink = () => {
-  return <div className={styles.formButton}><a target="_blank" rel="noreferrer" href="https://airtable.com/shrvl117K7aLgofhO">Submit Interest Form</a></div>
+  return <a className={styles.formButton} target="_blank" rel="noreferrer" href="https://airtable.com/shrvl117K7aLgofhO">Submit Interest Form</a>
 }
