@@ -4,7 +4,6 @@ import Poster from '../../public/images/ps37-moon-shot.png'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Footer from '../../components/footer.jsx'
-import Image from 'next/image'
 import {Container, Button} from '@mui/material/';
 import styles from '../../styles/Rent.module.css'
 
@@ -27,7 +26,7 @@ const Rent = () => {
       <div className={styles.rentPage}>
         <Container>
           <h1>Rental Packages</h1>
-          <p className={styles.generalInfo}>Need space? We rent out space for private events as well as on an ongoing basis to people who need space to do creative shit outside of their home. Just choose what you're looking for and holla!</p>
+          <p className={styles.generalInfo}>We have space for private events and for creatives that need somethign besides an office on an ongoing basis. For events we'll make sure it's cleaned up real nice, but keep it mind it's a warehouse and we are barely getting by. That said, more than happy to supply references, don't think we've had a bad event or a renter that left on bad terms since we first startd in 2018. Let us know if you like our wares.</p>
           <div className={styles.rentalOptions}>
             <div className={styles.rentalOption} onClick={() => setRenting("event")}>
               <h3>Event Rental</h3>

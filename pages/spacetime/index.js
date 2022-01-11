@@ -7,7 +7,7 @@ import spacetimeImg from '../../public/images/spacetime-min.jpg'
 import Image from 'next/image'
 import NftList from '../../components/spacetime/NftList.js'
 import Footer from '../../components/footer'
-import STHeader from './Header'
+import STHeader from './StHeader'
 import TombstoneInfo from '../../components/spacetime/TombstoneInfo'
 import FeaturedImage from '../../components/spacetime/STimage'
 

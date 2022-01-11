@@ -7,7 +7,7 @@ import spacetimeImg from '../../../public/images/spacetime-min.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import STHeader from '../Header'
+import STHeader from '../StHeader'
 import Footer from '../../../components/footer'
 
 const SpacetimeInstance = () => {
