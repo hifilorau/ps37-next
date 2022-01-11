@@ -38,6 +38,7 @@
   cursor: pointer;
   border-radius: .3em;
   margin-bottom: 1em;
+  transition: 500ms;
 }
 
 .rentalOption h3 {
@@ -50,7 +51,7 @@
 }
 
 .rentalOption:hover {
-  background-color: #8736aa;
+  background-color: #ffe863;
 }
 
 .eventPackages {
