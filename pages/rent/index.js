@@ -179,5 +179,5 @@ const PhotographyRent = () => {
 }
 
 const FormLink = () => {
-  return <div className={styles.formButton}><a target="_blank" rel="no-referrer" href="https://airtable.com/shrvl117K7aLgofhO">Submit Interest Form</a></div>
+  return <div className={styles.formButton}><a target="_blank" rel="noreferrer" href="https://airtable.com/shrvl117K7aLgofhO">Submit Interest Form</a></div>
 }
