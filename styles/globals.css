@@ -120,7 +120,7 @@ z-index: -1
   color: #111;
   position: relative;
   top: -10px;
-  font-size: 2.65rem;
+  font-size: 2.3rem;
   animation: fadeIn 2s ease;
   transition: 1s;
   opacity: .7;
@@ -130,6 +130,10 @@ z-index: -1
   text-transform: uppercase;
   color: purple;
 
+}
+
+.tag2 {
+  font-size: 1.5rem;
 }
 
 .home-nav {
