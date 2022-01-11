@@ -19,9 +19,10 @@ const Footer = ({fixed}) => {
          <div className="footer-img"><Image src={logo} /></div>
       </Link>
       </li>
-      <div>
-        <li><Link href="/about">INFO</Link></li>
-      </div>
+      <li className="flex-footer-link">
+        <Link href="/rent"><a className="footer-rent">RENT ME</a></Link>
+        <div><Link href="/about">INFO</Link></div>
+      </li>
     </ul>
   </div>
   )

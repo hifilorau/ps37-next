@@ -14,12 +14,13 @@ const setup = (p5, canvasParentRef) => {
   height = p5.windowHeight
   width=   p5.windowWidth
   cnv = p5.createCanvas(width, height).parent(canvasParentRef)
-  p5.fill(244, 232, 232);
+  p5.fill(144, 32, 132);
   p5.noStroke();
 }
 
 const draw = (p5, canvasParentRef) => {
-  p5.background('black');
+  console.log('W T F')
+  p5.background('yellow');
   let t = p5.frameCount / 60; // update time
   // create a random number of snowflakes each frame
   for (let i = 0; i < p5.random(5); i++) {
