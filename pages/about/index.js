@@ -1,7 +1,7 @@
 import Footer from '../../components/footer.jsx'
-import Link from 'next/Link'
+import Link from 'next/link'
 
-const Info = () => {
+const About = () => {
   return (
     <div>
     <div className="about">
@@ -16,4 +16,4 @@ const Info = () => {
     )
 }
 
-export default Info
+export default About
