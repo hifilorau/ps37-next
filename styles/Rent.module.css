@@ -1,11 +1,38 @@
-
+.rentBack {
+  position: relative;
+    background: #ffd93d;
+    height: 100%;
+}
 
 .rentPage {
   /* color: white; */
-  background: yellow;
-  background: #ffd93d;
-  min-height: 90vh;
+  padding-top: 1em;
+}
 
+.content {
+  position: relative;
+  z-index: 100;
+
+}
+
+.packages {
+  /* overflow: hidden;
+  position: relative; */
+}
+.imageSituation {
+  opacity: .4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4em;
+}
+
+.imageWrap {
+  width: 285px;
+}
+
+.rentPage h1 {
+  margin-top: 0;
 }
 
 .rentPage h2 {
@@ -52,6 +79,7 @@
 
 .rentalOption:hover {
   background-color: #ffe863;
+  opacity: .6;
 }
 
 .eventPackages {
@@ -65,7 +93,7 @@
 .eventPackage {
   padding: 0 1em 1em;
   width: 350px;
-  background: #ffe863;
+  /* background: #ffe863; */
   border-radius: .3em;
   border: 1px solid purple;
   margin-bottom: 1em;

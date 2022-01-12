@@ -6,7 +6,7 @@ import 'react-medium-image-zoom/dist/styles.css'
 import Footer from '../../components/footer.jsx'
 import {Container, Button} from '@mui/material/';
 import styles from '../../styles/Rent.module.css'
-
+import Image from 'next/image'
 
 
 const Rent = () => {
@@ -22,9 +22,11 @@ const Rent = () => {
  }, []);
 
   return (
-    <div>
+    <div className={styles.rentBack}>
+  
       <div className={styles.rentPage}>
         <Container>
+          <div className={styles.content}>
           <h1>Rental Packages</h1>
           <p className={styles.generalInfo}>We have a 4000sq warehouse and super awesome backyard and patio space available for both private events as well as for creatives who need something beyond an office on an ongoing basis. For events we'll make sure it's cleaned up real nice, and for creatives well make sure you can make as big of a mess as you need. Just everyone keep in mind, we are a super scrappy operation and this is an old school Durham warehouse. That said, more than happy to supply references, we haven't had a bad event yet or a renter that left us on bad terms since we first startd in 2018.So let us know if you like our wares and you need space.</p>
           <div className={styles.rentalOptions}>
@@ -41,13 +43,59 @@ const Rent = () => {
              <p>starting at $50/hr - $300/day</p>
             </div>
           </div>
-
+          {renting == "" && <div>Click above for more details </div>}
+       <div>
+         <div className={styles.imageSituation}>
+            <div className={styles.imageWrap}>
+              <Image 
+                src="/images/ps37-2.jpeg"
+                placeholder="blur"
+                blurDataURL="/images/ps37-2.jpeg"
+                layout='responsive'
+                width={350}
+                height={237}
+            />
+            </div>
+            <div className={styles.imageWrap}>
+              <Image 
+                src="/images/ps37-3.jpeg"
+                placeholder="blur"
+                blurDataURL="/images/ps37-2.jpeg"
+                layout='responsive'
+                width={350}
+                height={237}
+            />
+            </div>
+            <div className={styles.imageWrap}>
+              <Image 
+                src="/images/ps37-barlit.jpeg"
+                placeholder="blur"
+                blurDataURL="/images/ps37-2.jpeg"
+                layout='responsive'
+                width={350}
+                height={237}
+            />
+            </div>
+            <div className={styles.imageWrap}>
+              <Image 
+                src="/images/ps37-4.jpeg"
+                placeholder="blur"
+                blurDataURL="/images/ps37-2.jpeg"
+                layout='responsive'
+                width={350}
+                height={237}
+            />
+            </div>
+          </div>
+        <div className={styles.packages}>
           {renting == "event" && <EventRent />}
           {renting == "creative" && <CreativeRent />}
           {renting == "photo" && <PhotographyRent />}
-          {renting == "" && <div>Click above for more details </div>}
-
+        </div>
+          </div>
+          </div>
         </Container>
+       
       </div>
     <Footer fixed={true} />
     </div>
