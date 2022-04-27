@@ -1,17 +1,19 @@
 .rentBack {
   position: relative;
-    background: #ffd93d;
+    background: #222;
     height: 100%;
+    min-height: 100vh;
 }
 
 .rentPage {
-  /* color: white; */
+  color: white;
   padding-top: 1em;
 }
 
 .content {
   position: relative;
   z-index: 100;
+  /* color: white; */
 
 }
 
@@ -51,11 +53,11 @@
 
 
 .generalInfo {
-  color: #333;
+  /* color: #333; */
 }
 
 .rentalOption {
-  border: 1px solid purple;
+  border: 1px solid #cd42c9;
   width: 300px;
   height: 100px;
   margin-right: .5em;
@@ -95,19 +97,19 @@
   width: 350px;
   /* background: #ffe863; */
   border-radius: .3em;
-  border: 1px solid purple;
+  border: 1px solid #cd42c9;
   margin-bottom: 1em;
 
 
 }
 
 .allPackagesInclude {
-  color: #333;
+  /* color: #333; */
   margin-bottom: 4em;
 }
 
 .formButton {
-  background: purple;
+  background: #cd42c9;
   color: white;
   padding: .5em;
   border-radius: .3em;

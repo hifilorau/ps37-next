@@ -10,6 +10,10 @@ import Footer from '../components/footer.jsx'
 import Link from 'next/link'
 // import Snow from '../components/Snow'
 import Snow from '../components/Snow'
+const VidSketch = dynamic(
+  () => import('../components/VidSketch'),
+  { ssr: false }
+)
 
 
 
@@ -25,7 +29,7 @@ const Home = () => {
   return (
   <div className={styles.home}>
  
-    <Snow />
+    <VidSketch />
     <div className="homepage-container">
 
       {/* <div className="video-wrapper">

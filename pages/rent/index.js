@@ -11,7 +11,7 @@ import Image from 'next/image'
 
 const Rent = () => {
   
-  const [renting, setRenting ] = useState("");
+  const [renting, setRenting ] = useState("event");
   //move to api folder at some point
 
 
