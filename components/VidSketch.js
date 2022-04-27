@@ -20,9 +20,9 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper')
     height = p5.windowHeight
     width=   p5.windowWidth
     cnv = p5.createCanvas(width, height)
-    // videoElement.autoplay();
-    // videoElement.volume(0);
-    videoElement.autoplay();
+
+    videoElement.volume(0);
+    // videoElement.play();
 
 
     // p5.filter(p5.INVERT);
