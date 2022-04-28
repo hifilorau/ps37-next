@@ -6,6 +6,7 @@ import React from 'react'
 // import Video from '../public/images/ps37-v2-comp-nl.mp4';
 import Poster from '../public/images/ps37-moon-shot.png'
 import Logo from "../public/images/logo-13.svg"
+// import Logo from "../public/images/ps37-text-purp-09.png"
 import Footer from '../components/footer.jsx'
 import Link from 'next/link'
 // import Snow from '../components/Snow'
@@ -45,7 +46,7 @@ const Home = () => {
           {/* { this.state.randomNumber == 3 ?  <div className="tagline">A Paradise in Space</div>  : null }  */}
           {/* { this.state.randomNumber !== 3 ? <div className="tagline">makerspace, office, and arthaüs</div> : null } */}
           <div className="tagline">
-            <div>event venue, arthaüs, and creative space</div>
+            <div>Venue, arthaüs, and creative space</div>
             <div className="tag2">600B Foster Street, Durham, NC</div>
           </div> 
         </div>
