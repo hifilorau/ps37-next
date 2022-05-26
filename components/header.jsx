@@ -4,7 +4,7 @@ import Image from 'next/image'
 import logo from '../public/images/ps37-text-purp-09.png'
 
 const Header = ({ siteTitle }) => (
-  <header>
+  <div>
     <div className={"header"}>
       <ul className="footer-list">
         <li className="flex-footer-link"> 
@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => (
         </li>
       </ul>
     </div>
-  </header>
+  </div>
 )
 
 
