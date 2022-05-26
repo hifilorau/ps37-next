@@ -11,8 +11,6 @@ import STHeader from '../StHeader'
 
 const SpacetimeInstance = () => {
   const { authenticate, isAuthenticated, isAuthenticating, user, logout } = useMoralis();
-  // const globalState = useContext(store);
-  // const { dispatch } = globalState;
   const SPACETIME_CONTRACT='0x2953399124f0cbb46d2cbacd8a89cf0599974963'
   const SPACETIME_ID="73420591828577766976010686263780805592013870842024348598745919952551598358529"
   const Web3Api = useMoralisWeb3Api();
@@ -95,7 +93,6 @@ const SpacetimeInstance = () => {
       </div>
       
     </Container>
-    {/* <Footer fixed={true}/> */}
   </div>
   )  
 }
