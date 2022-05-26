@@ -428,3 +428,14 @@ a {
   object-fit: cover;
   /* transform: scale(1.04); */
 }
+
+.date {
+  color: white;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: -20px;
+}
+
+.header {
+  margin-top: 20px;
+}

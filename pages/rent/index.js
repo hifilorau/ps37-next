@@ -97,7 +97,6 @@ const Rent = () => {
         </Container>
        
       </div>
-    <Footer fixed={true} />
     </div>
   )
 }

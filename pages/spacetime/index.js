@@ -126,7 +126,7 @@ const Spacetime = () => {
   
       
     </Container>
-    <Footer fixed={true}/>
+    {/* <Footer fixed={true}/> */}
   </div>
   )  
 }

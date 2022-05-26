@@ -61,7 +61,7 @@ const getData = async () => {
           })}
       </div>
     </div>
-    <Footer />
+    {/* <Footer /> */}
     </div>
   )
 }

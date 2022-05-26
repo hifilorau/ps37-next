@@ -11,7 +11,7 @@ const About = () => {
         <p> Little known fact: The PS in PS37 actually stands for Paradise Spacecraft, an homage to the original Makerspace in Durham's DIY district, The Mothership, which was run by three of the most bad-ass women in the Universe. we'd say R.I.P. but the Mothership never dies.</p>
       </div>
     </div>
-    <Footer />
+    {/* <Footer /> */}
     </div>
     )
 }

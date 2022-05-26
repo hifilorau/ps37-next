@@ -160,7 +160,7 @@ function snowflake() {
         </div>
       </div> */}
       </Container>
-      <Footer fixed={true}/>
+      {/* <Footer fixed={true}/> */}
     </div>
   ) 
 }

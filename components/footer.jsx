@@ -20,7 +20,7 @@ const Footer = ({fixed}) => {
       </Link>
       </li>
       <li className="flex-footer-link">
-        <Link href="/rent"><a className="footer-rent">RENT ME</a></Link>
+        <Link href="/rent">RENT ME</Link>
         <div><Link href="/about">INFO</Link></div>
       </li>
     </ul>

@@ -1,40 +1,35 @@
-
-import PropTypes from "prop-types"
 import React from "react"
 import Link from 'next/link'
+import Image from 'next/image'
+import logo from '../public/images/ps37-text-purp-09.png'
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h4 style={{ margin: 0 }}>
-        <Link
-          href="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          For booking or to rent space contact ps37durham@gmail.com or drop us a dm on the insta @ps37durham
+  <header>
+    <div className={"header"}>
+      <ul className="footer-list">
+        <li className="flex-footer-link"> 
+  
+            <Link href="/events">EVENTS</Link>
+      
+  
+            <Link href="/art">ART</Link>  
+          
+        </li>
+        <li>
+          <Link href="/"> 
+           <div className="footer-img"><Image src={logo} /></div>
         </Link>
-      </h4>
+        </li>
+        <li className="flex-footer-link">
+          <Link href="/rent">RENT ME</Link>
+          <div><Link href="/about">INFO</Link></div>
+        </li>
+      </ul>
     </div>
   </header>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+
 
 Header.defaultProps = {
   siteTitle: ``,

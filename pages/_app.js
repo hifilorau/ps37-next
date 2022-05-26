@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Loading from '../components/Loading'
 import * as ga from '../utils/ga'
-
+import Header from '../components/Header'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -16,7 +16,8 @@ function MyApp({ Component, pageProps }) {
   //   ga.pageview(url)
   //   setLoading(false)
   // }
-
+  const path = router.pathname
+  console.log('path', path)
   const handleRouteChange = (url) => {
     console.log('URL', router)
     setLoading(false)
@@ -39,7 +40,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <MoralisProvider appId={process.env.NEXT_PUBLIC_APP_ID} serverUrl={process.env.NEXT_PUBLIC_SERVER_URL}>
-    {loading ? <Loading /> : <Component {...pageProps} />}
+    {loading ? <Loading /> :<>
+     {(path !== "/") && <Header /> }
+      <Component {...pageProps} />
+    </> }
       
     </MoralisProvider>
   )
