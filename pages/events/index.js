@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react'
 import Poster from '../../public/images/ps37-moon-shot.png'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import Footer from '../../components/footer.jsx'
 import Image from 'next/image'
 import Joystick from '../../components/Joystick'
 

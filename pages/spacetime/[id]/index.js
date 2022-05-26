@@ -8,7 +8,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import STHeader from '../StHeader'
-import Footer from '../../../components/footer'
 
 const SpacetimeInstance = () => {
   const { authenticate, isAuthenticated, isAuthenticating, user, logout } = useMoralis();
@@ -96,7 +95,7 @@ const SpacetimeInstance = () => {
       </div>
       
     </Container>
-    <Footer fixed={true}/>
+    {/* <Footer fixed={true}/> */}
   </div>
   )  
 }

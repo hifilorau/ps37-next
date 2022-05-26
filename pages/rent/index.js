@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react'
 import Poster from '../../public/images/ps37-moon-shot.png'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import Footer from '../../components/footer.jsx'
 import {Container, Button} from '@mui/material/';
 import styles from '../../styles/Rent.module.css'
 import Image from 'next/image'
@@ -96,7 +95,7 @@ const Rent = () => {
           </div>
         </Container>
        
-      </div>
+      </div>pm 
     </div>
   )
 }

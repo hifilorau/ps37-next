@@ -7,7 +7,7 @@ import React from 'react'
 import Poster from '../public/images/ps37-moon-shot.png'
 import Logo from "../public/images/logo-13.svg"
 // import Logo from "../public/images/ps37-text-purp-09.png"
-import Footer from '../components/footer.jsx'
+import Footer from '../components/Footer.jsx'
 import Link from 'next/link'
 // import Snow from '../components/Snow'
 import Snow from '../components/Snow'

@@ -1,4 +1,3 @@
-import Footer from '../../components/footer.jsx'
 import Link from 'next/link'
 
 const About = () => {
