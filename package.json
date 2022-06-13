@@ -10,7 +10,9 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@mui/material": "^5.2.3",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/material": "^5.8.3",
     "@tryghost/content-api": "^1.9.8",
     "@walletconnect/web3-provider": "^1.7.0",
     "moralis": "^0.0.176",
