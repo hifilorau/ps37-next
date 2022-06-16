@@ -6,7 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const Header = ({ siteTitle}) => {
 const [isOpen, setIsOpen] = useState(false)
-console.log('iS HOME', isHome)
+
 return (
   <div>
    <div className="header">
@@ -25,7 +25,7 @@ return (
         </Link>
         </li>
         <li className="flex-footer-link">
-          <Link href="/rent">RENT ME</Link>
+          <Link href="/rent">RENT</Link>
           <div><Link href="/about">INFO</Link></div>
         </li>
       </ul>
@@ -49,7 +49,7 @@ return (
         </li>
       
         <li className="flex-footer-link">
-          <Link href="/rent">RENT ME</Link>
+          <Link href="/rent">RENT</Link>
         </li>
         <li className="flex-footer-link">
         <Link href="/about">INFO</Link>
