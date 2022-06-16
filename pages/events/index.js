@@ -10,6 +10,7 @@ const EventCard = ({psEvent}) => {
   const {name, ticket_link, date} = psEvent.fields
   const imgUrl = psEvent.fields.image[0].url
  
+
   return (
     <div className="event-card">
       <Zoom>
@@ -42,6 +43,18 @@ const getData = async () => {
      getData();
  }, []);
 
+  if (psEvents.length <= 0) {
+    return (
+      <div>
+       <div className="event-page">
+       <h1>Upcoming Events</h1>
+       <div className="events-wrap">
+       <p style={{textAlign: 'center', color: 'white', width: "100%"}}>No Tickets Currently On Sale</p>
+       </div>
+       </div>
+      </div>
+    )
+  }
   return (
     <div>
     <div className="event-page">

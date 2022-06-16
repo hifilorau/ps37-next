@@ -84,14 +84,15 @@ z-index: -1
 
 .logo-wrapper {
   position: absolute;
-  max-width: 570px;
+  max-width: 650px;
   left: 50%;
-  top: 50%;
+  top: 40%;
   text-align: center;
   transform: translate(-50%, -50%);
   width: 100%;
-  pointer-events: disable;
+  /* pointer-events: disable; */
   z-index: 200;
+  padding: 1em;
 }
 
 .logo-landing {
@@ -110,7 +111,7 @@ z-index: -1
 
 
 .landing-content-container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   position: relative;
   height: 100%;
@@ -252,6 +253,7 @@ a {
   margin: 0 auto;
   padding: 5em 2em 2em;
   color: #333;
+  min-height: 90vh;
 }
 
 
@@ -438,6 +440,8 @@ a {
 
 .header {
   margin-top: 20px;
+  position: relative;
+  z-index: 1000;
 }
 
 .header-mobile {
@@ -483,7 +487,7 @@ a {
   transform: translateX(-50%)
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   .header {
     display: none;
   }

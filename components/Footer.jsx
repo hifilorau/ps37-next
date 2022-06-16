@@ -11,7 +11,7 @@ const Footer = ({fixed}) => {
           <Link href="/events">EVENTS</Link>
     
 
-          <Link href="/art">ART</Link>  
+          <Link href="/posts">UPDATES</Link>  
         
       </li>
       <li>
