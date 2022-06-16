@@ -10,20 +10,20 @@ const Upcoming = () => {
       <h1>Upcoming Events</h1>
       <ul className={styles.ucList}>
       <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 7th</div>  
           <div className={styles.ucName}>Mamis and the Papis</div>   
+          <div className={styles.ucDate}>July 7th</div>  
         </li> 
         <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 8th</div>  
           <div className={styles.ucName}>Shirlette Ammons and Spider Bags</div>   
+          <div className={styles.ucDate}>July 8th</div>  
         </li>  
         <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 9th</div>  
           <div className={styles.ucName}>Come Dance With Me</div>   
+          <div className={styles.ucDate}>July 9th</div>  
         </li>  
         <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 10th</div>  
           <div className={styles.ucName}>The Floor</div>   
+          <div className={styles.ucDate}>July 10th</div>  
         </li>  
       </ul> 
     </div>

@@ -140,17 +140,24 @@
 
 .ucList {
   margin-top: .25em;
+  padding-left: 0;
 }
 .ucListItem {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  /* grid-template-columns: 100px 1fr; */
   color: white;
   font-size: 20px;
-  text-align: left;
+  margin-bottom: .5em;
+  /* text-align: left; */
 }
 
 .ucName {
   font-weight: 700;
+}
+
+.ucDate {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
 }
 
 @media (max-width: 650px) {
