@@ -4,19 +4,19 @@ import Image from 'next/image'
 import logo from '../public/images/ps37-text-purp-09.png'
 import MenuIcon from '@material-ui/icons/Menu';
 
-const Header = ({ siteTitle, isHome}) => {
+const Header = ({ siteTitle}) => {
 const [isOpen, setIsOpen] = useState(false)
 console.log('iS HOME', isHome)
 return (
   <div>
-   {!isHome && <div className="header">
+   <div className="header">
       <ul className="footer-list">
         <li className="flex-footer-link"> 
   
             <Link href="/events">EVENTS</Link>
       
   
-            <Link href="/art">ART</Link>  
+            <Link href="/posts">UPDATES</Link>  
           
         </li>
         <li>
@@ -29,7 +29,7 @@ return (
           <div><Link href="/about">INFO</Link></div>
         </li>
       </ul>
-    </div>  }
+    </div>  
 
     <div className="header-mobile">
     <MenuIcon onClick={() => setIsOpen(!isOpen)}style={{
