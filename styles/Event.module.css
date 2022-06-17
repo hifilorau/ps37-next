@@ -1,0 +1,56 @@
+
+.eventPage {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.eventTitle {
+  /* text-align: center; */
+  color: #f5c0cc;
+  font-size: 42px;
+}
+
+.description {
+  color: white;
+}
+
+.date {
+  /* color: yellow; */
+}
+
+
+.flyerWrapper {
+  width: 100%;
+  /* height: auto; */
+  position: relative;
+  min-height: 380px;
+  margin-right: 1em;
+  min-width: 300px;
+}
+
+.contentItem {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+
+.ticketLink,.soon {
+  color: #f5c0cc;
+  font-weight: 700;
+}
+.label {
+  color: white;
+}
+.value {
+  color: white;
+}
+
+.contentWrapper {
+  display: flex;
+}
+
+@media only screen and (max-width: 650px) {
+  .contentWrapper {
+    flex-wrap: wrap;
+    padding: 1em;
+  }
+}

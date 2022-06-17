@@ -129,14 +129,10 @@
 .upcomingWrapper {
   /* border: 1px solid purple; */
   margin-top: .5em;
-  cursor: pointer;
   transition: .5s;
   /* border-radius: .35em; */
   padding: .5em;
   text-align: center;
-}
-.upcomingWrapper:hover {
-  background: rgba(255,255,255,.1);
 }
 
 .upcomingWrapper h1 {
@@ -166,6 +162,14 @@
 
 .ucName {
   font-weight: 700;
+  cursor: pointer;
+  color: white;
+  transition: .5s;
+}
+
+.ucName:hover {
+  color: yellow;
+  animation: pulsate 1.5s infinite alternate; 
 }
 
 .ucDate {
