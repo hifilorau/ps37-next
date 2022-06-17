@@ -26,7 +26,7 @@ const Upcoming = ({events}) => {
           <div className={styles.ucDate}>July 10th</div>  
         </li>   */}
         {events.map((event) => 
-          <li className={styles.ucListItem}>
+          <li className={styles.ucListItem} key={event.id}>
              <div className={styles.ucName}>{event.fields.name}</div>   
              <div className={styles.ucDate}>{event.fields.date}</div>  
            </li> 
