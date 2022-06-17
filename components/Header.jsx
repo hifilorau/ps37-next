@@ -45,7 +45,7 @@ return (
           <Link href="/events">EVENTS</Link>
          </li>
         <li className="flex-footer-link">
-        <Link href="/updates">Updates</Link>  
+        <Link href="/posts">Updates</Link>  
         </li>
       
         <li className="flex-footer-link">
