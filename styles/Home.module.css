@@ -108,6 +108,10 @@
   border-color: #0070f3;
 }
 
+.banner {
+  display: none;
+}
+
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
@@ -170,10 +174,16 @@
   font-size: 14px;
 }
 
+
+
 @media (max-width: 650px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .banner {
+    display: block;
   }
 
 }

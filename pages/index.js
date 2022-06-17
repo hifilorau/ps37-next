@@ -7,18 +7,15 @@ import React from 'react'
 import Poster from '../public/images/ps37-moon-shot.png'
 import Logo from "../public/images/logo-08.svg"
 // import Logo from "../public/images/ps37-text-purp-09.png"
-import Footer from '../components/Footer.jsx'
-import Link from 'next/link'
-// import Snow from '../components/Snow'
-import Snow from '../components/Snow'
+
 import Upcoming from '../components/Upcoming'
-import {getResourceData, minifyData} from '../lib/functions'
+import {getResourceData} from '../lib/functions'
+import { autocompleteClasses } from '@mui/material'
 
 const VidSketch = dynamic(
   () => import('../components/VidSketch'),
   { ssr: false }
 )
-
 
 
 const Home = ({events}) => {
@@ -33,6 +30,15 @@ const Home = ({events}) => {
 
   return (
   <div className={styles.home}>
+    <div className={styles.banner} style={{
+      width: '100%',
+      height: 'auto',
+      position: 'relative',
+      zIndex: '1000',
+      minHeight: '280px'
+    }}>
+    <Image src="/images/psbg.jpg" layout="fill" height={200} width={400} />
+    </div>
     <div className="tagline">
       <Upcoming events={events} />
             {/* <div>Venue, arthaüs, and creative space</div>
