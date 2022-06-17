@@ -20,7 +20,7 @@ const setup = (p5, canvasParentRef) => {
 
 const draw = (p5, canvasParentRef) => {
   console.log('W T F')
-  p5.background('#ffd93d');
+  p5.background('#111');
   let t = p5.frameCount / 60; // update time
   // create a random number of snowflakes each frame
   for (let i = 0; i < p5.random(5); i++) {

@@ -1,29 +1,36 @@
 import { Subtitles } from '@material-ui/icons'
 import styles from '../styles/Home.module.css'
-import Link from 'next/Link'
-const Upcoming = () => {
+import Link from 'next/link'
+
+const Upcoming = ({events}) => {
   return (
     <Link href="/events">
     <a>
     <div className={styles.upcomingWrapper}>
       <h1>Upcoming Events</h1>
       <ul className={styles.ucList}>
-      <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 7th</div>  
+      {/* <li className={styles.ucListItem}>
           <div className={styles.ucName}>Mamis and the Papis</div>   
+          <div className={styles.ucDate}>July 7th</div>  
         </li> 
         <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 8th</div>  
           <div className={styles.ucName}>Shirlette Ammons and Spider Bags</div>   
+          <div className={styles.ucDate}>July 8th</div>  
         </li>  
         <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 9th</div>  
           <div className={styles.ucName}>Come Dance With Me</div>   
+          <div className={styles.ucDate}>July 9th</div>  
         </li>  
         <li className={styles.ucListItem}>
-          <div className={styles.ucDate}>July 10th</div>  
           <div className={styles.ucName}>The Floor</div>   
-        </li>  
+          <div className={styles.ucDate}>July 10th</div>  
+        </li>   */}
+        {events.map((event) => 
+          <li className={styles.ucListItem}>
+             <div className={styles.ucName}>{event.fields.name}</div>   
+             <div className={styles.ucDate}>{event.fields.date}</div>  
+           </li> 
+        )}
       </ul> 
     </div>
     </a></Link>
