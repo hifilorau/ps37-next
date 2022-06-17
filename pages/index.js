@@ -12,6 +12,7 @@ import Link from 'next/link'
 // import Snow from '../components/Snow'
 import Snow from '../components/Snow'
 import Upcoming from '../components/Upcoming'
+import {getResourceData, minifyData} from '../lib/functions'
 
 const VidSketch = dynamic(
   () => import('../components/VidSketch'),
@@ -20,7 +21,8 @@ const VidSketch = dynamic(
 
 
 
-const Home = () => {
+const Home = ({events}) => {
+  console.log('DATA F', events)
   const rnGenerator = () => {
     const rarity = 10;
     let rng = Math.floor((Math.random() * rarity) + 1);
@@ -31,14 +33,13 @@ const Home = () => {
 
   return (
   <div className={styles.home}>
- 
+    <div className="tagline">
+      <Upcoming events={events} />
+            {/* <div>Venue, arthaüs, and creative space</div>
+            <div className="tag2">600B Foster Street, Durham, NC</div> */}
+          </div> 
     <VidSketch />
     <div className="homepage-container">
-
-      {/* <div className="video-wrapper">
-        <div className="video-ol"></div>
-        <video className="video" src="/images/ps37-v2-comp-nl.mp4" type="video/mp4" autoPlay loop muted poster={Poster}/>
-      </div> */}
       <div className="landing-content-container">
 
         <div className="logo-wrapper">
@@ -47,12 +48,10 @@ const Home = () => {
         {/* </Link> */}
           {/* { this.state.randomNumber == 3 ?  <div className="tagline">A Paradise in Space</div>  : null }  */}
           {/* { this.state.randomNumber !== 3 ? <div className="tagline">makerspace, office, and arthaüs</div> : null } */}
-          <div className="tagline">
-            <Upcoming />
-            {/* <div>Venue, arthaüs, and creative space</div>
-            <div className="tag2">600B Foster Street, Durham, NC</div> */}
-          </div> 
         </div>
+        {/* <div className="tagline">
+            <Upcoming />
+          </div>  */}
       </div>
     </div>
     {/* <Footer /> */}
@@ -61,3 +60,12 @@ const Home = () => {
 }
 
 export default Home
+
+export async function getServerSideProps(context) {
+  const data = await getResourceData();
+    return {
+      props: {
+        events: data
+    }
+  }
+}

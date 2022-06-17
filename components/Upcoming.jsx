@@ -2,14 +2,14 @@ import { Subtitles } from '@material-ui/icons'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
-const Upcoming = () => {
+const Upcoming = ({events}) => {
   return (
     <Link href="/events">
     <a>
     <div className={styles.upcomingWrapper}>
       <h1>Upcoming Events</h1>
       <ul className={styles.ucList}>
-      <li className={styles.ucListItem}>
+      {/* <li className={styles.ucListItem}>
           <div className={styles.ucName}>Mamis and the Papis</div>   
           <div className={styles.ucDate}>July 7th</div>  
         </li> 
@@ -24,7 +24,13 @@ const Upcoming = () => {
         <li className={styles.ucListItem}>
           <div className={styles.ucName}>The Floor</div>   
           <div className={styles.ucDate}>July 10th</div>  
-        </li>  
+        </li>   */}
+        {events.map((event) => 
+          <li className={styles.ucListItem}>
+             <div className={styles.ucName}>{event.fields.name}</div>   
+             <div className={styles.ucDate}>{event.fields.date}</div>  
+           </li> 
+        )}
       </ul> 
     </div>
     </a></Link>

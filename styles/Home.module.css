@@ -2,8 +2,8 @@
 
 .home {
   width: 100vw;
-  min-height: 100vh;
-  background: black;
+  /* min-height: 100vh; */
+  /* background: black; */
 }
 
 .snow {
@@ -124,11 +124,13 @@
   margin-left: 0.5rem;
 }
 .upcomingWrapper {
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   margin-top: .5em;
   cursor: pointer;
   transition: .5s;
-  border-radius: .35em;
+  /* border-radius: .35em; */
+  padding: .5em;
+  text-align: center;
 }
 .upcomingWrapper:hover {
   background: rgba(255,255,255,.1);
@@ -136,11 +138,19 @@
 
 .upcomingWrapper h1 {
   margin-bottom: .25em;
+  font-size: 34px;
+  margin-top: 0;
+  color: yellow;
+  animation: pulsate 1.5s infinite alternate; 
 }
 
 .ucList {
   margin-top: .25em;
   padding-left: 0;
+  max-width: 300px;
+  margin: .5em auto;
+  /* text-align: left; */
+  /* margin-left: 2em; */
 }
 .ucListItem {
   display: grid;
@@ -166,4 +176,34 @@
     flex-direction: column;
   }
 
+}
+
+@keyframes pulsate {
+    
+  100% {
+
+      text-shadow:
+      0 0 4px rgb(235, 218, 218),
+      0 0 11px rgb(235, 218, 218),
+      0 0 19px rgb(235, 218, 218),
+      0 0 40px #e8e222,
+      0 0 80px #e8e222,
+      0 0 90px #e8e222,
+      0 0 100px #e8e222,
+      0 0 150px #e8e222;
+  
+  }
+  
+  0% {
+
+    text-shadow:
+    0 0 2px rgb(235, 218, 218),
+    0 0 4px rgb(235, 218, 218),
+    0 0 6px rgb(235, 218, 218),
+    0 0 10px #e8e222,
+    0 0 45px #e8e222,
+    0 0 55px #e8e222,
+    0 0 70px #e8e222,
+    0 0 80px #e8e222;
+  }
 }
