@@ -5,6 +5,7 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Image from 'next/image'
 import Joystick from '../../components/Joystick'
+import Link from 'next/link'
 
 const EventCard = ({psEvent}) => {
   const {name, ticket_link, date} = psEvent.fields
@@ -13,14 +14,19 @@ const EventCard = ({psEvent}) => {
 
   return (
     <div className="event-card">
-      <Zoom>
-      <div className="event-image">
-        <Image src={imgUrl} layout="fill"/>
-      </div>
-      </Zoom>
-      <div>{name}</div>
-      <div>{date}</div>
-      <div><a className="event-link" target="_blank" rel="noreferrer" href={ticket_link}>Buy Tix</a></div>
+     
+          <Zoom>
+          <div className="event-image">
+            <Image src={imgUrl} layout="fill"/>
+          </div>
+          </Zoom>
+        <Link href={`/events/${psEvent.id}`}>
+        <a>
+        <div>{name}</div>
+        </a>
+      </Link>
+        <div>{date}</div>
+        <div><a className="event-link" target="_blank" rel="noreferrer" href={ticket_link}>Buy Tix</a></div>
 
     </div>
   )

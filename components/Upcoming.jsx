@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 const Upcoming = ({events}) => {
   return (
-    <Link href="/events">
-    <a>
+    // <Link href="/events">
+    // <a>
     <div className={styles.upcomingWrapper}>
       <h1>Upcoming Events</h1>
       <ul className={styles.ucList}>
@@ -27,13 +27,17 @@ const Upcoming = ({events}) => {
         </li>   */}
         {events.map((event) => 
           <li className={styles.ucListItem} key={event.id}>
-             <div className={styles.ucName}>{event.fields.name}</div>   
-             <div className={styles.ucDate}>{event.fields.date}</div>  
+             <Link href= {`/events/${event.id}`} >
+               <a className={styles.ucName}> 
+                <div>{event.fields.name}</div>  
+               </a>
+             </Link> 
+             <div className={styles.ucDate}>{event.fields.dateReadable}</div>  
            </li> 
         )}
       </ul> 
     </div>
-    </a></Link>
+    // </a></Link>
   )
 
 }
