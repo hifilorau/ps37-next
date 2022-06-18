@@ -711,7 +711,7 @@ const fadeOut = () => {
 					css={override} size={40} />
 					
 					
-					<h4>What took a god 7 days...</h4>
+					<h4>Creating a new ethereal plane...</h4>
 					{/* <p>creating new plane</p> */}
 				</div>  
 			</div>
@@ -737,7 +737,7 @@ const fadeOut = () => {
       </div>
 			<div className={info ? "nft-fo fade-in" : "nft-fo fade-out"}>
 				{/* <div className="close" onClick={() => setInfo(false)}>X</div> */}
-				<p>Each vapor plane is randomly generated using p5.js. There are billions of possible and unpredictable combinations. The idea of this collection is two fold. 1. the final collection is chosen by the art which the users choose to create. Users can create as many new planes as they like and once they find one that they like they can download it. (NFT mints coming soon) 2. Eventually minting of NFTs will both provide additional utility in the form of free tickets, and discounts on merch, and provide financial support for the space.</p>
+				<p>Each vapor plane is randomly generated using p5.js. There are billions of possible and unpredictable combinations. Press up arrow to save.</p>
 					
 				{/* <p> Vapor Plane NFTs will provide additional benefits and access to PS37 including future airdrops, NFT tickets to IRL or metaverse events, as well as merchandise, art printsgi, and discounts on event tickets and space rental.</p> */}
 			</div> 
