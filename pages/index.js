@@ -45,7 +45,7 @@ const Home = ({events}) => {
   <>
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>
-    <div className={styles.banner} style={{
+  {!keyholeAnimation && <div className={styles.banner} style={{
       width: '100%',
       height: 'auto',
       position: 'relative',
@@ -53,7 +53,7 @@ const Home = ({events}) => {
       minHeight: '280px'
     }}>
     <Image src="/images/psbg.jpg" layout="fill" height={200} width={400} />
-    </div>
+    </div>}
     <div className={!keyholeAnimation ? "tagline" : "tagline fadeout"}>
       <Upcoming events={events} />
     </div> 

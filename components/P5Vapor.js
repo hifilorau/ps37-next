@@ -90,7 +90,7 @@ let THEME_ARRAY = [
 	//MIDNIGHT BLUE PLANE
 	["#fb321a", "#ff911a", "#e100f5", "#450eff", "#21006f"], 
 
-	["#06f984", "#fde802", "#ffd11a", "#fc5d02", "#ff00f9"], /// Mercury's Horn
+	// ["#06f984", "#fde802", "#ffd11a", "#fc5d02", "#ff00f9"], /// Kid Amnesia's
 
 	["#aafec6", "#42fe90", "#00d98a", "#018c77", "#02515d"],  /// C.R.E.A.M
 
@@ -108,7 +108,7 @@ let THEME_ARRAY = [
 	['#688141', "#C48A4D", "#df9875", "#2F596F", "#A1819B"],  ///Circundum Cage
 
 
-	['#fffd00', '#ff0000', '#fad300', '#cb0900', '#fff700']  /// the Plane of the Eternal Flame
+	// ['#fffd00', '#ff0000', '#fad300', '#cb0900', '#fff700']  /// the Plane of the Eternal Flame
 ] 
 
 const renderConnect = () => {
@@ -131,28 +131,22 @@ const setThemeAttribute = (i) => {
 		return "Midnight in Eden"
 	}
 	if (i == 2) {
-		return "Kid's Amnesia"
-	}
-	if (i == 3) {
 		return "C.R.E.A.M."
 	}
-	if (i == 4) {
+	if (i == 3) {
 		return "Mogwai Polaris"
 	}
-	if (i == 5) {
+	if (i == 4) {
 		return "Imaginarium Hendrix"
 	}
-	if (i == 6) {
+	if (i == 5) {
 		return "Spacecraft Paradiso"
 	}
-	if (i == 7) {
+	if (i == 6) {
 		return "Doja's Delight"
 	}
-	if (i == 8) {
+	if (i == 7) {
 		return "Cage's Silence"
-	}
-	if (i == 9) {
-		return "Plane of the Eternal Flame"
 	}
 }
 

@@ -102,7 +102,8 @@ z-index: -1
   height: 100vh;
   position: absolute;
   background-color: white;
-  animation: fadeIn 9s;
+  top: 0;
+  animation: fadeIn 5s;
 }
 
 .key-bg h1 {
@@ -453,7 +454,12 @@ a {
     display: block !important;
   }
 
-
+  .key-bg h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 
   .flex-footer-link {
