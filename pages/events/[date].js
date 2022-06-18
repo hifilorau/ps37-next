@@ -5,7 +5,7 @@ import Image from 'next/image'
 const EventPage = ({event}) => {
   console.log('event', event)
   const thisEvent = event.fields
-  const eventImage = event.fields.image ? event.fields.image[0].url : "/images/fake_flyer.jpg"
+  const eventImage = event.fields.image ? event.fields.image[0].url : "/images/ps37_flyer.jpg"
   return (
     <div className={styles.eventPage}>
       <div className={styles.contentWrapper}>
