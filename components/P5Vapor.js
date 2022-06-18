@@ -719,9 +719,11 @@ const fadeOut = () => {
 				<h3 onMouseOver={() => setInfo(true)}  onMouseOut={() => setInfo(false)}> Information</h3>
 			  <h3>{renderConnect()}</h3> 
 					
-				<div className="vapor-link">
+				<div className="">
 					<Link href="/"> 
-         		<div className="vaporlink-img"><img src={logo} /></div>
+					<a>
+						 <h3>Home</h3>
+					</a>
       		</Link>
 					{/* <a href="https://instagram.com/ps37durham/?hl=en" target="_blank" rel="noreferrer" className="vp-social">
 						<img src={igLogo} />

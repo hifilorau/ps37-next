@@ -95,7 +95,15 @@
   display: flex;
   justify-content: space-around;
 }
+.vapor-back {
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: orange;
 
+
+}
 
 .vapor-link .vp-social {
   width: 20px;
