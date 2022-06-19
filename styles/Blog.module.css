@@ -6,9 +6,20 @@
   font-family: 'Oswald', sans-serif
 }
 
+.blogWrapper a {
+  color: yellow;
+
+}
+.blogWrapper ul {
+  color: white;
+  background: purple;
+  padding: 1em;
+  list-style: none;
+}
 .posts {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* flex-wrap: wrap; */
   padding: 1em;
 }
 
@@ -37,4 +48,16 @@
   height: auto;
   min-height: 315px;
   position: relative;
+}
+
+.date {
+  position: relative;
+  top: -15px;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 975px) {
+  .posts {
+    grid-template-columns: 1fr;
+  }
 }
