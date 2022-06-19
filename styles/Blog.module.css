@@ -12,15 +12,42 @@
 }
 .blogWrapper ul {
   color: white;
-  background: purple;
+  /* background: purple; */
   padding: 1em;
   list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 .posts {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* flex-wrap: wrap; */
   padding: 1em;
+}
+
+.ucWrapper {
+  background: purple;
+  padding: 1em;
+}
+.ucTicket {
+  color: pink;
+}
+
+.ucWrapper ul{
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.ucWrapper h3 {
+  color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.ucWrapper li {
+  display: grid;
+  grid-template-columns: 60px 1fr 50px;
 }
 
 .postLi {

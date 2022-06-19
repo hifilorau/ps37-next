@@ -1,12 +1,28 @@
-import { getSinglePost } from "../../lib/functions";
+import { getSinglePost, getResourceData } from "../../lib/functions";
 import styles from '../../styles/Blog.module.css'
 
-const PostPage = (props) => {
+const PostPage = ({post, events}) => {
+  console.log('POST', post)
   return (
     <div className={styles.blogWrapper}>
-      <img src={props.post.feature_image} />
-      <h1>{props.post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+      <img src={post.feature_image} />
+      <h1>{post.title}</h1>
+      <div className={styles.ucWrapper}>
+        <h3>Upcoming Events</h3>
+        <ul>
+        {events.map((event)=>{
+
+          return (
+            <li>
+              <div className={styles.ucDate}>{event.fields.dateReadable}</div>
+              <div className={styles.ucName}>{event.fields.name}</div>
+              {event.fields.ticket_link && <a href={event.fields.ticket_link} target="_blank"><div className={styles.ucTicket}>Tickets</div></a>}
+            </li>
+          )
+        })}
+        </ul>
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   );
 };
@@ -30,6 +46,7 @@ export default PostPage;
 export async function getServerSideProps(context) {
   console.log('HIIII', context.params.slug)
   const post = await getSinglePost(context.params.slug);
+  const data = await getResourceData();
   console.log('POST TOM', post)
   if (!post) {
     return {
@@ -38,7 +55,10 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { post },
+    props: {
+    post: post,
+    events: data
+    }
     // revalidate: 1,
   };
 }
