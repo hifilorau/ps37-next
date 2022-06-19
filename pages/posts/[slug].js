@@ -13,10 +13,10 @@ const PostPage = ({post, events}) => {
         {events.map((event)=>{
 
           return (
-            <li>
+            <li key={event.id}>
               <div className={styles.ucDate}>{event.fields.dateReadable}</div>
               <div className={styles.ucName}>{event.fields.name}</div>
-              {event.fields.ticket_link && <a href={event.fields.ticket_link} target="_blank"><div className={styles.ucTicket}>Tickets</div></a>}
+              {event.fields.ticket_link && <a href={event.fields.ticket_link} target="_blank" rel="noreferrer"><div className={styles.ucTicket}>Tickets</div></a>}
             </li>
           )
         })}
