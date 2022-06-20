@@ -1,13 +1,17 @@
 import { getPosts } from "../../lib/functions";
+import React, {useState} from 'react'
 import Link from "next/link";
 import styles from '../../styles/Blog.module.css'
 import Image from 'next/image'
 import { style } from "@mui/system";
+import Subscribe from "../../components/Subscribe";
 
 const Posts = (props) => {
+  const [subscribeB, setSubscribeB] = useState(false)
   return (
   <div className={styles.blogWrapper}>
-    <h1>Updates</h1>
+    <h1>Updates <span className={styles.subscribeButton} onClick={() => setSubscribeB(true)}>Subscribe</span> </h1>
+     {subscribeB && <Subscribe /> }
     <ul className={styles.posts} >
       {props.posts.map((post) => {
         const d = new Date(post.published_at)
