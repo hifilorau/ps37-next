@@ -104,7 +104,7 @@
 .subscribeContainer {
   margin: 20px 0px;
   padding: 24px;
-  max-width: 768px;
+  /* max-width: 768px; */
   box-sizing: border-box;
   border: 1px solid #d0d0032e;
   background: purple;

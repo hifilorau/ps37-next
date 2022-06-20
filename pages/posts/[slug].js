@@ -1,12 +1,13 @@
 import { getSinglePost, getResourceData } from "../../lib/functions";
 import styles from '../../styles/Blog.module.css'
+import Subscribe from "../../components/Subscribe";
 
 const PostPage = ({post, events}) => {
   console.log('POST', post)
   return (
     <div className={styles.blogWrapper}>
-      <img src={post.feature_image} />
       <h1>{post.title}</h1>
+      <img src={post.feature_image} />
       <div className={styles.ucWrapper}>
         <h3>Upcoming Events</h3>
         <ul>
@@ -23,6 +24,7 @@ const PostPage = ({post, events}) => {
         </ul>
       </div>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Subscribe />
     </div>
   );
 };
