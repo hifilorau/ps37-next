@@ -6,9 +6,7 @@ const PostPage = ({post, events}) => {
   console.log('POST', post)
   return (
     <div className={styles.blogWrapper}>
-      <h1>{post.title}</h1>
-      <img src={post.feature_image} />
-      <div className={styles.ucWrapper}>
+       <div className={styles.ucWrapper}>
         <h3>Upcoming Events</h3>
         <ul>
         {events.map((event)=>{
@@ -23,6 +21,8 @@ const PostPage = ({post, events}) => {
         })}
         </ul>
       </div>
+      <h1>{post.title}</h1>
+      <img src={post.feature_image} />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <Subscribe />
     </div>
@@ -46,10 +46,9 @@ export default PostPage;
 // Pass the page slug to "getSinglePost()" function
 // Which then passes it to "posts.read()" to query the GhostContentAPI
 export async function getServerSideProps(context) {
-  console.log('HIIII', context.params.slug)
   const post = await getSinglePost(context.params.slug);
   const data = await getResourceData();
-  console.log('POST TOM', post)
+
   if (!post) {
     return {
       notFound: true,
