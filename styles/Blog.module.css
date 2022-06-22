@@ -78,9 +78,12 @@
 .blogWrapper h1 {
   font-size: 37px;
   color: #f5c0cc;
-  font-family: 'Press Start 2P', cursive;
   font-weight: 700;
   text-align: center;
+}
+
+.rewindHead {
+  font-family: 'Press Start 2P', cursive;
 }
 
 .blogWrapper {
