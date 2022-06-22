@@ -13,7 +13,8 @@ const Posts = ({posts, events}) => {
   const featuredD = featuredDate.toDateString()
   return (
   <div className={styles.blogWrapper}>
-    <h1>The Paradise Rewind<span className={styles.subscribeButton} onClick={() => setSubscribeB(true)}>Subscribe</span> </h1>
+    <h1>The Paradise Rewind </h1>
+    <div className={styles.subscribeButton} onClick={() => setSubscribeB(true)}>Subscribe</div>
      {subscribeB && <Subscribe /> }
      <div className={styles.rewindBanner}>
      <div className={styles.featuredPost} key={featuredPost.id}>
