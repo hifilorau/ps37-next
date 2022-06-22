@@ -39,7 +39,7 @@ const Posts = ({posts, events, error}) => {
       {posts.map((post, index) => {
         const d = new Date(post.published_at)
         const date = d.toDateString()
-        console.log('D', d) 
+       
         if (index !== 0 )
         return (
         <li className={styles.postLi} key={post.id}>
@@ -82,7 +82,6 @@ export async function getServerSideProps(context) {
   try {
     const posts = await getPosts();
     const data = await getResourceData();
-    console.log('POOSSSTSSSS', posts)
     if (!posts) {
       return {
         notFound: true,
