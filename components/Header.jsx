@@ -41,17 +41,17 @@ return (
   </Link>
     {isOpen && 
       <ul className="footer-list">
-        <li className="flex-footer-link"> 
+        <li className="flex-footer-link mobile-link"> 
           <Link href="/events">EVENTS</Link>
          </li>
-        <li className="flex-footer-link">
-        <Link href="/posts">Updates</Link>  
+        <li className="flex-footer-link mobile-link">
+        <Link href="/posts">UPDATES</Link>  
         </li>
       
-        <li className="flex-footer-link">
+        <li className="flex-footer-link mobile-link">
           <Link href="/rent">RENT</Link>
         </li>
-        <li className="flex-footer-link">
+        <li className="flex-footer-link mobile-link">
         <Link href="/about">INFO</Link>
         </li>
       </ul> }
