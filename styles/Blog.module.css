@@ -44,8 +44,15 @@
 }
 
 .ucWrapper {
-  background: purple;
+  /* background: purple; */
   padding: 1em;
+  border: 0.2rem solid #fff;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe; 
 }
 .ucTicket {
   color: pink;
@@ -57,7 +64,7 @@
 }
 
 .ucWrapper h3 {
-  color: white;
+  color: purple;
   margin-bottom: 0;
   margin-top: 0;
   font-weight: 700;
