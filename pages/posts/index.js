@@ -6,11 +6,16 @@ import Image from 'next/image'
 import { style } from "@mui/system";
 import Subscribe from "../../components/Subscribe";
 
-const Posts = ({posts, events}) => {
+const Posts = ({posts, events, error}) => {
   const [subscribeB, setSubscribeB] = useState(false)
   const featuredPost = posts[0]
   const featuredDate = new Date(featuredPost.published_at)
   const featuredD = featuredDate.toDateString()
+
+  if (error){
+    return (<div className={styles.postsError}>{error}</div>)
+  }
+
   return (
   <div className={styles.blogWrapper}>
     <h1 className={styles.rewindHead}>The Paradise Rewind </h1>
@@ -74,17 +79,23 @@ const Posts = ({posts, events}) => {
 export default Posts;
 
 export async function getServerSideProps(context) {
-  const posts = await getPosts();
-  const data = await getResourceData();
-  console.log('POOSSSTSSSS', posts)
-  if (!posts) {
+  try {
+    const posts = await getPosts();
+    const data = await getResourceData();
+    console.log('POOSSSTSSSS', posts)
+    if (!posts) {
+      return {
+        notFound: true,
+      };
+    }  
     return {
-      notFound: true,
+      props: { posts, events: data },
+      // revalidate: 1,
     };
-  }
-
-  return {
-    props: { posts, events: data },
-    // revalidate: 1,
-  };
+  } catch (e) {
+      return {
+        props: {error: e.message}
+      };
+    }
+   
 }
