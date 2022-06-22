@@ -76,7 +76,7 @@
 }
 
 .blogWrapper h1 {
-  font-size: 42px;
+  font-size: 37px;
   color: #f5c0cc;
   font-family: 'Press Start 2P', cursive;
   font-weight: 700;
@@ -263,6 +263,12 @@
   .inputForm input {
     margin-bottom: .5em;
   }
+
+
+.blogWrapper h1 {
+  font-size: 27px;
+}
+
 }
 
 
