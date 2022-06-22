@@ -147,7 +147,7 @@
 .ucList {
   margin-top: .25em;
   padding-left: 0;
-  max-width: 300px;
+  max-width: 350px;
   margin: .5em auto;
   /* text-align: left; */
   /* margin-left: 2em; */
@@ -156,7 +156,7 @@
   display: grid;
   /* grid-template-columns: 100px 1fr; */
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: .5em;
   /* text-align: left; */
 }
