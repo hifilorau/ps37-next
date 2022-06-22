@@ -69,6 +69,8 @@
 
 .postLi {
   max-width: 375px;
+  position: relative;
+  overflow: hidden;
   /* margin: 1em; */
 }
 
@@ -87,6 +89,59 @@
 .indexTitle {
   color: white !important
 }
+
+.vidWrap {
+  position: relative;
+  top: 0; left: 0; right: 0; bottom: 0;
+  height: 315px;
+  /* overflow: hidden; */
+}
+
+.vidWrap video {
+  width: 100%;
+ position: relative;
+  height: 800px;
+  object-fit: cover;
+  top: -70px;
+  /* background-color: blue; */
+}
+
+.rewindBanner {
+  /* display: grid;
+  grid-template-columns: 315px 1fr; */
+}
+
+.vidEvents {
+  display: grid;
+  grid-template-columns: 70px 200px 70px;
+  justify-content: center;
+}
+
+.freakWrap {
+  position: relative;
+  overflow: hidden;
+  max-width: 375px;
+  border: 0.2rem solid #fff;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe; 
+}
+
+.eventVidContent {
+  position: absolute;
+  top: -37px;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+
+}
+
 
 .imageWrapper {
   min-width: 400px;
@@ -173,6 +228,8 @@
   color: #b00020;
   padding-top: 20px;
 }
+
+
 
 @media only screen and (max-width: 975px) {
   .posts {

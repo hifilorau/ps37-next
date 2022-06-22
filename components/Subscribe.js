@@ -31,7 +31,7 @@ function Subscribe() {
     <div className={styles.subscribeContainer}>
       <h4 className={styles.subHeader}>Subscribe to the Paradise Rewind</h4>
       <p className="sub-text">
-        We'll send you a monthly email highlighting what's happening at PS37 in the upcoming month, along with some highlights from last month. No SPAM ever... unless it's food!
+        Your monthly email highlighting what's happening at PS37 in the upcoming month, along with some highlights from last month. No SPAM ever... unless it's going in your mouth.
       </p>
       <form onSubmit={subscribe}>
         <div className={styles.subFormContainer}>
