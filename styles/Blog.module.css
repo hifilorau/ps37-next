@@ -100,7 +100,7 @@
 .vidWrap video {
   width: 100%;
  position: relative;
-  height: 800px;
+  height: 500px;
   object-fit: cover;
   top: -70px;
   /* background-color: blue; */
@@ -121,9 +121,9 @@
   position: relative;
   overflow: hidden;
   max-width: 375px;
-  /* border: 0.2rem solid #fff; */
+  /* border: 0.1rem solid rgba(255,255,255,1); */
   box-shadow: 
-  /* 0 0 .2rem #fff, */
+  0 0 .2rem #fff,
   0 0 .2rem #fff,
   0 0 2rem #bc13fe,
   0 0 0.8rem #bc13fe,
