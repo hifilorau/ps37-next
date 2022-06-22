@@ -50,7 +50,7 @@ const Posts = ({posts, events}) => {
       )})}
         <li className={styles.freakWrap}>
           <div className={styles.vidWrap}>
-            <video src="/images/ps37-glitch.mp4" autoPlay muted loop/>
+            <video src="/images/pstest.mp4" autoPlay muted loop/>
           </div>
 
           <ul className={styles.eventVidContent}>
