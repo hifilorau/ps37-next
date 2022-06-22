@@ -117,10 +117,20 @@
   justify-content: center;
 }
 
+.freakOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(37,0,88,.5);
+  z-index: 10000;
+}
+
 .freakWrap {
   position: relative;
   overflow: hidden;
-  max-width: 375px;
+  max-width: 500px;
   /* border: 0.1rem solid rgba(255,255,255,1); */
   box-shadow: 
   0 0 .2rem #fff,
@@ -141,6 +151,8 @@
   top: 50%;
   left: 50%;
   transform:translate(-50%, -50%);
+  z-index: 100005;
+  opacity: .6;
 
 }
 
