@@ -3,6 +3,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import styles from '../styles/Home.module.css'
 import  React, {useState} from 'react';
+import Banner from '../components/Banner'
 // import Video from '../public/images/ps37-v2-comp-nl.mp4';
 import Poster from '../public/images/ps37-moon-shot.png'
 import Logo from "../public/images/logo-08.svg"
@@ -45,6 +46,10 @@ const Home = ({events}) => {
   <>
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>
+   <Banner message={{
+     link: 'https://www.carolinaabortionfund.org/donate',
+     message: 'Support the North Carolina Abortion Fund: Click to donate directly.'
+   }}/>
   {!keyholeAnimation && <div className={styles.banner} style={{
       width: '100%',
       height: 'auto',
@@ -91,3 +96,5 @@ export async function getServerSideProps(context) {
     }
   }
 }
+
+//

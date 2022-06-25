@@ -163,7 +163,7 @@ z-index: -1
   text-transform: uppercase;
   color: #b93bb6;
   font-weight: 700;
-  z-index: 1000;
+  z-index: 1003;
   max-width: 600px;
   border-radius: .1em;
   transform: rotate3d(-11, 20, -5, 40deg);
@@ -382,7 +382,7 @@ a {
 }
 
 .footer-img {
-  width: 100px;
+  width: 90px;
   margin: 0 auto;
   position: relative;
   top: -10px;
@@ -530,14 +530,14 @@ a {
 }
 
 .header {
-  margin-top: 20px;
+  padding-top: 20px;
   position: relative;
   z-index: 1000;
 }
 
 .header-mobile {
   display: none;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
   position: relative;
   z-index: 10000;
 }
