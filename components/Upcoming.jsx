@@ -7,7 +7,7 @@ const Upcoming = ({events}) => {
     // <Link href="/events">
     // <a>
     <div className={styles.upcomingWrapper}>
-      <h1>Upcoming Events</h1>
+      <h1>On Deck</h1>
       <ul className={styles.ucList}>
       {/* <li className={styles.ucListItem}>
           <div className={styles.ucName}>Mamis and the Papis</div>   
