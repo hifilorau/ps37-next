@@ -47,6 +47,7 @@ const Home = ({events}) => {
   <div className="homepage-container">
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>
+   
    <Banner message={{
      link: 'https://www.carolinaabortionfund.org/donate',
      message: 'Support the North Carolina Abortion Fund: Click to donate directly.'
@@ -60,9 +61,11 @@ const Home = ({events}) => {
     }}>
     <Image src="/images/psbg.jpg" layout="fill" height={200} width={400} />
     </div>}
-    <div className={!keyholeAnimation ? "tagline" : "tagline fadeout"}>
-      <Upcoming events={events} />
-    </div> 
+    <div className="taglineWrapper">
+      <div className={!keyholeAnimation ? "tagline" : "tagline fadeout"}>
+        <Upcoming events={events} />
+      </div> 
+    </div>
     {keyholeAnimation && <div className="key-bg">
       <h1>YOU ARE NOW ENTERING THE MF KEYHOLE.</h1>
       <div>(and also loading...)</div>

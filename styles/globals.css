@@ -152,6 +152,10 @@ z-index: -1
   height: 100%; */
 }
 
+.taglineWrapper {
+  padding: 0 1em;
+}
+
 .tagline {
   /* color: #111; */
   position: relative;
@@ -439,6 +443,8 @@ a {
   .events-wrap {
     justify-content: center;
   }
+
+
   .tagline {
     transform:none;
     position: relative;

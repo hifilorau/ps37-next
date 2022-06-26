@@ -5,7 +5,7 @@ import { MoralisProvider } from 'react-moralis';
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 // import Loading from '../components/Loading'
-import * as ga from '../utils/ga'
+// import * as ga from '../utils/ga'
 import Header from '../components/Header'
 
 function MyApp({ Component, pageProps }) {

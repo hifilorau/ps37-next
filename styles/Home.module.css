@@ -3,7 +3,7 @@
   width: 100vw;
   overflow: hidden;
   min-height: 100vh;
-  padding: 0 1em;
+  /* padding: 0 1em; */
   /* background: black; */
 }
 
@@ -167,13 +167,20 @@
   color: yellow;
   animation: pulsate 1.5s infinite alternate; 
   background: rgba(255,255,255,.6);
+  border-bottom: 3px white solid;
+  /* box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;  */
 }
 
 .ucList {
   margin-top: .25em;
   padding-left: 0;
   padding: 0 .5em;
-  max-width: 450px;
+  max-width: 490px;
   margin: .5em auto;
   /* background: rgba(255,255,255,.5); */
   width: 100%;
@@ -195,11 +202,25 @@
   cursor: pointer;
   color: white;
   transition: .5s;
+  color: white;
+  /* animation: pulsate 1.5s infinite alternate;  */
+  font-size: 22px;
+  text-shadow:
+  0 0 4px rgb(235, 218, 218),
+  0 0 11px rgb(235, 218, 218),
+  0 0 19px rgb(235, 218, 218),
+  0 0 40px #e8e222,
+  0 0 80px #e8e222,
+  0 0 90px #e8e222,
+  0 0 100px #e8e222,
+  0 0 150px #e8e222;
+
 }
+
 
 .ucName:hover {
   color: yellow;
-  animation: pulsate 1.5s infinite alternate; 
+  /* animation: pulsate .5s infinite alternate;  */
 }
 
 .ucDate {
