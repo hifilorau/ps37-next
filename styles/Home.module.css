@@ -3,6 +3,7 @@
   width: 100vw;
   overflow: hidden;
   min-height: 100vh;
+  padding: 0 1em;
   /* background: black; */
 }
 
@@ -151,26 +152,31 @@
 }
 .upcomingWrapper {
   /* border: 1px solid purple; */
-  margin-top: .5em;
+  /* margin-top: .5em; */
   transition: .5s;
   /* border-radius: .35em; */
-  padding: .5em;
+  /* padding: .5em; */
   text-align: center;
 }
 
 .upcomingWrapper h1 {
   margin-bottom: .25em;
+  padding: .25em 0;
   font-size: 34px;
   margin-top: 0;
   color: yellow;
   animation: pulsate 1.5s infinite alternate; 
+  background: rgba(255,255,255,.6);
 }
 
 .ucList {
   margin-top: .25em;
   padding-left: 0;
-  max-width: 350px;
+  padding: 0 .5em;
+  max-width: 450px;
   margin: .5em auto;
+  /* background: rgba(255,255,255,.5); */
+  width: 100%;
   /* text-align: left; */
   /* margin-left: 2em; */
 }
@@ -180,6 +186,7 @@
   color: white;
   font-size: 18px;
   margin-bottom: .5em;
+  /* border-bottom: black 1px solid; */
   /* text-align: left; */
 }
 

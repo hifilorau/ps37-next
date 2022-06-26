@@ -44,6 +44,7 @@ const Home = ({events}) => {
 
   return (
   <>
+  <div className="homepage-container">
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>
    <Banner message={{
@@ -64,9 +65,10 @@ const Home = ({events}) => {
     </div> 
     {keyholeAnimation && <div className="key-bg">
       <h1>YOU ARE NOW ENTERING THE MF KEYHOLE.</h1>
+      <div>(and also loading...)</div>
     </div>}
     <VidSketch />
-    <div className="homepage-container">
+    {/* <div className="homepage-container"> */}
       <div className="landing-content-container">
         <div className={!keyholeAnimation ? "logo-wrapper" : "logo-wrapper keyhole-punch"} onClick={keyholeStart}>
         {/* <Link href="/vaporplanes">  */}
@@ -79,8 +81,9 @@ const Home = ({events}) => {
             <Upcoming />
           </div>  */}
       </div>
-    </div>
+    {/* </div> */}
     {/* <Footer /> */}
+  </div>
   </div>
   </>
   )

@@ -67,6 +67,7 @@ h1 {
 .homepage-container {
   min-height: 90vh;
   position: relative;
+  overflow: hidden;
   /* background: black; */
   /* opacity: .6; */
 
@@ -83,12 +84,10 @@ z-index: -1
 }
 
 .logo-wrapper {
-  position: absolute;
+  position: relative;
+  margin: 0 auto;
   max-width: 300px;
-  left: 50%;
-  top: 55%;
   text-align: center;
-  transform: translate(-50%, -50%);
   width: 100%;
   /* pointer-events: disable; */
   z-index: 200;
@@ -115,8 +114,12 @@ z-index: -1
 }
 
 .keyhole-punch {
-  animation: keyhole 5s;
+  animation: keyhole 7s;
   z-index: 100000000;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  top: 50%;
 }
 .fadeout {
   animation: fade 9s;
@@ -151,10 +154,11 @@ z-index: -1
 
 .tagline {
   /* color: #111; */
-  position: absolute;
-  top: 140px;
-  left: 70px;
+  position: relative;
+  /* top: 140px;
+  left: 50%; */
   font-size: 2rem;
+  margin: 1em auto;
   /* animation: fadeIn 2s ease;
   transition: 1s; */
   line-height: .9;
@@ -164,9 +168,9 @@ z-index: -1
   color: #b93bb6;
   font-weight: 700;
   z-index: 1003;
-  max-width: 600px;
+  max-width: 800px;
   border-radius: .1em;
-  transform: rotate3d(-11, 20, -5, 40deg);
+  /* transform: rotate3d(-11, 20, -5, 40deg); */
   /* animation: rotateMast 9s infinite; */
   border: 0.2rem solid #fff;
   box-shadow: 0 0 .2rem #fff,
@@ -176,6 +180,7 @@ z-index: -1
   0 0 2.8rem #bc13fe,
   inset 0 0 1.3rem #bc13fe; 
   min-width: 500px;
+  /* transform: translateX(-50%); */
 }
 
 
@@ -439,7 +444,7 @@ a {
     position: relative;
     top:-80px;
     left:auto; 
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
     min-width: auto;
   }
@@ -594,20 +599,24 @@ a {
   0% { 
     min-height: 500px;
     max-width: 300px;
-    top: 65%;
+    top: 50%;
+    /* top: 65%; */
   }
 
   40% { 
     min-height: 250vh;
     max-width: 1300px;
-    top: 100%
+    top: 0%
   }
 
 
   100% {
       min-height: 670vh;
       max-width: 700vw;
-      top: 200%;
+      /* left: 50%;
+      /* top: 50%; */ 
+      /* top: 200%; */
+      top: -200%;
   }
 }
 

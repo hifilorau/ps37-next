@@ -6,13 +6,13 @@ const Loading = () => {
 return (
 <div className="loading">
   <Snow />
-<div className="logo-wrapper">
+<div className="loading-wrapper">
         {/* <Link href="/vaporplanes">  */}
             <Image className="logo-landing glitch" src={Logo}/>
         {/* </Link> */}
           {/* { this.state.randomNumber == 3 ?  <div className="tagline">A Paradise in Space</div>  : null }  */}
           {/* { this.state.randomNumber !== 3 ? <div className="tagline">makerspace, office, and arthaüs</div> : null } */}
-          <div style={{color: 'white'}}>Loading... Doing weird things in the backroom</div> 
+          <div className={"loading-text"}>Humanity is weird.</div> 
           {/* <div>Or the site is down</div> */}
         </div>
 </div>
