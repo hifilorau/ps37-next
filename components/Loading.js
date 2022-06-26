@@ -12,7 +12,7 @@ return (
         {/* </Link> */}
           {/* { this.state.randomNumber == 3 ?  <div className="tagline">A Paradise in Space</div>  : null }  */}
           {/* { this.state.randomNumber !== 3 ? <div className="tagline">makerspace, office, and arthaüs</div> : null } */}
-          <div className="">Loading... greatness takes time.</div> 
+          <div style={{color: 'white'}}>Loading... Doing weird things in the backroom</div> 
           {/* <div>Or the site is down</div> */}
         </div>
 </div>
