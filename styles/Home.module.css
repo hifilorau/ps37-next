@@ -166,7 +166,7 @@
   margin-top: 0;
   color: yellow;
   animation: pulsate 1.5s infinite alternate; 
-  background: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.3);
   border-bottom: 3px white solid;
   /* box-shadow: 0 0 .2rem #fff,
   0 0 .2rem #fff,
@@ -204,7 +204,7 @@
   transition: .5s;
   color: white;
   /* animation: pulsate 1.5s infinite alternate;  */
-  font-size: 22px;
+  font-size: 20px;
   text-shadow:
   0 0 4px rgb(235, 218, 218),
   0 0 11px rgb(235, 218, 218),
