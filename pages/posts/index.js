@@ -6,6 +6,11 @@ import Image from 'next/image'
 import Subscribe from "../../components/Subscribe";
 
 const Posts = ({posts, events, error}) => {
+  const [subscribeB, setSubscribeB] = useState(false)
+  const featuredPost = posts ? posts[0] : null;
+  const featuredDate = posts ? new Date(featuredPost.published_at) : null
+  const featuredD = posts ? featuredDate.toDateString() : null;
+
   if (error){
     return (<div classsName={styles.postsError}>{error}</div>)
   }
@@ -13,12 +18,6 @@ const Posts = ({posts, events, error}) => {
   if (!posts){
     return (<div className={styles.postsError}>Check back in a sec.</div>)
   }
-
-  const [subscribeB, setSubscribeB] = useState(false)
-  const featuredPost = posts ? posts[0] : null;
-  const featuredDate = new Date(featuredPost.published_at)
-  const featuredD = featuredDate.toDateString()
-
  
 
   return (
