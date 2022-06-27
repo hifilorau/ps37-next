@@ -58,16 +58,16 @@ const Home = ({events}) => {
     <div className="taglineWrapper">
       <div className={!keyholeAnimation ? "tagline" : "tagline fadeout"}>
         <Upcoming events={events} />
-        <div className="landing-content-container">
-        <div className={!keyholeAnimation ? "logo-wrapper" : "logo-wrapper keyhole-punch"} onClick={keyholeStart}>
+        <div className={!keyholeAnimation ? "landing-content-container" : "landing-content-container keyhole-punch"}>
+        <div className="logo-wrapper" onClick={keyholeStart}>
             <Image className="logo-landing glitch" src={Logo} objectFit="cover" layout="fill"/>
         </div>
       </div>
       </div> 
     </div>
     {keyholeAnimation && <div className="key-bg">
-      <h1>YOU ARE NOW ENTERING THE MF KEYHOLE.</h1>
-      <h1>(and also loading...)</h1>
+      <h1>YOU ARE NOW ENTERING THE MF KEYHOLE...</h1>
+      {/* <h1>(and also loading...)</h1> */}
     </div>}
     <VidSketch />
     {/* <div className="video-2">
