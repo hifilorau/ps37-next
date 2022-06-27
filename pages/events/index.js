@@ -1,11 +1,10 @@
 
 import React, {useEffect, useState} from 'react'
-import Poster from '../../public/images/ps37-moon-shot.png'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Image from 'next/image'
-import Joystick from '../../components/Joystick'
 import Link from 'next/link'
+import {getEventsData} from '../../lib/functions'
 
 const EventCard = ({psEvent}) => {
   const {name, ticket_link, date} = psEvent.fields
@@ -32,22 +31,22 @@ const EventCard = ({psEvent}) => {
   )
 }
 
-const Events = () => {
+const Events = ({events}) => {
   
-  const [psEvents, setPsEvents ] = useState([]);
+  const psEvents = events;
   //move to api folder at some point
 
 
-const getData = async () => {
-  const response = await fetch('/api/eventsApi')
-  const data = await response.json()
-  console.log('COMPONENT RES', data)
-  setPsEvents(data)
-}
+// const getData = async () => {
+//   const response = await fetch('/api/eventsApi')
+//   const data = await response.json()
+//   console.log('COMPONENT RES', data)
+//   setPsEvents(data)
+// }
   
-  useEffect(() => {
-     getData();
- }, []);
+//   useEffect(() => {
+//      getData();
+//  }, []);
 
   if (psEvents.length <= 0) {
     return (
@@ -84,3 +83,14 @@ const getData = async () => {
 }
 
 export default Events;
+
+export async function getServerSideProps(context) {
+  const data = await getEventsData();
+  const events = JSON.parse(JSON.stringify(data))
+  
+    return {
+      props: {
+        events
+    }
+  }
+}
