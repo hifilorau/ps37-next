@@ -12,12 +12,8 @@ return (
    <div className="header">
       <ul className="footer-list">
         <li className="flex-footer-link"> 
-  
             <Link href="/events">EVENTS</Link>
-      
-  
             <Link href="/posts">UPDATES</Link>  
-          
         </li>
         <li>
           <Link href="/"> 

@@ -47,7 +47,6 @@ border-color: red;
 `;
 
 useEffect( async () => {
-	console.log('WINDOW', window)
 		// const {address, status} = await getCurrentWalletConnected();
     // setWallet(address)
     // setStatus(status); 

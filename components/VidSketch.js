@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import styles from '../styles/Home.module.css'
-import { P5Instance, Sketch, P5WrapperProps } from 'react-p5-wrapper'
+// import { P5Instance, Sketch, P5WrapperProps } from 'react-p5-wrapper'
 const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper')
     .then(mod => mod.ReactP5Wrapper), {
     ssr: false
@@ -14,7 +14,6 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper')
   
   p5.preload = () => {
     videoElement = p5.createVideo(['vid.mp4']);
-    console.log(videoElement)
   }
   p5.setup = () => {
     height = p5.windowHeight
@@ -22,11 +21,6 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper')
     cnv = p5.createCanvas(width, height)
 
     videoElement.volume(0);
-    // videoElement.play();
-
-
-    // p5.filter(p5.INVERT);
-    // videoElement.hide();
     p5.noStroke();
     p5.fill(255);
     videoElement.loop();
