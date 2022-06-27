@@ -13,7 +13,11 @@ const Posts = ({posts, events, error}) => {
   const featuredD = featuredDate.toDateString()
 
   if (error){
-    return (<div className={styles.postsError}>{error}</div>)
+    return (<div classsName={styles.postsError}>{error}</div>)
+  }
+
+  if (!posts){
+    return (<div className={styles.postsError}>Check back in a sec.</div>)
   }
 
   return (
@@ -84,7 +88,7 @@ export async function getServerSideProps(context) {
     const data = await getResourceData();
     if (!posts) {
       return {
-        notFound: true,
+          props: {posts: null}
       };
     }  
     return {
