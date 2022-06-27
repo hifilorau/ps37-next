@@ -68,9 +68,12 @@ const Home = ({events}) => {
     </div>
     {keyholeAnimation && <div className="key-bg">
       <h1>YOU ARE NOW ENTERING THE MF KEYHOLE.</h1>
-      <div>(and also loading...)</div>
+      <h1>(and also loading...)</h1>
     </div>}
-    <VidSketch />s
+    <VidSketch />
+    {/* <div className="video-2">
+      <video src="/images/vid.mp4" autoPlay muted loop/>
+    </div> */}
     
 
     {/* <Footer /> */} 
