@@ -86,13 +86,14 @@ z-index: -1
 .logo-wrapper {
   position: relative;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 200px;
   text-align: center;
   width: 100%;
   /* pointer-events: disable; */
   z-index: 200;
   padding: 1em;
-  height: 400px;
+  height: 240px;
+  top: 40px;
 } 
 
 .key-bg {
@@ -172,7 +173,7 @@ z-index: -1
   color: #b93bb6;
   font-weight: 700;
   z-index: 1003;
-  max-width: 800px;
+  max-width: 600px;
   border-radius: .1em;
   /* transform: rotate3d(-11, 20, -5, 40deg); */
   /* animation: rotateMast 9s infinite; */
@@ -184,6 +185,7 @@ z-index: -1
   0 0 2.8rem #bc13fe,
   inset 0 0 1.3rem #bc13fe; 
   min-width: 500px;
+  min-height: 600px;
   /* transform: translateX(-50%); */
 }
 
