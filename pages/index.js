@@ -23,7 +23,6 @@ const Home = ({events}) => {
   const [keyholeAnimation, setKeyholeAnimation] = useState(false)
   const router = useRouter();
 
-  console.log('DATA F', events)
   const rnGenerator = () => {
     const rarity = 10;
     let rng = Math.floor((Math.random() * rarity) + 1);
