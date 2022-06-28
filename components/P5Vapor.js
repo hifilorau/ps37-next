@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
-import {Container, Button, LinearProgress} from '@mui/material/';
+// import {Container, Button, LinearProgress} from '@mui/material/';
 // import Sketch from 'react-p5'
 import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
@@ -9,8 +9,8 @@ const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
 const logo1 = '/images/palms_main.svg'
 const logo5 =  '/images/logo-12.svg'
 import Link from 'next/link'
-const logo =  '/images/ps37-text-purp-09.png'
-const igLogo = '/images/ig_logo.png'
+// const logo =  '/images/ps37-text-purp-09.png'
+// const igLogo = '/images/ig_logo.png'
 
 // import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 // import { create } from 'ipfs-http-client'

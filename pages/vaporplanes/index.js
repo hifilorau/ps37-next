@@ -1,14 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import dynamic from 'next/dynamic'
-import logo1 from '../../public/images/palms_main.svg'
-import logo2 from '../../public/images/logo-09.svg'
-import logo5 from '../../public/images/logo-12.svg'
-import logo6 from '../../public/images/logo-13.svg'
-import logo7 from '../../public/images/logo-14.svg'
-import Link from 'next/link'
-import logo from '../../public/images/ps37-text-purp-09.png'
-import igLogo from '../../public/images/ig_logo.png'
-import GridLoader from 'react-spinners/GridLoader'
+
+
 // import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 // import { create } from 'ipfs-http-client'
 // import '../Future/future.css'
