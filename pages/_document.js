@@ -1,27 +1,10 @@
 // pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Script from 'next/script'
+
 class MyDocument extends Document {
   render() {
     return (
-      <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=XXXXXXXXX`}
-      />
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-SLJYNNHR40', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
+    
       <Html>
         <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -35,7 +18,7 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-      </>
+   
     )
   }
 }
