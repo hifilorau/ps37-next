@@ -23,10 +23,11 @@
   text-decoration: underline;
   animation: demo-1 20s linear infinite;
   display: block;
-  /* -moz-transform:translateX(100%);
+
+  -moz-transform:translateX(100%);
   -webkit-transform:translateX(100%);  
-  transform:translateX(100%); */
-  width: 750px;
+  transform:translateX(100%);
+  width: 550px;
 }
 
 .snow {
