@@ -21,7 +21,7 @@ const Posts = ({posts, events, error}) => {
  
 
   return (
-  <div className={styles.blogWrapper}>
+  <div className={styles.eventsWrapper}>
     <h1 className={styles.rewindHead}>The Paradise Rewind </h1>
     <div className={styles.subscribeButton} onClick={() => setSubscribeB(true)}>Subscribe</div>
      {subscribeB && <Subscribe /> }
