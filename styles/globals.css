@@ -120,7 +120,7 @@ z-index: -1
   background-color: white;
   top: 0;
   animation: fadeIn 5s;
-  animation-delay: 2s;
+  animation-delay: 3500ms;
   opacity: 0;
 }
 
@@ -150,7 +150,7 @@ z-index: -1
   height: 400px;
   z-index: 1000;
   animation: keyhole2 5s;
-  animation-delay: 2s;
+  animation-delay: 3s;
 } 
 
 .kp2 {
@@ -674,17 +674,17 @@ a {
   }
 
   40% { 
-    top: 95%;
-    transform: translateX(-50%) scale(800%);
+    top: 125%;
+    transform: translateX(-50%) scale(1500%);
   }
 
 
   100% {
-    top: 145%;
+    top: 185%;
       /* left: 50%;
       /* top: 50%; */ 
       /* top: 200%; */
-      transform: translateX(-50%) scale(1800%); 
+      transform: translateX(-50%) scale(2400%); 
   }
 }
 
@@ -695,7 +695,7 @@ a {
   }
 
   20% {
-    opacity: .6;
+    opacity: .4;
  
   }
 

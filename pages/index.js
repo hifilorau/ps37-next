@@ -34,7 +34,7 @@ const Home = ({events}) => {
     setKeyholeAnimation(true)
     setTimeout(() => {
       router.push("/vaporplanes")
-    }, 5000)
+    }, 6000)
   }
 
   return (
