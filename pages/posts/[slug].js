@@ -1,6 +1,7 @@
 import { getSinglePost, getResourceData } from "../../lib/functions";
 import styles from '../../styles/Blog.module.css'
 import Subscribe from "../../components/Subscribe";
+import Head from 'next/head'
 
 const PostPage = ({post, events}) => {
   return (
