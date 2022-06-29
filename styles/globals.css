@@ -120,6 +120,8 @@ z-index: -1
   background-color: white;
   top: 0;
   animation: fadeIn 5s;
+  animation-delay: 2s;
+  opacity: 0;
 }
 
 .key-bg h1 {
@@ -131,15 +133,44 @@ z-index: -1
 }
 
 .keyhole-punch {
-  animation: keyhole 7s;
+  animation: keyhole 5s;
   z-index: 100000000;
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
   top: 50%;
 }
+
+.keyhole-punch-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 200px;
+  height: 400px;
+  z-index: 1000;
+  animation: keyhole2 5s;
+  animation-delay: 2s;
+} 
+
+.kp2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 200px;
+  height: 400px;
+  z-index: 1000;
+}
+
+.kp2 .logo-wrapper {
+  opacity: .2;
+}
+
 .fadeout {
-  animation: fade 9s;
+  animation: fade 10s; 
+  /* animation-delay: 2s; */
+  /* opacity: 0; */
 }
 /* .logo-2-wrap {
   width: 400px;
@@ -171,7 +202,7 @@ z-index: -1
 .taglineWrapper {
   padding: 0 1em;
   position: absolute;
-  top: 170px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -619,25 +650,41 @@ a {
 
 @keyframes keyhole {
   0% { 
-    min-height: 500px;
-    transform: translateY(0) translateX(-50%) translateZ(0);
+    transform: translateX(-50%);
+    /* top: 65%; */
+  }
+
+  /* 40% { 
+    transform: translateX(-50%) scale(-50%);
+  } */
+
+
+  100% {
+
+      transform: translateX(-50%) scale(0); 
+  }
+}
+
+@keyframes keyhole2 {
+  0% { 
+    transform: translateX(-50%) scale(0);
+    top: 50%;
+    
     /* top: 65%; */
   }
 
   40% { 
-   min-height: 250vh;
-    width: 1300px;
-    transform: translateY(-500px) translateX(-50%) translateZ(-500px);
+    top: 95%;
+    transform: translateX(-50%) scale(800%);
   }
 
 
   100% {
-      min-height: 670vh;
-      width: 700vw;
+    top: 145%;
       /* left: 50%;
       /* top: 50%; */ 
       /* top: 200%; */
-      transform: translateY(-1500px) translateX(-50%)  translateZ(-1000px); 
+      transform: translateX(-50%) scale(1800%); 
   }
 }
 
@@ -648,7 +695,7 @@ a {
   }
 
   20% {
-    opacity: 0;
+    opacity: .6;
  
   }
 

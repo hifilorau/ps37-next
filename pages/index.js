@@ -33,7 +33,7 @@ const Home = ({events}) => {
     setKeyholeAnimation(true)
     setTimeout(() => {
       router.push("/vaporplanes")
-    }, 3000)
+    }, 5000)
   }
 
   return (
@@ -41,11 +41,15 @@ const Home = ({events}) => {
   <div className="homepage-container">
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>
-   
-   <Banner message={{
+  <div className={keyholeAnimation ? "keyhole-punch-2" : "kp2"}>
+    <div className="logo-wrapper">
+        <Image className="logo-landing glitch" src={Logo} objectFit="cover" layout="fill"/>
+    </div>
+  </div>
+   {/* <Banner message={{
      link: 'https://www.carolinaabortionfund.org/donate',
      message: 'Support the North Carolina Abortion Fund: Click to donate directly.'
-   }}/>
+   }}/> */}
   {!keyholeAnimation && <div className={styles.banner} style={{
       width: '100%',
       height: 'auto',
@@ -67,8 +71,8 @@ const Home = ({events}) => {
     </div>
     {keyholeAnimation && <div className="key-bg">
       <h1>YOU ARE NOW ENTERING THE MF KEYHOLE...</h1>
-      {/* <h1>(and also loading...)</h1> */}
-    </div>}
+    </div>} 
+      {/* <h1>(and also loading...)</h1>
     <VidSketch />
     {/* <div className="video-2">
       <video src="/images/vid.mp4" autoPlay muted loop/>
