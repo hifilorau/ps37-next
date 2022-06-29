@@ -182,7 +182,7 @@ useEffect( async () => {
 		// thisLogo = images[Math.floor(p5.random(images.length))];
     // img = images[Math.floor(p5.random(images.length))];
 		// img = img5
-		console.log('IMGAGE PL', img)
+		// console.log('IMGAGE PL', img)
 
   }
 
@@ -256,14 +256,14 @@ useEffect( async () => {
   }
 
 	const draw = (p5, testImage) => {
-	console.log('TESTIMAGE', img)
+
 			customDraw(p5, img)
 		
 	}
 
 	const  customDraw = (p5, img) => {
  
-		console.log('NEW IMAGE STUFF', img1)
+	
 		// p5.push()
 		// p5.translate(0,0,-10)
 
