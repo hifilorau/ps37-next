@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Upcoming from '../components/Upcoming'
 import {getResourceData} from '../lib/functions'
+import Head from 'next/head'
 
 
 
@@ -38,6 +39,9 @@ const Home = ({events}) => {
 
   return (
   <>
+    <Head>
+    <title>PS37: Arthaus, Collective, and Venue</title>
+   </Head>
   <div className="homepage-container">
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>

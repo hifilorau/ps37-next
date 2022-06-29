@@ -3,8 +3,12 @@ import styles from '../../styles/Blog.module.css'
 import Subscribe from "../../components/Subscribe";
 
 const PostPage = ({post, events}) => {
-  console.log('POST', post)
   return (
+    <>
+    <Head>
+    <title>Paradise Rewind: Post</title>
+   </Head>
+   
     <div className={styles.blogWrapper}>
        <div className={styles.ucWrapper}>
         <h3>Upcoming Events</h3>
@@ -26,6 +30,7 @@ const PostPage = ({post, events}) => {
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <Subscribe />
     </div>
+    </>
   );
 };
 

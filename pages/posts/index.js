@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from '../../styles/Blog.module.css'
 import Image from 'next/image'
 import Subscribe from "../../components/Subscribe";
+import Head from 'next/head'
 
 const Posts = ({posts, events, error}) => {
   const [subscribeB, setSubscribeB] = useState(false)
@@ -21,6 +22,11 @@ const Posts = ({posts, events, error}) => {
  
 
   return (
+    <>
+    <Head>
+    <title>Paradise Rewind: PS37 Blog and Updates</title>
+   </Head>
+ 
   <div className={styles.eventsWrapper}>
     <h1 className={styles.rewindHead}>The Paradise Rewind </h1>
     <div className={styles.subscribeButton} onClick={() => setSubscribeB(true)}>Subscribe</div>
@@ -79,6 +85,7 @@ const Posts = ({posts, events, error}) => {
       </li>
     </ul>
   </div>
+  </>
 )}
 export default Posts;
 

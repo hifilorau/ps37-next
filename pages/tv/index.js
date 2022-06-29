@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef} from 'react'
 import styles from '../../styles/TV.module.css'
-
+import Head from 'next/head'
 
 const TV = () => {
     const [muteVideo, setMuteVideo]  = useState(true)
@@ -13,7 +13,10 @@ const TV = () => {
   
 
   return (
-    <div>
+    <>
+   <Head>
+    <title>PS37 TV</title>
+   </Head>
       <div className={styles.allWrap}>
           <img src="/images/diego_gonzalez.jpg" />
         <div className={styles.tvWrap}>
@@ -23,7 +26,7 @@ const TV = () => {
         </div>
        
       </div>
-    </div>
+    </>
   )
 }
 

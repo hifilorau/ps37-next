@@ -1,12 +1,16 @@
 import styles from '../../styles/Event.module.css'
 import {getEventData} from '../../lib/functions'
 import Image from 'next/image'
+import Head from 'next/head'
 
 const EventPage = ({event}) => {
-  console.log('event', event)
   const thisEvent = event.fields
   const eventImage = event.fields.image ? event.fields.image[0].url : "/images/ps37_flyer.jpg"
   return (
+    <>
+    <Head>
+    <title>PS37 Event Page</title>
+   </Head>
     <div className={styles.eventPage}>
       <div className={styles.contentWrapper}>
       <div className={styles.flyerWrapper}>
@@ -21,12 +25,9 @@ const EventPage = ({event}) => {
       <p className={styles.description}>{thisEvent.description}</p>
       {thisEvent.ticket_link ? <a className={styles.ticketLink} href={thisEvent.ticket_link}>Get Tickets</a> : <div className={styles.soon}>Tickets on sale soon</div>}
       </div>
-
-
       </div>
-    
-
     </div>
+    </>
   )
 }
 

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-
+import Head from 'next/head'
 
 // import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 // import { create } from 'ipfs-http-client'
 // import '../Future/future.css'
 // import { connectWallet, getCurrentWalletConnected, mintNFT } from "../../utils/interact.js"
-import MetaInfo from '../../components/Meta.js'
+// import MetaInfo from '../../components/Meta.js'
 // import P5Vapor from './P5Vapor.jsx'
 // const client = create('https://ipfs.infura.io:5001/api/v0')
 const contractAddress = "0x90fa9714C8e7961F8D703A0a7085D5F29F269c23"
@@ -23,43 +23,43 @@ const VaporPlanes = () => {
 
 
 ///STATE ITEMS 
-const [nftAttributes, setNftAttributes] = useState({})
-const [fileUrl, updateFileUrl] = useState(``)
-const [customSave, setCustomSave] = useState(null)
-const [preFadeOut, setPreFadeOut] = useState(false)
-const [name, setName] = useState("");
-const [description, setDescription] = useState("");
-const [url, setURL] = useState("");
-const [metaInfo, setMetaInfo] = useState(true)
+// const [nftAttributes, setNftAttributes] = useState({})
+// const [fileUrl, updateFileUrl] = useState(``)
+// const [customSave, setCustomSave] = useState(null)
+// const [preFadeOut, setPreFadeOut] = useState(false)
+// const [name, setName] = useState("");
+// const [description, setDescription] = useState("");
+// const [url, setURL] = useState("");
+// const [metaInfo, setMetaInfo] = useState(true)
 const [isLoading, setIsLoading] = useState(true)
 
 
 ///INITIALIZE VARIABLES
-var hLine;
-let attributes = {}
-let sun;
-let isSun;
-let skyColor;
-let sunColor;
-let lineColor;
-let mtnColors = [];
-let moonColors = [];
-let gridLake;
-let starColor;
-let mtns = [];
-let moons = [];
-let img;
-let img1;
-let img2;
-let img3;
-let img4;
-let img5;
-let img6;
-let img7;
-let testImage;
-let images = [];
-let thisLogo;
-let thisImg;
+// var hLine;
+// let attributes = {}
+// let sun;
+// let isSun;
+// let skyColor;
+// let sunColor;
+// let lineColor;
+// let mtnColors = [];
+// let moonColors = [];
+// let gridLake;
+// let starColor;
+// let mtns = [];
+// let moons = [];
+// let img;
+// let img1;
+// let img2;
+// let img3;
+// let img4;
+// let img5;
+// let img6;
+// let img7;
+// let testImage;
+// let images = [];
+// let thisLogo;
+// let thisImg;
 
 
 
@@ -250,11 +250,14 @@ const fadeOut = () => {
 
 
   return (
-    <div>
+    <>
+		<Head>
+    <title>Vaporplanes: Create Your Own Ethereal Plane</title>
+   </Head>
 		 {!isLoading && <P5Vapor />} 
 
 			
-    </div>
+    </>
   )
 }
 

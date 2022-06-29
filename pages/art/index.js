@@ -5,7 +5,7 @@ import styles from '../../styles/Art.module.css'
 import spacetimeImg from '../../public/images/spacetime-min.jpg'
 import Image from 'next/image'
 import Overlay from './overlay'
-import { style } from '@mui/system'
+import Head from 'next/head'
 
 
 const Art = () => {
@@ -82,6 +82,10 @@ function snowflake() {
 
 
   return (
+    <>
+    <Head>
+    <title>PS37 Art exhibits</title>
+   </Head>
     <div className={styles.artPage}>
       <Container className={styles.artContainer}>
       <h1>PS37's Current & Upcoming Exhibitions and Installations</h1>
@@ -161,6 +165,7 @@ function snowflake() {
       </Container>
       {/* <Footer fixed={true}/> */}
     </div>
+    </>
   ) 
 }
 

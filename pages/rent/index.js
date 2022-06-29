@@ -1,12 +1,12 @@
 
 import React, {useEffect, useState} from 'react'
-import Poster from '../../public/images/ps37-moon-shot.png'
-import Zoom from 'react-medium-image-zoom'
+// import Poster from '../../public/images/ps37-moon-shot.png'
+// import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import {Container, Button} from '@mui/material/';
 import styles from '../../styles/Rent.module.css'
 import Image from 'next/image'
-
+import Head from 'next/head'
 
 const Rent = () => {
   
@@ -14,13 +14,11 @@ const Rent = () => {
   //move to api folder at some point
 
 
-
-  
-  useEffect(() => {
-    //  getData();
- }, []);
-
   return (
+    <>
+    <Head>
+    <title>Event Rental Space, Durham NC</title>
+   </Head>
     <div className={styles.rentBack}>
   
       <div className={styles.rentPage}>
@@ -97,6 +95,7 @@ const Rent = () => {
        
       </div>pm 
     </div>
+  </>
   )
 }
 
