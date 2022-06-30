@@ -477,6 +477,14 @@ a {
   justify-content: space-around;
 }
 
+.flex-footer-link .activeLink {
+  color: white;
+  font-family: 'Press Start 2P';
+  font-size: 18px;
+  position: relative;
+  top: 10px;
+}
+
 .mobile-link {
   color: #f5c0cc;
 }

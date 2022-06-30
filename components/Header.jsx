@@ -14,23 +14,40 @@ useEffect(() => {
     setIsOpen(!isOpen)
   }
 },[router.asPath] )
+console.log('router', router.pathname)
 return (
   <div>
   <div className="header-shiv"></div>
    <div className="header">
       <ul className="footer-list">
         <li className="flex-footer-link"> 
-            <Link href="/events">EVENTS</Link>
-            <Link href="/posts">UPDATES</Link>  
+            <Link href="/events">
+              <a className={router.pathname == "/events" ? 'activeLink' : ""}> 
+                EVENTS
+              </a>
+            </Link>
+            <Link href="/posts">
+              <a className={router.pathname == "/posts" ? 'activeLink' : ""}>
+              UPDATES
+              </a>
+            </Link>  
         </li>
         <li>
-          <Link href="/"> 
+        <Link href="/"> 
            <div className="footer-img"><Image src={logo} /></div>
         </Link>
         </li>
         <li className="flex-footer-link">
-          <Link href="/rent">RENT</Link>
-          <div><Link href="/about">INFO</Link></div>
+          <Link href="/rent">
+          <a className={router.pathname == "/rent" ? 'activeLink' : ""}>
+            RENT
+          </a>
+          </Link>
+          <Link href="/about">
+            <a className={router.pathname == "/about" ? 'activeLink' : ""}>
+            INFO
+            </a>
+          </Link>
         </li>
       </ul>
     </div>  
