@@ -35,17 +35,20 @@ const P5Vapor = () => {
 
 
 
+
+
+
 ///STATE ITEMS 
-const { authenticate, isAuthenticated, user, logout, isAuthenticating } = useMoralis();
+// const { authenticate, isAuthenticated, user, logout, isAuthenticating } = useMoralis();
 const [nftAttributes, setNftAttributes] = useState({})
-const [fileUrl, updateFileUrl] = useState(``)
-const [customSave, setCustomSave] = useState(null)
+// const [fileUrl, updateFileUrl] = useState(``)
+// const [customSave, setCustomSave] = useState(null)
 const [info, setInfo] = useState(false)
-const [status, setStatus] = useState("");
-const [name, setName] = useState("");
-const [description, setDescription] = useState("");
-const [url, setURL] = useState("");
-const [metaInfo, setMetaInfo] = useState(true)
+// const [status, setStatus] = useState("");
+// const [name, setName] = useState("");
+// const [description, setDescription] = useState("");
+// const [url, setURL] = useState("");
+// const [metaInfo, setMetaInfo] = useState(true)
 const [isLoading, setIsLoading] = useState(true)
 
 ///INITIALIZE VARIABLES
@@ -63,19 +66,18 @@ let starColor;
 let mtns = [];
 let moons = [];
 let img;
-let img1;
-let img2;
-let img3;
-let img4;
-let img5;
-let img6;
-let img7;
+let isSafari = false;
+// let img1;
+// let img2;
+// let img3;
+// let img4;
+// let img5;
+// let img6;
+// let img7;
 let testImage;
 let images = [];
 let thisLogo;
 let thisImg;
-
-
 
 
 let width;
@@ -123,7 +125,6 @@ const renderConnect = () => {
 }
 
 const setThemeAttribute = (i) => {
-	console.log('set theme', i)
 	if (i == 0) {
 		return "Roz Vonos"
 	}
@@ -158,13 +159,13 @@ margin: 0 auto;
 border-color: red;
 `;
 
-useEffect( async () => {
-	console.log('WINDOW', window)
-		// const {address, status} = await getCurrentWalletConnected();
-    // setWallet(address)
-    // setStatus(status); 
-		// addWalletListener();
-}, [])
+// useEffect( async () => {
+// 	console.log('WINDOW', window)
+// 		// const {address, status} = await getCurrentWalletConnected();
+//     // setWallet(address)
+//     // setStatus(status); 
+// 		// addWalletListener();
+// }, [])
 
 
   const preload = (p5) => {
@@ -229,13 +230,16 @@ useEffect( async () => {
   starColor = theme[Math.floor(p5.random(theme.length))]
 	mtnColors.push(theme[0], theme[1])
 	moonColors.push(theme[1], theme[2])
-	console.log('MoonCOlors', moonColors)
+
 
   // move = 1;
   hLine=0;
 	p5.imageTint=p5.random(255);
 
 
+	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+		isSafari = true;
+	}
 
 
 	// for scaling logo
@@ -243,36 +247,19 @@ useEffect( async () => {
 	// img.resize(0, height/6) 
 	p5.background(skyColor);
 	
-
-
-
-	// customDraw(p5, img)
-
-	// setCustomSave(canvasParentRef)
-	// const thePlane = p5.get()
-
-	// thePlane.save()
 	p5.noLoop()
   }
 
-	const draw = (p5, testImage) => {
-
+	const draw = (p5) => {
 			customDraw(p5, img)
-		
 	}
 
 	const  customDraw = (p5, img) => {
  
-	
-		// p5.push()
-		// p5.translate(0,0,-10)
-
 
 
 		p5.push()
-
 		newSky(p5)
-
 
 		// p5.rotateZ(-90)
 		// p5.arc(0, 0, 650, 650, p5.PI, 0);
@@ -280,7 +267,7 @@ useEffect( async () => {
     // p5.fill()
 
 		if (realityCheck(25, p5)) {
-			console.log('FLIING')
+
 			attributes.inverted = true;
 			p5.rotateZ(180);
 			// p5.rotateX(180)
@@ -301,10 +288,10 @@ useEffect( async () => {
 		// displayMtns();
 		
 		displayMtns(p5);
-		//error card iterator
-		// p5.rotateX(-87)
-		iterator(50, p5)
-		p5.push()
+		if (isSafari) {
+			iterator(50, p5)
+		}
+		// p5.push()
 
 		if (realityCheck(50, p5) && attributes.inverted) {
 			p5.rotateX(180)
@@ -315,80 +302,59 @@ useEffect( async () => {
 		// iterator(p5)
 		p5.pop()
 		setNftAttributes(attributes)
-		console.log('FINAL ATTRI', attributes)
 		setIsLoading(false)
 	// pop()
 	}
   
 
   const iterator = (pct, p5) => {
-    // for (var i = 0 ; i < width * 3; i += 22) {
-    // let hLineY = hLine + i;
 		let gridSize = 13
-		// p5.camera(0,0,.1, 0, 0, -.1, 0, 1, 0);
 		p5.push()
 		p5.stroke(lineColor);
     p5.strokeWeight(.3);
 		// p5.translate(0,0,100);
-		if (realityCheck(10, p5)) {
+		if (realityCheck(10, p5) && isSafari == false) {
 			attributes.grid="horizontal"
 			p5.rotateX(89)
 			p5.strokeWeight(.1)
 			for (var x = 0; x < width * 1.2; x += gridSize*4) {
 				for (var y = 0; y < height * 1.2; y += gridSize * 4 ) {
-	
-					p5.line(0-width * 1.3, y * p5.random(1,1.75) , width * 1.3, y * p5.random(1,1.75) ) ;
-					// p5.line(x-width/2, 0, x-width/2, height * 2);
+					p5.line(0-width * 1.3, y * p5.random(1,1.75) , width * 1.3, y * p5.random(1,1.75) ) ;		
 				}
 			}
-		} else if (realityCheck(10, p5)) {
+		} else if ( realityCheck(10, p5) && isSafari == false ) {
+			// console.log('10')
 			attributes.grid="vertical"
 			p5.rotateX(88.5)
       let modifier = p5.int(p5.random(1, 4))
-			console.log('modifer', modifier)
+			// console.log('modifer', modifier)
 			if (modifier == 2) {
 				attributes.grid = "vertical abstract"
 			}
 			for (var x = 0; x < width * modifier; x += gridSize ) {
 				for (var y = 0; y < height; y += gridSize ) {
-					
-					// p5.line(0-width/2, y * 2, width/2, y * 2  ) ;
 					p5.line(x-width, 0, x-width, height* 2);
 				}
 			}
 
-		} else if (realityCheck(60, p5)) {
-		
-			if (realityCheck(95, p5)) {
+		} else if (realityCheck(80, p5 ) && isSafari == false) {
+			if (realityCheck(75, p5) && isSafari == false) {
 				p5.rotateX(88.5)
 				attributes.grid="grid"
-		 } else {
-			attributes.grid="graph"
-		 }
-
-			for (var x = 0; x < width * 2; x += gridSize ) {
-				for (var y = 0; y < height * 2; y += gridSize ) {
-					// p5.circle(0-width/2, 0, 200, 200)
-					p5.line(0-width * 1.3, y * 2, width * 1.3, y * 2  ) ;
-					p5.line(x-width, 0, x-width, height * 2);
+			} else {
+				attributes.grid="graph"
+			}
+			for (var x = 0; x <= width * 2; x += gridSize ) {
+				for (var y = 0; y <= height * 2; y += gridSize ) {
+					p5.line(0 - width * 1.3, y * 2, width * 1.3, y * 2);
+					p5.line(x - width, 0, x - width, height * 2);
 				}
 			}
 
 		} else {
 			attributes.grid="none"
 		}
-
-
-
-
 		p5.pop()
-    // if (hLine + move > height / 7 ) {
-    //   hLine = -100;
-    // } else {
-    //   hLine += .01
-    // }
-    // move += .01;
-  // }
 }
 
 
@@ -407,10 +373,11 @@ function getX(i, p5) {
 
 
 function imageDecisions(p5) {
-	if (realityCheck(50, p5)) { //no
+
+	if (realityCheck(70, p5)) { //no
 		images = [logo1, logo5];
 		const imgIndex = Math.floor(p5.random(images.length))
-		console.log('IMGAGE INDEX', imgIndex)
+		// console.log('IMGAGE INDEX', imgIndex)
 		thisLogo = images[imgIndex];
 		if (imgIndex == 0) {
 			attributes.logo = "Pyramid"
@@ -418,19 +385,17 @@ function imageDecisions(p5) {
 		if (imgIndex == 1) {
 			attributes.logo = "Key Hole"
 		}
-		console.log('ABOUT TO LOAD IMAGE')
 		p5.loadImage(thisLogo, thisLogo => {imagePlacement(thisLogo, p5)});
 	} else return
 }
 
 const imagePlacement = (thisImg, p5) => {
  //no image
-		if (realityCheck(75, p5)) { // stdrd image
-			attributes.logoType = "Locked"
-			p5.image(thisImg, 0, -thisImg.height/2 + 27, 102, 94)
-			// console.log('img height', thisImg.height, 204, 190)
 
-			
+		if (realityCheck(95, p5)) { // stdrd image
+			attributes.logoType = "Locked"
+			p5.image(thisImg, 0, -37, 102, 94)
+			// console.log('img height', thisImg.height, 204, 190)
 			} 
 			else { // anwhere image
 				attributes.logoType = "Free"
@@ -470,7 +435,6 @@ class Moon {
 		this.moonSpot = Math.floor(p5.random(2,4))
 		this.horiz = this.moonSpot < 3 ? p5.random(-width/2,-400) : p5.random(width/2, 400)
 		this.moonColors = moonColors
-		console.log('MOON height', this.vert)
 
 		this.moonColor = p5.random(moonColors)
 		// this.moonColor.setAlpha(128 + 128 * sin(millis() / 1000));
@@ -568,10 +532,12 @@ function newSky(p5) {
 	p5.translate(0,0,-1280)
   // p5.strokeWeight(25 / 15);
    let chooseSky = p5.int(p5.random(0,9))
-
+	const matrixPct = isSafari ? 50 : 10
+	const skyPct = isSafari ? 50 : 10
 	p5.fill(starColor)
 	p5.noStroke()
-	if (chooseSky == 0) {
+	// if (chooseSky == 0) {
+		if (realityCheck(matrixPct,p5)) {
 		attributes.sky="matrix"
 		for (var i = 0; i < width*3 ; i+=30) {
 			for (var j = 0; j < height*1.5 ; j+= 15) {
@@ -581,7 +547,7 @@ function newSky(p5) {
 			}
 		}
 	} 
-	if (chooseSky == 1) {
+	if (realityCheck(skyPct,p5)) {
 		attributes.sky="stars"
 		for (var i = 0; i < 2000 ; i+=1) {
 		p5.ellipse(p5.random(-width*1.5, width*1.5),p5.random(-height*1.5), 5, 5 )

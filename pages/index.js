@@ -45,11 +45,11 @@ const Home = ({events}) => {
   <div className="homepage-container">
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>
-  <div className={keyholeAnimation ? "keyhole-punch-2" : "kp2"}>
+  {/* <div className={keyholeAnimation ? "keyhole-punch-2" : "kp2"}>
     <div className="logo-wrapper">
         <Image className="logo-landing glitch" src={Logo} objectFit="cover" layout="fill"/>
     </div>
-  </div>
+  </div> */}
    {/* <Banner message={{
      link: 'https://www.carolinaabortionfund.org/donate',
      message: 'Support the North Carolina Abortion Fund: Click to donate directly.'
@@ -66,8 +66,8 @@ const Home = ({events}) => {
     <div className="taglineWrapper">
       <div className={!keyholeAnimation ? "tagline" : "tagline fadeout"}>
         <Upcoming events={events} />
-        <div className={!keyholeAnimation ? "landing-content-container" : "landing-content-container keyhole-punch"}>
-        <div className="logo-wrapper" onClick={keyholeStart}>
+        <div className="landing-content-container">
+        <div className={!keyholeAnimation ? "logo-wrapper" : "logo-wrapper keyhole-punch"} onClick={keyholeStart}>
             <Image className="logo-landing glitch" src={Logo} objectFit="cover" layout="fill"/>
         </div>
       </div>
