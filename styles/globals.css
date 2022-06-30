@@ -110,7 +110,29 @@ z-index: -1
   padding: 1em;
   height: 240px;
   top: 40px;
+  filter: blur(.1rem);
+  cursor: pointer;
+  /* transition: 2s; */
 } 
+
+.logo-wrapper:hover {
+  animation: blur 4s infinite ease-in-out;
+  /* animation: blur 3s infinite ease-in-out; */
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(0.12rem);
+  }
+
+  50% {
+    filter: blur(0.57rem);
+  }
+
+  100% {
+    filter: blur(0.12rem);
+  }
+}
 
 .key-bg {
   z-index: 2000;
@@ -139,6 +161,7 @@ z-index: -1
   left: 50%;
   position: absolute;
   top: 50%;
+  filter: blur(0.37rem);
   /* animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0); */
 }
 
@@ -702,7 +725,7 @@ a {
   100% {
     left: 50%;
     /* -webkit-transform: translateX(-50%) scale(0); */
-    transform: translateX(-50%) translateY(50%) scale(700%); 
+    transform: translateX(-50%) translateY(90%) scale(1400%); 
   }
 }
 
