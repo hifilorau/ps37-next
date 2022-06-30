@@ -651,6 +651,16 @@ a {
   margin-bottom: 0;
 }
 
+.kg-card {
+  width: 100%;
+  margin: 0;
+
+}
+
+.kg-card iframe {
+  min-height: 400px;
+  width: 100%;
+}
 .mobile-logo {
   width: 70px;
   position: absolute;
@@ -658,6 +668,8 @@ a {
   left: 50%;
   transform: translateX(-50%)
 }
+
+
 
 
 
