@@ -110,27 +110,48 @@ z-index: -1
   padding: 1em;
   height: 240px;
   top: 40px;
-  filter: blur(.1rem);
+  filter: blur(.25rem);
   cursor: pointer;
-  /* transition: 2s; */
+  transition: 1s;
 } 
 
 .logo-wrapper:hover {
-  animation: blur 4s infinite ease-in-out;
+  animation: blur 3s infinite ease-in;
   /* animation: blur 3s infinite ease-in-out; */
+}
+
+.blurMe {
+  animation: blur 3s infinite ease-in-out;
+  top: 10px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 200px;
+  text-align: center;
+  width: 100%;
+  /* pointer-events: disable; */
+  z-index: 200;
+  padding: 1em;
+  height: 240px;
+  /* filter: blur(.25rem); */
+  /* cursor: pointer; */
+  transition: 1s;
 }
 
 @keyframes blur {
   0% {
-    filter: blur(0.12rem);
+    filter: blur(0.25rem);
   }
 
   50% {
-    filter: blur(0.57rem);
+    filter: blur(0.12rem);
+  }
+
+  75% {
+    filter: blur(0.35rem);
   }
 
   100% {
-    filter: blur(0.12rem);
+    filter: blur(0.25rem);
   }
 }
 
@@ -666,9 +687,6 @@ a {
   padding-top: 1em;
 }
 
-.header-mobile .flex-footer-link:first-child {
-  /* padding-top: 0; */
-}
 
 .header-mobile .flex-footer-link a {
   margin-bottom: 0;

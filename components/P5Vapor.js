@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
+import Logo from "../public/images/logo-08.svg"
+import Image from 'next/image'
 // import {Container, Button, LinearProgress} from '@mui/material/';
 // import Sketch from 'react-p5'
-import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
+// import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
   ssr: false,
 })
@@ -667,9 +669,11 @@ const fadeOut = () => {
 		 {isLoading && 
 		 <div className="loading-screen-wrapper">
 			<div className="vapor-loading">
-				<GridLoader color={'#6e0d60'} isLoading={true}
-					css={override} size={40} />
-					
+				{/* <GridLoader color={'#6e0d60'} isLoading={true}
+					css={override} size={40} /> */}
+				 <div className="blurMe">
+            <Image className="logo-landing glitch" src={Logo} objectFit="cover" layout="fill"/>
+        </div>	
 					
 					<h4>Creating a new ethereal plane...</h4>
 					{/* <p>creating new plane</p> */}
