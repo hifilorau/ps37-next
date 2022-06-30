@@ -1,14 +1,22 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../public/images/ps37-text-purp-09.png'
 import MenuIcon from '@material-ui/icons/Menu';
+import {useRouter} from 'next/router'
 
 const Header = ({ siteTitle}) => {
 const [isOpen, setIsOpen] = useState(false)
+const router = useRouter();
 
+useEffect(() => {
+  if (isOpen) {
+    setIsOpen(!isOpen)
+  }
+},[router.asPath] )
 return (
   <div>
+  <div className="header-shiv"></div>
    <div className="header">
       <ul className="footer-list">
         <li className="flex-footer-link"> 

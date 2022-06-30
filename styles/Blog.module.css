@@ -20,6 +20,7 @@
   /* margin-left: 1em; */
   text-transform: uppercase;
   color: white;
+  margin-bottom: 2em;
 }
 
 .blogWrapper a {
@@ -89,6 +90,8 @@
 
 .rewindHead {
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
 }
 
 .blogWrapper {
