@@ -288,9 +288,9 @@ border-color: red;
 		// displayMtns();
 		
 		displayMtns(p5);
-		if (isSafari) {
+		
 			iterator(50, p5)
-		}
+		
 		// p5.push()
 
 		if (realityCheck(50, p5) && attributes.inverted) {
@@ -394,7 +394,7 @@ const imagePlacement = (thisImg, p5) => {
 
 		if (realityCheck(95, p5)) { // stdrd image
 			attributes.logoType = "Locked"
-			p5.image(thisImg, 0, -37, 102, 94)
+			p5.image(thisImg, 0, -45, 102, 94)
 			// console.log('img height', thisImg.height, 204, 190)
 			} 
 			else { // anwhere image
