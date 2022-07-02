@@ -81,7 +81,7 @@ const Home = ({events}) => {
     {/* <div className="video-2">
       <video src="/images/vid.mp4" autoPlay muted loop/>
     </div> */}
-    
+       <VidSketch />
 
     {/* <Footer /> */} 
   </div>

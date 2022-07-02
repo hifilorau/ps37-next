@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 // import '../styles/art.css'
-import { MoralisProvider } from 'react-moralis';
+// import { MoralisProvider } from 'react-moralis';
 // import Loading from '../components/Loading'
 // import * as ga from '../utils/ga'
 import Script from 'next/script'
@@ -51,10 +51,10 @@ function MyApp({ Component, pageProps }) {
       />
 
 
-    <MoralisProvider appId={process.env.NEXT_PUBLIC_APP_ID} serverUrl={process.env.NEXT_PUBLIC_SERVER_URL}>
+    {/* <MoralisProvider appId={process.env.NEXT_PUBLIC_APP_ID} serverUrl={process.env.NEXT_PUBLIC_SERVER_URL}> */}
      {path != "/vaporplanes" && path != "/" && <Header/> }
       <Component {...pageProps} />
-    </MoralisProvider>
+    {/* </MoralisProvider> */}
    </>
   )
 }
