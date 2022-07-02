@@ -121,20 +121,26 @@ z-index: -1
 }
 
 .blurMe {
-  animation: blur 3s infinite ease-in-out;
-  top: 10px;
+  animation: blur 5s infinite ease-in-out;
+  top: 20px;
   position: relative;
   margin: 0 auto;
   max-width: 200px;
   text-align: center;
   width: 100%;
+
   /* pointer-events: disable; */
   z-index: 200;
-  padding: 1em;
-  height: 240px;
+  /* padding: 1em; */
+  /* height: 240px; */
   /* filter: blur(.25rem); */
   /* cursor: pointer; */
   transition: 1s;
+}
+
+.vapor-loading h4 {
+  margin-top: 0;
+  font-size: 18px;
 }
 
 @keyframes blur {

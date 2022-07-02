@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
-import Logo from "../public/images/logo-08.svg"
+import Logo from "../public/images/key_door.png"
 import Image from 'next/image'
 // import {Container, Button, LinearProgress} from '@mui/material/';
 // import Sketch from 'react-p5'
@@ -662,17 +662,21 @@ const fadeOut = () => {
 
   return (
     <div id='canvas-parent' className="future vaporplanes">
-     <div className="sketch-wrapper">
+     {/* <div className="sketch-wrapper">
 			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, img) => draw(p5, img)}/>
-		 </div>
+		 </div> */}
 		 
-		 {isLoading && 
+		 {!isLoading && 
 		 <div className="loading-screen-wrapper">
 			<div className="vapor-loading">
 				{/* <GridLoader color={'#6e0d60'} isLoading={true}
 					css={override} size={40} /> */}
 				 <div className="blurMe">
-            <Image className="logo-landing glitch" src={Logo} objectFit="cover" layout="fill"/>
+            <Image className="logo-landing glitch" src={Logo} 
+						// objectFit="cover" layout="fill" 
+						width={310}
+						height={540}
+						priority/>
         </div>	
 					
 					<h4>Creating a new ethereal plane...</h4>
