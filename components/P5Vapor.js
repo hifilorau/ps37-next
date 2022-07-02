@@ -662,11 +662,11 @@ const fadeOut = () => {
 
   return (
     <div id='canvas-parent' className="future vaporplanes">
-     {/* <div className="sketch-wrapper">
+     <div className="sketch-wrapper">
 			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, img) => draw(p5, img)}/>
-		 </div> */}
+		 </div>
 		 
-		 {!isLoading && 
+		 {isLoading && 
 		 <div className="loading-screen-wrapper">
 			<div className="vapor-loading">
 				{/* <GridLoader color={'#6e0d60'} isLoading={true}
