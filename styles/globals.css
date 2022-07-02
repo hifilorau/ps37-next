@@ -567,6 +567,10 @@ a {
     min-width: auto;
   }
 
+  .logo-wrapper {
+    top: 10px;
+  }
+
   .homepage-container {
     min-height: 50vh;
   }
