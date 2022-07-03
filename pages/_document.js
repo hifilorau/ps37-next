@@ -11,7 +11,9 @@ class MyDocument extends Document {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
         {/* <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet"/> */}
         <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Oswald:wght@200;400&family=Press+Start+2P&display=swap" rel="stylesheet"></link>
-
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> */}
+      <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Oswald:wght@200;400&family=Press+Start+2P&family=Righteous&display=swap" rel="stylesheet"></link>
         </Head>
         <body>
           <Main />

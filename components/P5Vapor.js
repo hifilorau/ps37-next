@@ -82,7 +82,7 @@ let images = [];
 let thisLogo;
 let thisImg;
 let thisTheme;
-
+let font;
 
 let width;
 // let width = 3840;
@@ -122,6 +122,8 @@ border-color: red;
 
 
   const preload = (p5) => {
+		font = p5.loadFont('https://fonts.gstatic.com/s/newscycle/v14/CSR54z1Qlv-GDxkbKVQ_dFsvWNRevA.ttf');
+	}
 		// console.log('PRE LOAD', logo1)
    	// img1 = p5.loadImage(logo1)
     // img2 = p5.loadImage(logo2);
@@ -138,7 +140,7 @@ border-color: red;
 		// img = img5
 		// console.log('IMGAGE PL', img)
 
-  }
+  // }
 
   const setup = (p5, canvasParentRef) => {
 		// p5.loadImage(logo1, (img) => {
@@ -205,13 +207,16 @@ border-color: red;
 
 	const draw = (p5) => {
 			console.log('THIS THEME', thisTheme)
+			
 			customDraw(p5, img)
+			// p5.fill(0);
+			// p5.textSize(152);
+			// p5.textFont('Georgia');
+			// p5.text('Righteous', width/2, height/2);
+	
 	}
 
 	const  customDraw = (p5, img) => {
- 
-
-
 		p5.push()
 		newSky(p5)
 
@@ -252,11 +257,16 @@ border-color: red;
 		}
 		// console.log('THIS THEME')
 		imageDecisions(p5)
-
+	
 		// p5.pop()
 		// iterator(p5)
 		p5.pop()
 		setNftAttributes(attributes)
+		p5.textFont(font);
+		p5.textSize(28);
+		const displayName = thisTheme.name.toUpperCase()
+		// p5.textAlign(width/2, height/2)
+		p5.text(displayName, -width/3, height/3);
 		setIsLoading(false)
 	// pop()
 	}
@@ -624,7 +634,7 @@ const fadeOut = () => {
   return (
     <div id='canvas-parent' className="future vaporplanes">
      <div className="sketch-wrapper">
-			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, img) => draw(p5, img)}/>
+			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5) => draw(p5)}/>
 		 </div>
 		 
 
