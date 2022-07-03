@@ -15,7 +15,6 @@ import Link from 'next/link'
 import MetaInfo from '../pages/vaporplanes/Meta.js'
 import GridLoader from 'react-spinners/GridLoader'
 
-console.log('VTHEMES', vaporThemes)
 // const logo =  '/images/ps37-text-purp-09.png'
 // const igLogo = '/images/ig_logo.png'
 
@@ -34,7 +33,7 @@ console.log('VTHEMES', vaporThemes)
 const P5Vapor = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [nftAttributes, setNftAttributes] = useState({})
-	const [info, setInfo] = useState(false)
+	const [info, setInfo] = useState(true)
 
 // const context = useWeb3React()
 // const { connector, library, chainId, account, activate, deactivate, active, error } = context
@@ -82,6 +81,7 @@ let testImage;
 let images = [];
 let thisLogo;
 let thisImg;
+let thisTheme;
 
 
 let width;
@@ -141,9 +141,9 @@ border-color: red;
   }
 
   const setup = (p5, canvasParentRef) => {
-		p5.loadImage(logo1, (img) => {
-			testImage=img;
-		});
+		// p5.loadImage(logo1, (img) => {
+		// 	testImage=img;
+		// });
 		height=1080;
 		width=1920;
     p5.createCanvas(width, height, p5.WEBGL).parent(canvasParentRef)
@@ -158,7 +158,7 @@ border-color: red;
     
 	//theming
 	const themeIndex = Math.floor(p5.random(THEME_ARRAY.length))
-  const thisTheme = THEME_ARRAY[themeIndex]
+  thisTheme = THEME_ARRAY[themeIndex]
 	const themeColors = thisTheme.palette
 	attributes.theme = thisTheme.name
   const skyIndex = Math.floor(p5.random(themeColors.length))
@@ -204,6 +204,7 @@ border-color: red;
   }
 
 	const draw = (p5) => {
+			console.log('THIS THEME', thisTheme)
 			customDraw(p5, img)
 	}
 
@@ -249,6 +250,7 @@ border-color: red;
 		if (realityCheck(50, p5) && attributes.inverted) {
 			p5.rotateX(180)
 		}
+		// console.log('THIS THEME')
 		imageDecisions(p5)
 
 		// p5.pop()
@@ -328,16 +330,23 @@ function getX(i, p5) {
 function imageDecisions(p5) {
 
 	if (realityCheck(70, p5)) { //no
-		images = [logo1, logo5];
-		const imgIndex = Math.floor(p5.random(images.length))
-		// console.log('IMGAGE INDEX', imgIndex)
-		thisLogo = images[imgIndex];
-		if (imgIndex == 0) {
-			attributes.logo = "Pyramid"
+		if (!thisTheme.logo) {
+			console.log('THIS THEME IMAGE', thisTheme.logo)
+			images = [logo1, logo5];
+			const imgIndex = Math.floor(p5.random(images.length))
+			// console.log('IMGAGE INDEX', imgIndex)
+			thisLogo = images[imgIndex];
+			if (imgIndex == 0) {
+				attributes.logo = "Pyramid"
+			}
+			if (imgIndex == 1) {
+				attributes.logo = "Key Hole"
+			}
+		} else {
+			thisLogo = thisTheme.logo;
+			attributes.logo = thisTheme.name
 		}
-		if (imgIndex == 1) {
-			attributes.logo = "Key Hole"
-		}
+
 		p5.loadImage(thisLogo, thisLogo => {imagePlacement(thisLogo, p5)});
 	} else return
 }
@@ -347,7 +356,7 @@ const imagePlacement = (thisImg, p5) => {
 
 		if (realityCheck(95, p5)) { // stdrd image
 			attributes.logoType = "Locked"
-			p5.image(thisImg, 0, -45, 102, 94)
+			p5.image(thisImg, 0, -72, 153, 141)
 			// console.log('img height', thisImg.height, 204, 190)
 			} 
 			else { // anwhere image
