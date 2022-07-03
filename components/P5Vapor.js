@@ -666,7 +666,7 @@ const fadeOut = () => {
 			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, img) => draw(p5, img)}/>
 		 </div>
 		 
-		 {/* {isLoading &&  */}
+
 		 <div className={isLoading ? "loading-screen-wrapper" : "loading-screen-wrapper loading-not-active"}>
 			<div className="vapor-loading">
 				{/* <GridLoader color={'#6e0d60'} isLoading={true}
@@ -684,7 +684,7 @@ const fadeOut = () => {
 				</div>  
 			</div>
 			 
-			//  }
+	
 
 
       <div className="vp-content">
