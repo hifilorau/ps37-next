@@ -356,7 +356,7 @@ const imagePlacement = (thisImg, p5) => {
 
 		if (realityCheck(95, p5)) { // stdrd image
 			attributes.logoType = "Locked"
-			p5.image(thisImg, 0, -72, 153, 141)
+			p5.image(thisImg, 0, -52, 115, 106)
 			// console.log('img height', thisImg.height, 204, 190)
 			} 
 			else { // anwhere image
@@ -640,7 +640,7 @@ const fadeOut = () => {
 						priority={true}/>
         </div>	
 					
-					<h4>Creating a new ethereal plane...</h4>
+					<h4>Creating...</h4>
 					{/* <p>creating new plane</p> */}
 				</div>  
 			</div>
@@ -666,12 +666,12 @@ const fadeOut = () => {
 				</div>
 				
       </div>
-			<div className={info ? "nft-fo fade-in" : "nft-fo fade-out"}>
-				{/* <div className="close" onClick={() => setInfo(false)}>X</div> */}
+			{/* <div className={info ? "nft-fo fade-in" : "nft-fo fade-out"}>
+
 				<p>Each vapor plane is randomly generated using p5.js. There are billions of possible and unpredictable combinations. Press up arrow to save.</p>
 					
-				{/* <p> Vapor Plane NFTs will provide additional benefits and access to PS37 including future airdrops, NFT tickets to IRL or metaverse events, as well as merchandise, art printsgi, and discounts on event tickets and space rental.</p> */}
-			</div> 
+
+			</div>  */}
 			{nftAttributes && info && <MetaInfo meta={nftAttributes} info={info} /> }
 
 			

@@ -11,10 +11,10 @@ const MetaInfo = ({meta, info}) => {
         <div className="meta-label">Plane:</div>
         <div className="meta-value">{meta.theme}</div>
       </div>
-      {meta.logo && <div className="meta-item">
+      {/* {meta.logo && <div className="meta-item">
         <div className="meta-label">Logo:</div>
         <div className="meta-value">{meta.logo}</div>
-      </div> }
+      </div> } */}
       {meta.sky && <div className="meta-item">
         <div className="meta-label">Sky:</div>
         <div className="meta-value">{meta.sky}</div>
