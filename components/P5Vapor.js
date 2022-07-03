@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
-import Logo from "../public/images/key_door.png"
+// import Logo from "../public/images/key_door.png"
 import Image from 'next/image'
 // import {Container, Button, LinearProgress} from '@mui/material/';
 // import Sketch from 'react-p5'
@@ -672,7 +672,7 @@ const fadeOut = () => {
 				{/* <GridLoader color={'#6e0d60'} isLoading={true}
 					css={override} size={40} /> */}
 				 <div className="blurMe">
-            <Image className="logo-landing glitch" src={Logo} 
+            <Image className="logo-landing glitch" src="/images/key_door.png" 
 						// objectFit="cover" layout="fill" 
 						width={310}
 						height={540}
