@@ -188,4 +188,12 @@
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,.97);
   z-index: 10000000;
+  transition: .5s;
+  opacity: 1;
+}
+
+.loading-not-active {
+  opacity: 0;
+  z-index: -1;
+
 }

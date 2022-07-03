@@ -13,10 +13,10 @@ import Head from 'next/head'
 
 
 
-const VidSketch = dynamic(
-  () => import('../components/VidSketch'),
-  { ssr: false }
-)
+// const VidSketch = dynamic(
+//   () => import('../components/VidSketch'),
+//   { ssr: false }
+// )
 
 
 const Home = ({events}) => {
@@ -24,11 +24,11 @@ const Home = ({events}) => {
   const [keyholeAnimation, setKeyholeAnimation] = useState(false)
   const router = useRouter();
 
-  const rnGenerator = () => {
-    const rarity = 10;
-    let rng = Math.floor((Math.random() * rarity) + 1);
-    this.setState({randomNumber: rng})
-  }
+  // const rnGenerator = () => {
+  //   const rarity = 10;
+  //   let rng = Math.floor((Math.random() * rarity) + 1);
+  //   this.setState({randomNumber: rng})
+  // }
 
   const keyholeStart = () => {
     setKeyholeAnimation(true)
@@ -43,7 +43,7 @@ const Home = ({events}) => {
     <title>PS37: Arthaus, Collective, and Venue</title>
    </Head>
   <div className="homepage-container">
-  <div className="video-2">
+    <div className="video-2">
       <video src="https://hifilorau.s3.us-west-2.amazonaws.com/vid.mp4" autoPlay muted loop/>
     </div>
   {!keyholeAnimation && <Header /> }
