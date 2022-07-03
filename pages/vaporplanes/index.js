@@ -70,67 +70,67 @@ let width;
 let height;
 // let height = 2160;
 //need polar and black scheme
-let THEME_ARRAY = [
-	///Lavendar Plane
-	["#BEFCFF", "#DEFFFA", "#FFDAF5", "#B0E1FF","#E6C6FF" ], /// Roz Vonos (pink mountain)
-	//MIDNIGHT BLUE PLANE
-	["#fb321a", "#ff911a", "#e100f5", "#450eff", "#21006f"], 
+// let THEME_ARRAY = [
+// 	///Lavendar Plane
+// 	["#BEFCFF", "#DEFFFA", "#FFDAF5", "#B0E1FF","#E6C6FF" ], /// Roz Vonos (pink mountain)
+// 	//MIDNIGHT BLUE PLANE
+// 	["#fb321a", "#ff911a", "#e100f5", "#450eff", "#21006f"], 
 
-	["#06f984", "#fde802", "#ffd11a", "#fc5d02", "#ff00f9"], /// Mercury's Horn
+// 	["#06f984", "#fde802", "#ffd11a", "#fc5d02", "#ff00f9"], /// Mercury's Horn
 
-	["#aafec6", "#42fe90", "#00d98a", "#018c77", "#02515d"],  /// C.R.E.A.M
+// 	["#aafec6", "#42fe90", "#00d98a", "#018c77", "#02515d"],  /// C.R.E.A.M
 
-	["#FFDAF5", "#DEFFFA", "#FFDAF5", "#B0E1FF","#fff" ],  /// Polaris 
-	//black theme
-	["#d84800", "#f07800", "#483018", "#f07800","#000" ],   /// Birth of Hendrix 
-		//BLAVENDAR
-	["#6e0d60", "#DEFFFA", "#972688", "#B0E1FF","#000" ], /// Spacecraft Paradiso
+// 	["#FFDAF5", "#DEFFFA", "#FFDAF5", "#B0E1FF","#fff" ],  /// Polaris 
+// 	//black theme
+// 	["#d84800", "#f07800", "#483018", "#f07800","#000" ],   /// Birth of Hendrix 
+// 		//BLAVENDAR
+// 	["#6e0d60", "#DEFFFA", "#972688", "#B0E1FF","#000" ], /// Spacecraft Paradiso
 
-	///black theme
+// 	///black theme
 
-	///yellow theme
-	["#c75001", "#d43acc", "#de689f", "#e79771","#fbf017", "#f1c344"],  ///Doja's Delight
+// 	///yellow theme
+// 	["#c75001", "#d43acc", "#de689f", "#e79771","#fbf017", "#f1c344"],  ///Doja's Delight
 
-	['#688141', "#C48A4D", "#df9875", "#2F596F", "#A1819B"],  ///Circundum Cage
-
-
-	['#fffd00', '#ff0000', '#fad300', '#cb0900', '#fff700']  /// the Plane of the Eternal Flame
-]
+// 	['#688141', "#C48A4D", "#df9875", "#2F596F", "#A1819B"],  ///Circundum Cage
 
 
-const setThemeAttribute = (i) => {
-	console.log('set theme', i)
-	if (i == 0) {
-		return "Roz Vonos"
-	}
-	if (i == 1) {
-		return "Midnight in Eden"
-	}
-	if (i == 2) {
-		return "Kid's Amnesia"
-	}
-	if (i == 3) {
-		return "C.R.E.A.M."
-	}
-	if (i == 4) {
-		return "Mogwai Polaris"
-	}
-	if (i == 5) {
-		return "Imaginarium Hendrix"
-	}
-	if (i == 6) {
-		return "Spacecraft Paradiso"
-	}
-	if (i == 7) {
-		return "Doja's Delight"
-	}
-	if (i == 8) {
-		return "Cage's Silence"
-	}
-	if (i == 9) {
-		return "Plane of the Eternal Flame"
-	}
-}
+// 	['#fffd00', '#ff0000', '#fad300', '#cb0900', '#fff700']  /// the Plane of the Eternal Flame
+// ]
+
+
+// const setThemeAttribute = (i) => {
+// 	console.log('set theme', i)
+// 	if (i == 0) {
+// 		return "Roz Vonos"
+// 	}
+// 	if (i == 1) {
+// 		return "Midnight in Eden"
+// 	}
+// 	if (i == 2) {
+// 		return "Kid's Amnesia"
+// 	}
+// 	if (i == 3) {
+// 		return "C.R.E.A.M."
+// 	}
+// 	if (i == 4) {
+// 		return "Mogwai Polaris"
+// 	}
+// 	if (i == 5) {
+// 		return "Imaginarium Hendrix"
+// 	}
+// 	if (i == 6) {
+// 		return "Spacecraft Paradiso"
+// 	}
+// 	if (i == 7) {
+// 		return "Doja's Delight"
+// 	}
+// 	if (i == 8) {
+// 		return "Cage's Silence"
+// 	}
+// 	if (i == 9) {
+// 		return "Plane of the Eternal Flame"
+// 	}
+// }
 
 
 

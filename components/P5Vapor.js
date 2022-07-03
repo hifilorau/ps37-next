@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
 // import Logo from "../public/images/key_door.png"
 import Image from 'next/image'
+import {vaporThemes} from '../lib/vaporThemes.js'
 // import {Container, Button, LinearProgress} from '@mui/material/';
 // import Sketch from 'react-p5'
 // import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
@@ -11,47 +12,47 @@ const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
 const logo1 = '/images/palms_main.svg'
 const logo5 =  '/images/logo-12.svg'
 import Link from 'next/link'
+import MetaInfo from '../pages/vaporplanes/Meta.js'
+import GridLoader from 'react-spinners/GridLoader'
+
+console.log('VTHEMES', vaporThemes)
 // const logo =  '/images/ps37-text-purp-09.png'
 // const igLogo = '/images/ig_logo.png'
 
 // import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 // import { create } from 'ipfs-http-client'
 // import '../Future/future.css'
-import GridLoader from 'react-spinners/GridLoader'
 // import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 // import { create } from 'ipfs-http-client'
 
 // import { connectWallet, getCurrentWalletConnected, mintNFT } from "../../utils/interact.js"
-import MetaInfo from '../pages/vaporplanes/Meta.js'
 
 // const client = create('https://ipfs.infura.io:5001/api/v0')
 // const contractAddress = "0x90fa9714C8e7961F8D703A0a7085D5F29F269c23"
 
 
-
-
 const P5Vapor = () => {
+	const [isLoading, setIsLoading] = useState(true)
+	const [nftAttributes, setNftAttributes] = useState({})
+	const [info, setInfo] = useState(false)
+
 // const context = useWeb3React()
 // const { connector, library, chainId, account, activate, deactivate, active, error } = context
 // //  const [gridLake, setGridLake] = useState(false)
 
 
-
-
-
-
 ///STATE ITEMS 
 // const { authenticate, isAuthenticated, user, logout, isAuthenticating } = useMoralis();
-const [nftAttributes, setNftAttributes] = useState({})
+
 // const [fileUrl, updateFileUrl] = useState(``)
 // const [customSave, setCustomSave] = useState(null)
-const [info, setInfo] = useState(false)
+
 // const [status, setStatus] = useState("");
 // const [name, setName] = useState("");
 // const [description, setDescription] = useState("");
 // const [url, setURL] = useState("");
 // const [metaInfo, setMetaInfo] = useState(true)
-const [isLoading, setIsLoading] = useState(true)
+
 
 ///INITIALIZE VARIABLES
 var hLine;
@@ -69,6 +70,7 @@ let mtns = [];
 let moons = [];
 let img;
 let isSafari = false;
+const THEME_ARRAY = vaporThemes;
 // let img1;
 // let img2;
 // let img3;
@@ -88,32 +90,7 @@ let width;
 let height;
 // let height = 2160;
 //need polar and black scheme
-let THEME_ARRAY = [
-	///Lavendar Plane
-	["#BEFCFF", "#DEFFFA", "#FFDAF5", "#B0E1FF","#E6C6FF" ], /// Roz Vonos (pink mountain)
-	//MIDNIGHT BLUE PLANE
-	["#fb321a", "#ff911a", "#e100f5", "#450eff", "#21006f"], 
 
-	// ["#06f984", "#fde802", "#ffd11a", "#fc5d02", "#ff00f9"], /// Kid Amnesia's
-
-	["#aafec6", "#42fe90", "#00d98a", "#018c77", "#02515d"],  /// C.R.E.A.M
-
-	["#FFDAF5", "#DEFFFA", "#FFDAF5", "#B0E1FF","#fff" ],  /// Polaris 
-	//black theme
-	["#d84800", "#f07800", "#483018", "#f07800","#000" ],   /// Birth of Hendrix 
-		//BLAVENDAR
-	["#6e0d60", "#DEFFFA", "#972688", "#B0E1FF","#000" ], /// Spacecraft Paradiso
-
-	///black theme
-
-	///yellow theme
-	["#c75001", "#d43acc", "#de689f", "#e79771","#fbf017", "#f1c344"],  ///Doja's Delight
-
-	['#688141', "#C48A4D", "#df9875", "#2F596F", "#A1819B"],  ///Circundum Cage
-
-
-	// ['#fffd00', '#ff0000', '#fad300', '#cb0900', '#fff700']  /// the Plane of the Eternal Flame
-] 
 
 const renderConnect = () => {
 	return <div>Press Up Arrow to Save</div> 
@@ -126,32 +103,6 @@ const renderConnect = () => {
 	// else return <Button onClick={authenticate}>Connect </Button>
 }
 
-const setThemeAttribute = (i) => {
-	if (i == 0) {
-		return "Roz Vonos"
-	}
-	if (i == 1) {
-		return "Midnight in Eden"
-	}
-	if (i == 2) {
-		return "C.R.E.A.M."
-	}
-	if (i == 3) {
-		return "Mogwai Polaris"
-	}
-	if (i == 4) {
-		return "Imaginarium Hendrix"
-	}
-	if (i == 5) {
-		return "Spacecraft Paradiso"
-	}
-	if (i == 6) {
-		return "Doja's Delight"
-	}
-	if (i == 7) {
-		return "Cage's Silence"
-	}
-}
 
 
 
@@ -207,31 +158,31 @@ border-color: red;
     
 	//theming
 	const themeIndex = Math.floor(p5.random(THEME_ARRAY.length))
-  const thisTheme = setThemeAttribute(themeIndex);
-	console.log('this theme', thisTheme)
-	attributes.theme = thisTheme
-  const theme = THEME_ARRAY[themeIndex]
-  const skyIndex = Math.floor(p5.random(theme.length))
-	skyColor = theme[skyIndex]
-	theme.splice(skyIndex, 1);
+  const thisTheme = THEME_ARRAY[themeIndex]
+	const themeColors = thisTheme.palette
+	attributes.theme = thisTheme.name
+  const skyIndex = Math.floor(p5.random(themeColors.length))
+	skyColor = themeColors[skyIndex]
+	themeColors.splice(skyIndex, 1);
 
 
 	/// set up for sun
 	if (realityCheck(80,p5)) {
 		isSun = true;
-		let sunIndex = Math.floor(p5.random(theme.length))
-		sunColor = theme[sunIndex]
-		theme.splice(sunIndex, 1);
+		let sunIndex = Math.floor(p5.random(themeColors.length))
+		sunColor = themeColors[sunIndex]
+		themeColors.splice(sunIndex, 1);
 		sun = new Sun(sunColor, p5);
 		attributes.sun = true;
 	}
 
 
-	lineColor = theme[Math.floor(p5.random(theme.length))]
+	lineColor = themeColors[Math.floor(p5.random(themeColors.length))]
 	// console.log('secondary', secondaryColor)
-  starColor = theme[Math.floor(p5.random(theme.length))]
-	mtnColors.push(theme[0], theme[1])
-	moonColors.push(theme[1], theme[2])
+  starColor = themeColors[Math.floor(p5.random(themeColors.length))]
+	console.log('STAR', starColor)
+	mtnColors.push(themeColors[0], themeColors[1])
+	moonColors.push(themeColors[1], themeColors[2])
 
 
   // move = 1;
@@ -300,7 +251,7 @@ border-color: red;
 		}
 		imageDecisions(p5)
 
-		p5.pop()
+		// p5.pop()
 		// iterator(p5)
 		p5.pop()
 		setNftAttributes(attributes)
@@ -536,6 +487,7 @@ function newSky(p5) {
    let chooseSky = p5.int(p5.random(0,9))
 	const matrixPct = isSafari ? 50 : 10
 	const skyPct = isSafari ? 50 : 10
+	console.log('STAR TWO', starColor)
 	p5.fill(starColor)
 	p5.noStroke()
 	// if (chooseSky == 0) {
