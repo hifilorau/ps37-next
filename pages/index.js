@@ -3,7 +3,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import styles from '../styles/Home.module.css'
 import  React, {useState} from 'react';
-import Banner from '../components/Banner'
+// import Banner from '../components/Banner'
 import Logo from "../public/images/logo-08.svg"
 import { useRouter } from 'next/router'
 import Header from '../components/Header'
@@ -43,6 +43,9 @@ const Home = ({events}) => {
     <title>PS37: Arthaus, Collective, and Venue</title>
    </Head>
   <div className="homepage-container">
+  <div className="video-2">
+      <video src="https://hifilorau.s3.us-west-2.amazonaws.com/vid.mp4" autoPlay muted loop/>
+    </div>
   {!keyholeAnimation && <Header /> }
   <div className={styles.home}>
   {/* <div className={keyholeAnimation ? "keyhole-punch-2" : "kp2"}>
@@ -76,12 +79,10 @@ const Home = ({events}) => {
     {keyholeAnimation && <div className="key-bg">
       <h1>YOU ARE NOW ENTERING THE MF KEYHOLE...</h1>
     </div>} 
-      {/* <h1>(and also loading...)</h1>
-    <VidSketch />
-    {/* <div className="video-2">
-      <video src="/images/vid.mp4" autoPlay muted loop/>
-    </div> */}
-       <VidSketch />
+     {/* <h1>(and also loading...)</h1> */}
+    {/* <VidSketch /> */}
+ 
+       {/* <VidSketch /> */}
 
     {/* <Footer /> */} 
   </div>

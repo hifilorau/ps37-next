@@ -75,12 +75,13 @@ h1 {
 
 .video-2 {
   position: absolute;
-  width: 100vh;
+  width: 100%;
   height: 100vh;
   position: fixed;
   top: 0;
-left: 0;
-z-index: -1
+  /* left: 0; */
+z-index: -1;
+filter: blur(0.32rem);
 }
 
 .video-2 video {
@@ -110,7 +111,7 @@ z-index: -1
   padding: 1em;
   height: 240px;
   top: 40px;
-  filter: blur(.25rem);
+  /* filter: blur(.25rem); */
   cursor: pointer;
   transition: 1s;
 } 
@@ -145,7 +146,7 @@ z-index: -1
 
 @keyframes blur {
   0% {
-    filter: blur(0.25rem);
+    filter: blur(0.1rem);
   }
 
   50% {
@@ -157,7 +158,7 @@ z-index: -1
   }
 
   100% {
-    filter: blur(0.25rem);
+    filter: blur(0.1rem);
   }
 }
 

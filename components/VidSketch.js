@@ -13,7 +13,7 @@ const ReactP5Wrapper = dynamic(() => import('react-p5-wrapper')
    // array to hold snowflake objects
   
   p5.preload = () => {
-    videoElement = p5.createVideo(['vid.mp4']);
+    videoElement = p5.createVideo(['https://hifilorau.s3.us-west-2.amazonaws.com/vid.mp4']);
   }
   p5.setup = () => {
     height = p5.windowHeight

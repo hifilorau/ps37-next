@@ -38,7 +38,7 @@ const Posts = ({posts, events, error}) => {
            <h3>{featuredPost.title}</h3> 
            <div className={styles.date}>{featuredD}</div>
            <div className={styles.imageWrapper}>
-            <Image src={featuredPost.feature_image}  layout="fill" objectFit="cover"/>
+            <Image src={featuredPost.feature_image}  layout="fill" objectFit="contain"/>
            </div>
            </a>
           </Link>

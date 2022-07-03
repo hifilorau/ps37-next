@@ -299,4 +299,11 @@
 
 }
 
+@media only screen and (max-width: 525px) {
+  .imageWrapper {
+    max-width: 350px;
+  }
+
+}
+
 
