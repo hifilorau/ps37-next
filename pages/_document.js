@@ -16,6 +16,8 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+        {/* EMPTY SCRIPT TAG TEST */}
+          <script></script>
         </body>
       </Html>
    
