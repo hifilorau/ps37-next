@@ -676,7 +676,7 @@ const fadeOut = () => {
 						// objectFit="cover" layout="fill" 
 						width={310}
 						height={540}
-						priority/>
+						priority={true}/>
         </div>	
 					
 					<h4>Creating a new ethereal plane...</h4>
