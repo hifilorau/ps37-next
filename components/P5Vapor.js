@@ -728,15 +728,15 @@ const handleSave = () => {
 
 		 <div className={isLoading ? "loading-screen-wrapper" : "loading-screen-wrapper loading-not-active"}>
 			<div className="vapor-loading">
-				{/* <GridLoader color={'#6e0d60'} isLoading={true}
-					css={override} size={40} /> */}
-				 <div className="blurMe">
+				<GridLoader color={'#6e0d60'} isLoading={true} 
+					css={override} size={40} /> 
+				 {/* <div className="blurMe">
             <Image className="logo-landing glitch" src="/images/key_door.png" 
 						// objectFit="cover" layout="fill" 
 						width={310}
 						height={540}
 						priority={true}/>
-        </div>	
+        </div>	 */}
 					
 					<h4>Creating...</h4>
 					{/* <p>creating new plane</p> */}
