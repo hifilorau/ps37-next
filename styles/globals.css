@@ -126,9 +126,10 @@ z-index: -1
   top: 0px;
   position: relative;
   margin: 0 auto;
-  max-width: 220px;
+  max-width: 160px;
   text-align: center;
   width: 100%;
+  height: auto;
   opacity: .7;
   /* pointer-events: disable; */
   z-index: 200;

@@ -34,7 +34,7 @@ const P5Vapor = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [nftAttributes, setNftAttributes] = useState({})
 	const [info, setInfo] = useState(true)
-
+	const [isSave, setSave] = useState(false)
 // const context = useWeb3React()
 // const { connector, library, chainId, account, activate, deactivate, active, error } = context
 // //  const [gridLake, setGridLake] = useState(false)
@@ -93,7 +93,7 @@ let height;
 
 
 const renderConnect = () => {
-	return <div>Press Up Arrow to Save</div> 
+	return <div>Press to Save</div> 
 	// if (isAuthenticated) {
 	// 	return <Button onClick={logout}>Logout</Button>
 	// }
@@ -202,13 +202,18 @@ border-color: red;
 	// img.resize(0, height/6) 
 	p5.background(skyColor);
 	
-	p5.noLoop()
+	// p5.noLoop()
+	customDraw(p5, img)
   }
 
-	const draw = (p5) => {
-			console.log('THIS THEME', thisTheme)
-			
-			customDraw(p5, img)
+	const draw = (p5, save) => {
+			if (save) {
+				p5.save('vapor-plane.png')
+				p5.noLoop()
+			}
+
+			// save = false;
+			// customDraw(p5, img)
 			// p5.fill(0);
 			// p5.textSize(152);
 			// p5.textFont('Georgia');
@@ -487,10 +492,11 @@ function displayMtns(p5) {
 
 
 
-function keyPressed(p5) {
+function keyPressed(p5, isSave) {
   if (p5.keyCode === p5.UP_ARROW) {
     p5.save('vapor-plane.png')
-  } else {
+  } 
+	else {
    return
   }
 }
@@ -630,11 +636,17 @@ const fadeOut = () => {
 	// }, 500)
 }
 
+const handleSave = () => {
+	console.log('save click')
+	setSave(true)
+	
+}
+
 
   return (
     <div id='canvas-parent' className="future vaporplanes">
      <div className="sketch-wrapper">
-			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5) => draw(p5)}/>
+			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, save) => draw(p5,isSave)}/>
 		 </div>
 		 
 
@@ -662,7 +674,7 @@ const fadeOut = () => {
         <h3 onClick={resetFrame}>Create New Plane</h3>
 				{/* <h3 onClick={(e, p5) => saveMe(e, p5)}> Information</h3> */}
 				<h3 onMouseOver={() => setInfo(true)}  onMouseOut={() => setInfo(false)}> Information</h3>
-			  <h3>{renderConnect()}</h3> 
+			  <h3 onClick={handleSave}>{renderConnect()}</h3> 
 					
 				<div className="">
 					<Link href="/"> 
