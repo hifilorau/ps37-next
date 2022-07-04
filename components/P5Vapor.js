@@ -166,7 +166,6 @@ border-color: red;
 	skyColor = themeColors[skyIndex]
 	skyType = chooseSky(p5)
 	gridType = chooseGrid(p5)
-	console.log('GIRD TYPE', gridType)
 	themeColors.splice(skyIndex, 1);
 	textColor = themeColors[ Math.floor(p5.random(themeColors.length))]
   counter = 0;
@@ -292,7 +291,14 @@ border-color: red;
 		}
 		setNftAttributes(attributes)
 		setIsLoading(false)
-		counter += 15;
+		if (counter > 750 ) {
+			counter = 0
+		}
+		else {
+			counter += 15;
+		}
+	
+
 	// pop()
 	}
   
@@ -433,7 +439,6 @@ class Sun {
 		this.vert =  p5.random(-height/2, 150)
 		this.sunSpot = Math.floor( p5.random(2,4))
 		this.horiz = this.sunSpot < 3 ? p5.random(-width/2,-400) :  p5.random(width/2, 400)
-		console.log("SUN height, w", this.vert, this.horiz)
 		// this.horiz = random(-600,600)
 		this.color = p5.color(sunColor);
 		// this.color.setAlpha(128 + 128 * sin(millis() / 1000)); 
@@ -586,7 +591,6 @@ function newSky(p5) {
   // let chooseSky = p5.int(p5.random(0,9))
 	// const matrixPct = isSafari ? 50 : 10
 	// const skyPct = isSafari ? 50 : 10
-	console.log('STAR TWO', skyType)
 	p5.fill(starColor)
 	p5.noStroke()
 		if (skyType == "matrix") {
@@ -710,7 +714,6 @@ const fadeOut = () => {
 }
 
 const handleSave = () => {
-	console.log('save click')
 	setIsSave(true)
 	
 }
