@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
-// import Logo from "../public/images/key_door.png"
 import Image from 'next/image'
 import {vaporThemes} from '../lib/vaporThemes.js'
 // import {Container, Button, LinearProgress} from '@mui/material/';
-// import Sketch from 'react-p5'
 // import { useMoralis, useMoralisWeb3Api, useMoralisQuery } from "react-moralis";
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
   ssr: false,
@@ -28,32 +26,6 @@ import GridLoader from 'react-spinners/GridLoader'
 
 // const client = create('https://ipfs.infura.io:5001/api/v0')
 // const contractAddress = "0x90fa9714C8e7961F8D703A0a7085D5F29F269c23"
-
-
-const P5Vapor = () => {
-	const [isLoading, setIsLoading] = useState(true)
-	const [nftAttributes, setNftAttributes] = useState({})
-	const [info, setInfo] = useState(true)
-	const [isSave, setSave] = useState(false)
-// const context = useWeb3React()
-// const { connector, library, chainId, account, activate, deactivate, active, error } = context
-// //  const [gridLake, setGridLake] = useState(false)
-
-
-///STATE ITEMS 
-// const { authenticate, isAuthenticated, user, logout, isAuthenticating } = useMoralis();
-
-// const [fileUrl, updateFileUrl] = useState(``)
-// const [customSave, setCustomSave] = useState(null)
-
-// const [status, setStatus] = useState("");
-// const [name, setName] = useState("");
-// const [description, setDescription] = useState("");
-// const [url, setURL] = useState("");
-// const [metaInfo, setMetaInfo] = useState(true)
-
-
-///INITIALIZE VARIABLES
 var hLine;
 let attributes = {}
 let sun;
@@ -70,13 +42,7 @@ let moons = [];
 let img;
 let isSafari = false;
 const THEME_ARRAY = vaporThemes;
-// let img1;
-// let img2;
-// let img3;
-// let img4;
-// let img5;
-// let img6;
-// let img7;
+
 let testImage;
 let images = [];
 let thisLogo;
@@ -88,6 +54,28 @@ let width;
 // let width = 3840;
 // let width = 2160;
 let height;
+let fontRatio;
+
+
+/// REACT COMPONENT
+
+const P5Vapor = () => {
+	const [isLoading, setIsLoading] = useState(true)
+	const [nftAttributes, setNftAttributes] = useState({})
+	const [info, setInfo] = useState(true)
+	const [isInfo, setIsInfo] = useState(true)
+	const [isSave, setSave] = useState(false)
+// const context = useWeb3React()
+// const { connector, library, chainId, account, activate, deactivate, active, error } = context
+
+
+
+///STATE ITEMS 
+// const { authenticate, isAuthenticated, user, logout, isAuthenticating } = useMoralis();
+
+
+///INITIALIZE VARIABLES
+
 // let height = 2160;
 //need polar and black scheme
 
@@ -122,7 +110,9 @@ border-color: red;
 
 
   const preload = (p5) => {
-		font = p5.loadFont('https://fonts.gstatic.com/s/newscycle/v14/CSR54z1Qlv-GDxkbKVQ_dFsvWNRevA.ttf');
+		font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
+		// font = p5.loadFont('/fonts/Special_Elite/Ewert-Regular.ttf');
+		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
 	}
 		// console.log('PRE LOAD', logo1)
    	// img1 = p5.loadImage(logo1)
@@ -201,24 +191,31 @@ border-color: red;
 	// p5.rotateY(180)
 	// img.resize(0, height/6) 
 	p5.background(skyColor);
-	
+  // handleText(font, p5)
 	// p5.noLoop()
-	customDraw(p5, img)
+	// customDraw(p5, img)
   }
 
-	const draw = (p5, save) => {
-			if (save) {
-				p5.save('vapor-plane.png')
-				p5.noLoop()
-			}
-
-			// save = false;
+	const draw = (p5, save, info) => {
+		p5.background(0);
+		// console.log('info', info)
 			// customDraw(p5, img)
-			// p5.fill(0);
-			// p5.textSize(152);
-			// p5.textFont('Georgia');
-			// p5.text('Righteous', width/2, height/2);
-	
+		if (info) {
+			handleText(font, p5)
+		}
+		if (save) {
+			p5.save('vapor-plane.png')
+			p5.noLoop()
+			}
+	}
+
+	const handleText = (font, p5) => {
+		// p5.fill(thisTheme.colors)
+		p5.textFont(font);
+		p5.textSize(125);
+		const displayName = thisTheme.name.toUpperCase()
+		p5.textAlign(p5.CENTER, p5.CENTER);
+		p5.text(displayName, 0, 170);
 	}
 
 	const  customDraw = (p5, img) => {
@@ -267,11 +264,6 @@ border-color: red;
 		// iterator(p5)
 		p5.pop()
 		setNftAttributes(attributes)
-		p5.textFont(font);
-		p5.textSize(28);
-		const displayName = thisTheme.name.toUpperCase()
-		// p5.textAlign(width/2, height/2)
-		p5.text(displayName, -width/3, height/3);
 		setIsLoading(false)
 	// pop()
 	}
@@ -292,7 +284,7 @@ border-color: red;
 					p5.line(0-width * 1.3, y * p5.random(1,1.75) , width * 1.3, y * p5.random(1,1.75) ) ;		
 				}
 			}
-		} else if ( realityCheck(10, p5) && isSafari == false ) {
+		} else if ( realityCheck(15, p5) && isSafari == false ) {
 			// console.log('10')
 			attributes.grid="vertical"
 			p5.rotateX(88.5)
@@ -308,7 +300,7 @@ border-color: red;
 			}
 
 		} else if (realityCheck(80, p5 ) && isSafari == false) {
-			if (realityCheck(75, p5) && isSafari == false) {
+			if (realityCheck(85, p5) && isSafari == false) {
 				p5.rotateX(88.5)
 				attributes.grid="grid"
 			} else {
@@ -646,7 +638,7 @@ const handleSave = () => {
   return (
     <div id='canvas-parent' className="future vaporplanes">
      <div className="sketch-wrapper">
-			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, save) => draw(p5,isSave)}/>
+			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, save, info) => draw(p5,isSave, isInfo)}/>
 		 </div>
 		 
 
@@ -673,7 +665,14 @@ const handleSave = () => {
       <div className="vp-content">
         <h3 onClick={resetFrame}>Create New Plane</h3>
 				{/* <h3 onClick={(e, p5) => saveMe(e, p5)}> Information</h3> */}
-				<h3 onMouseOver={() => setInfo(true)}  onMouseOut={() => setInfo(false)}> Information</h3>
+				<h3 
+					// onMouseOver={() => setInfo(true)}  
+					// onMouseOut={() => setInfo(false)}
+					onClick={() => setIsInfo(!isInfo)}
+					> 
+					
+					Information
+				</h3>
 			  <h3 onClick={handleSave}>{renderConnect()}</h3> 
 					
 				<div className="">

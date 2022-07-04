@@ -612,8 +612,8 @@ a {
 
   }
 
-  .footer-list a {
-    /* color: white; */
+  .vaporplanes canvas {
+    transform: scale(30%)
   }
 
   .flex-footer-link {

@@ -197,3 +197,9 @@
   z-index: -1;
 
 }
+
+@media only screen and (max-width: 650px) {
+  .vp-content h3 {
+    margin: .25em;
+  }
+}
