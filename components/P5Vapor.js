@@ -12,6 +12,7 @@ const logo5 =  '/images/logo-12.svg'
 import Link from 'next/link'
 import MetaInfo from '../pages/vaporplanes/Meta.js'
 import GridLoader from 'react-spinners/GridLoader'
+import { Loop } from '@material-ui/icons'
 
 // const logo =  '/images/ps37-text-purp-09.png'
 // const igLogo = '/images/ig_logo.png'
@@ -42,14 +43,14 @@ let moons = [];
 let img;
 let isSafari = false;
 const THEME_ARRAY = vaporThemes;
-
+let themeColors;
 let testImage;
 let images = [];
 let thisLogo;
 let thisImg;
 let thisTheme;
 let font;
-
+let textColor;
 let width;
 // let width = 3840;
 // let width = 2160;
@@ -64,7 +65,7 @@ const P5Vapor = () => {
 	const [nftAttributes, setNftAttributes] = useState({})
 	const [info, setInfo] = useState(true)
 	const [isInfo, setIsInfo] = useState(true)
-	const [isSave, setSave] = useState(false)
+	const [isSave, setIsSave] = useState(false)
 // const context = useWeb3React()
 // const { connector, library, chainId, account, activate, deactivate, active, error } = context
 
@@ -110,8 +111,8 @@ border-color: red;
 
 
   const preload = (p5) => {
-		font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
-		// font = p5.loadFont('/fonts/Special_Elite/Ewert-Regular.ttf');
+		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
+		font = p5.loadFont('/fonts/Special_Elite/SpecialElite-Regular.ttf');
 		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
 	}
 		// console.log('PRE LOAD', logo1)
@@ -145,18 +146,19 @@ border-color: red;
     p5.pixelDensity(2)
 		gridLake = false;
 		p5.colorMode(p5.HSB, 360, 100, 100, 100);
+		p5.frameRate(7);
 		// p5.perspective(90, width/height, -10000, 0)
 
     
 	//theming
 	const themeIndex = Math.floor(p5.random(THEME_ARRAY.length))
   thisTheme = THEME_ARRAY[themeIndex]
-	const themeColors = thisTheme.palette
+	themeColors = thisTheme.palette
 	attributes.theme = thisTheme.name
   const skyIndex = Math.floor(p5.random(themeColors.length))
 	skyColor = themeColors[skyIndex]
 	themeColors.splice(skyIndex, 1);
-
+	textColor = themeColors[ Math.floor(p5.random(themeColors.length))]
 
 	/// set up for sun
 	if (realityCheck(80,p5)) {
@@ -172,10 +174,10 @@ border-color: red;
 	lineColor = themeColors[Math.floor(p5.random(themeColors.length))]
 	// console.log('secondary', secondaryColor)
   starColor = themeColors[Math.floor(p5.random(themeColors.length))]
-	console.log('STAR', starColor)
 	mtnColors.push(themeColors[0], themeColors[1])
 	moonColors.push(themeColors[1], themeColors[2])
-
+	// createMoons(moonColors, p5)
+	// createMtns(mtnColors, p5)
 
   // move = 1;
   hLine=0;
@@ -185,43 +187,47 @@ border-color: red;
 	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
 		isSafari = true;
 	}
-
+  // iterator(p5)
 
 	// for scaling logo
 	// p5.rotateY(180)
 	// img.resize(0, height/6) 
-	p5.background(skyColor);
+	// p5.background(skyColor);
   // handleText(font, p5)
 	// p5.noLoop()
 	// customDraw(p5, img)
   }
 
-	const draw = (p5, save, info) => {
-		p5.background(0);
+	const draw = (p5, save, info, setSave) => {
+	
 		// console.log('info', info)
-			// customDraw(p5, img)
+		customDraw(p5, img)
 		if (info) {
 			handleText(font, p5)
 		}
 		if (save) {
-			p5.save('vapor-plane.png')
 			p5.noLoop()
+			p5.save('vapor-plane.png')
+			setSave(false)
+	    p5.loop()
 			}
 	}
 
 	const handleText = (font, p5) => {
 		// p5.fill(thisTheme.colors)
+		
+		p5.fill(textColor)
 		p5.textFont(font);
-		p5.textSize(125);
+		p5.textSize(105);
 		const displayName = thisTheme.name.toUpperCase()
 		p5.textAlign(p5.CENTER, p5.CENTER);
-		p5.text(displayName, 0, 170);
+		p5.text(displayName, 0, 340);
 	}
 
 	const  customDraw = (p5, img) => {
 		p5.push()
+		p5.background(skyColor);
 		newSky(p5)
-
 		// p5.rotateZ(-90)
 		// p5.arc(0, 0, 650, 650, p5.PI, 0);
 
@@ -235,9 +241,9 @@ border-color: red;
 		}
 
 		// 
-		
 		createMoons(moonColors, p5)
 		createMtns(mtnColors, p5)
+	
 
 		p5.tint(255, p5.imageTint+= .25);
 
@@ -250,7 +256,7 @@ border-color: red;
 		
 		displayMtns(p5);
 		
-			iterator(50, p5)
+		iterator(p5)
 		
 		// p5.push()
 
@@ -269,22 +275,22 @@ border-color: red;
 	}
   
 
-  const iterator = (pct, p5) => {
+  const iterator = (p5) => {
 		let gridSize = 13
 		p5.push()
 		p5.stroke(lineColor);
     p5.strokeWeight(.3);
 		// p5.translate(0,0,100);
-		if (realityCheck(10, p5) && isSafari == false) {
+		if (realityCheck(20, p5)) {
 			attributes.grid="horizontal"
 			p5.rotateX(89)
 			p5.strokeWeight(.1)
-			for (var x = 0; x < width * 1.2; x += gridSize*4) {
-				for (var y = 0; y < height * 1.2; y += gridSize * 4 ) {
+			// for (var x = 0; x < width * 1.2; x += gridSize*4) {
+				for (var y = 0; y < height * 1.3; y += gridSize * 2 ) {
 					p5.line(0-width * 1.3, y * p5.random(1,1.75) , width * 1.3, y * p5.random(1,1.75) ) ;		
 				}
-			}
-		} else if ( realityCheck(15, p5) && isSafari == false ) {
+			// }
+		} else if ( realityCheck(15, p5)) {
 			// console.log('10')
 			attributes.grid="vertical"
 			p5.rotateX(88.5)
@@ -294,12 +300,13 @@ border-color: red;
 				attributes.grid = "vertical abstract"
 			}
 			for (var x = 0; x < width * modifier; x += gridSize ) {
-				for (var y = 0; y < height; y += gridSize ) {
+				// for (var y = 0; y < height; y += gridSize ) {
 					p5.line(x-width, 0, x-width, height* 2);
-				}
+				// }
 			}
 
-		} else if (realityCheck(80, p5 ) && isSafari == false) {
+		} 
+		else if (realityCheck(80, p5 )) {
 			if (realityCheck(85, p5) && isSafari == false) {
 				p5.rotateX(88.5)
 				attributes.grid="grid"
@@ -307,13 +314,13 @@ border-color: red;
 				attributes.grid="graph"
 			}
 			for (var x = 0; x <= width * 2; x += gridSize ) {
-				for (var y = 0; y <= height * 2; y += gridSize ) {
-					p5.line(0 - width * 1.3, y * 2, width * 1.3, y * 2);
+				// for (var y = 0; y <= height * 2; y += gridSize ) {
+					p5.line(0 - width * 1.3, x * 2, width * 1.3, x * 2);
 					p5.line(x - width, 0, x - width, height * 2);
 				}
-			}
-
-		} else {
+			// }
+		} 
+		else {
 			attributes.grid="none"
 		}
 		p5.pop()
@@ -416,6 +423,7 @@ class Moon {
 }
 
 function createMoons (theme, p5) {
+	moons = [];
 	let moonNumber = Math.floor(p5.random(0,3));
 	attributes.moons = moonNumber;
 	for (let i=0; i < moonNumber; i++) {
@@ -467,7 +475,8 @@ const invertMtnsCheck = (p5) => {
 }
 
 function createMtns (theme, p5) {
-	let mtnNumber = Math.floor(p5.random(0,5));
+	mtns = [];
+	let mtnNumber = Math.floor(p5.random(0,9));
 	attributes.mountains = mtnNumber;
 	for (let i=0; i < mtnNumber; i++) {
 		let newMtn = new Mtn(theme, i, p5);
@@ -556,7 +565,12 @@ const b64toBlob = (dataURI) => {
 
 
 const saveMe = async (p5) => {
-	// console.log('save', nftAttributes)
+	setInfo(true)
+	// console.log(dataUrl)
+ }
+
+ const handleIPFS = () => {
+		// console.log('save', nftAttributes)
 	// const id = 1;
 	// const canvas = document.querySelector('canvas')
 	// const dataUrl = canvas.toDataURL("img/png");
@@ -599,10 +613,6 @@ const saveMe = async (p5) => {
 	// catch (err) {
 	// 	console.log('SAVE ERROR', err)
 	// }
-
-
-	setInfo(true)
-	// console.log(dataUrl)
  }
 
 
@@ -630,7 +640,7 @@ const fadeOut = () => {
 
 const handleSave = () => {
 	console.log('save click')
-	setSave(true)
+	setIsSave(true)
 	
 }
 
@@ -638,7 +648,7 @@ const handleSave = () => {
   return (
     <div id='canvas-parent' className="future vaporplanes">
      <div className="sketch-wrapper">
-			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, save, info) => draw(p5,isSave, isInfo)}/>
+			<Sketch setup={(...args) => setup(...args)}  preload={(...args) => preload(...args)} keyPressed={(...args) => keyPressed(...args)} draw={(p5, save, info, setSave) => draw(p5,isSave, isInfo, setIsSave)}/>
 		 </div>
 		 
 
@@ -673,7 +683,9 @@ const handleSave = () => {
 					
 					Information
 				</h3>
-			  <h3 onClick={handleSave}>{renderConnect()}</h3> 
+			  <h3 
+				onClick={handleSave}
+				>{renderConnect()}</h3> 
 					
 				<div className="">
 					<Link href="/"> 
@@ -693,7 +705,7 @@ const handleSave = () => {
 					
 
 			</div>  */}
-			{nftAttributes && info && <MetaInfo meta={nftAttributes} info={info} /> }
+			{/* {nftAttributes && info && <MetaInfo meta={nftAttributes} info={info} /> } */}
 
 			
     </div>
