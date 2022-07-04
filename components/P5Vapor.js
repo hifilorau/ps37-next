@@ -7,12 +7,12 @@ import {vaporThemes} from '../lib/vaporThemes.js'
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
   ssr: false,
 })
-const logo1 = '/images/palms_main.svg'
-const logo5 =  '/images/logo-12.svg'
+// const logo1 = '/images/palms_main.svg'
+// const logo5 =  '/images/logo-12.svg'
 import Link from 'next/link'
-import MetaInfo from '../pages/vaporplanes/Meta.js'
+// import MetaInfo from '../pages/vaporplanes/Meta.js'
 import GridLoader from 'react-spinners/GridLoader'
-import { Loop } from '@material-ui/icons'
+
 
 // const logo =  '/images/ps37-text-purp-09.png'
 // const igLogo = '/images/ig_logo.png'
@@ -41,6 +41,7 @@ let starColor;
 let mtns = [];
 let moons = [];
 let img;
+let isImg=true;
 let isSafari = false;
 const THEME_ARRAY = vaporThemes;
 let themeColors;
@@ -52,11 +53,13 @@ let thisTheme;
 let font;
 let textColor;
 let width;
+let skyType;
+let gridType
+let counter;
 // let width = 3840;
 // let width = 2160;
 let height;
-let fontRatio;
-
+let jooseImg, paradiseImg, keyholeImg;
 
 /// REACT COMPONENT
 
@@ -113,6 +116,10 @@ border-color: red;
   const preload = (p5) => {
 		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
 		font = p5.loadFont('/fonts/Special_Elite/SpecialElite-Regular.ttf');
+		jooseImg = p5.loadImage('/vapor/moshpit.png')
+		paradiseImg = p5.loadImage('/vapor/key-og-01.png')
+		keyholeImg = p5.loadImage('/vapor/key_door.png')
+
 		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
 	}
 		// console.log('PRE LOAD', logo1)
@@ -146,7 +153,7 @@ border-color: red;
     p5.pixelDensity(2)
 		gridLake = false;
 		p5.colorMode(p5.HSB, 360, 100, 100, 100);
-		p5.frameRate(7);
+		p5.frameRate(5);
 		// p5.perspective(90, width/height, -10000, 0)
 
     
@@ -157,9 +164,12 @@ border-color: red;
 	attributes.theme = thisTheme.name
   const skyIndex = Math.floor(p5.random(themeColors.length))
 	skyColor = themeColors[skyIndex]
+	skyType = chooseSky(p5)
+	gridType = chooseGrid(p5)
+	console.log('GIRD TYPE', gridType)
 	themeColors.splice(skyIndex, 1);
 	textColor = themeColors[ Math.floor(p5.random(themeColors.length))]
-
+  counter = 0;
 	/// set up for sun
 	if (realityCheck(80,p5)) {
 		isSun = true;
@@ -178,15 +188,20 @@ border-color: red;
 	moonColors.push(themeColors[1], themeColors[2])
 	// createMoons(moonColors, p5)
 	// createMtns(mtnColors, p5)
+	if (realityCheck(25, p5)) {
 
+		attributes.inverted = true;
+		// p5.rotateX(180)
+	}
+	imageDecisions(p5)
   // move = 1;
   hLine=0;
 	p5.imageTint=p5.random(255);
 
 
-	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-		isSafari = true;
-	}
+	// if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+	// 	isSafari = true;
+	// }
   // iterator(p5)
 
 	// for scaling logo
@@ -218,7 +233,7 @@ border-color: red;
 		
 		p5.fill(textColor)
 		p5.textFont(font);
-		p5.textSize(105);
+		p5.textSize(50);
 		const displayName = thisTheme.name.toUpperCase()
 		p5.textAlign(p5.CENTER, p5.CENTER);
 		p5.text(displayName, 0, 340);
@@ -233,28 +248,30 @@ border-color: red;
 
     // p5.fill()
 
-		if (realityCheck(25, p5)) {
+		if (attributes.inverted == true) {
 
-			attributes.inverted = true;
 			p5.rotateZ(180);
 			// p5.rotateX(180)
 		}
 
 		// 
-		createMoons(moonColors, p5)
-		createMtns(mtnColors, p5)
-	
-
-		p5.tint(255, p5.imageTint+= .25);
-
-		if (isSun) {
-			sun.display(p5)
-		}
-
-		displayMoons(p5)
-		// displayMtns();
+		// if (p5.frameCount % 15 == 0) {
+			createMoons(moonColors, p5)
+			createMtns(mtnColors, p5)
 		
-		displayMtns(p5);
+	
+			p5.tint(255, p5.imageTint+= .25);
+	
+			if (isSun) {
+				sun.display(p5)
+			}
+	
+			displayMoons(p5)
+			// displayMtns();
+			
+			displayMtns(p5);
+		// }
+	
 		
 		iterator(p5)
 		
@@ -264,13 +281,18 @@ border-color: red;
 			p5.rotateX(180)
 		}
 		// console.log('THIS THEME')
-		imageDecisions(p5)
-	
+
+
 		// p5.pop()
 		// iterator(p5)
 		p5.pop()
+		// p5.loadImage(thisLogo, thisLogo => {imagePlacement(thisLogo, p5)});
+		if (isImg) {
+			imagePlacement(thisLogo, p5)
+		}
 		setNftAttributes(attributes)
 		setIsLoading(false)
+		counter += 15;
 	// pop()
 	}
   
@@ -281,7 +303,7 @@ border-color: red;
 		p5.stroke(lineColor);
     p5.strokeWeight(.3);
 		// p5.translate(0,0,100);
-		if (realityCheck(20, p5)) {
+		if (gridType == "horizontal") {
 			attributes.grid="horizontal"
 			p5.rotateX(89)
 			p5.strokeWeight(.1)
@@ -290,7 +312,8 @@ border-color: red;
 					p5.line(0-width * 1.3, y * p5.random(1,1.75) , width * 1.3, y * p5.random(1,1.75) ) ;		
 				}
 			// }
-		} else if ( realityCheck(15, p5)) {
+		} 
+		if ( gridType == "vertical") {
 			// console.log('10')
 			attributes.grid="vertical"
 			p5.rotateX(88.5)
@@ -306,20 +329,25 @@ border-color: red;
 			}
 
 		} 
-		else if (realityCheck(80, p5 )) {
-			if (realityCheck(85, p5) && isSafari == false) {
+		if (gridType=="plane") {
+	
 				p5.rotateX(88.5)
 				attributes.grid="grid"
-			} else {
-				attributes.grid="graph"
-			}
+			
+			for (var x = 0; x <= width * 2; x += gridSize ) {
+				// for (var y = 0; y <= height * 2; y += gridSize ) {
+					p5.line(0 - width * 1.3, x * 2 + counter, width * 1.3, x * 2 + counter);
+					p5.line(x - width, 0, x - width, height * 2);
+				}
+			// }
+		} 
+		if  (gridType=="graph") {
 			for (var x = 0; x <= width * 2; x += gridSize ) {
 				// for (var y = 0; y <= height * 2; y += gridSize ) {
 					p5.line(0 - width * 1.3, x * 2, width * 1.3, x * 2);
 					p5.line(x - width, 0, x - width, height * 2);
 				}
-			// }
-		} 
+		}
 		else {
 			attributes.grid="none"
 		}
@@ -342,33 +370,46 @@ function getX(i, p5) {
 
 
 function imageDecisions(p5) {
-
-	if (realityCheck(70, p5)) { //no
-		if (!thisTheme.logo) {
-			console.log('THIS THEME IMAGE', thisTheme.logo)
-			images = [logo1, logo5];
-			const imgIndex = Math.floor(p5.random(images.length))
-			// console.log('IMGAGE INDEX', imgIndex)
-			thisLogo = images[imgIndex];
-			if (imgIndex == 0) {
-				attributes.logo = "Pyramid"
-			}
-			if (imgIndex == 1) {
-				attributes.logo = "Key Hole"
-			}
-		} else {
-			thisLogo = thisTheme.logo;
+ if (realityCheck(80, p5 )) {
+	if (!thisTheme.logo) {
+		console.log('THIS THEME IMAGE', thisTheme.logo)
+		images = [logo1, logo5];
+		const imgIndex = Math.floor(p5.random(images.length))
+		// console.log('IMGAGE INDEX', imgIndex)
+		thisLogo = images[imgIndex];
+		if (imgIndex == 0) {
+			attributes.logo = "Pyramid"
+		}
+		if (imgIndex == 1) {
+			attributes.logo = "Key Hole"
+		}
+	} else {
+		if (thisTheme.slug == "joose") {
+			thisLogo=jooseImg
 			attributes.logo = thisTheme.name
 		}
+		if (thisTheme.slug == "ps37") {
+			thisLogo=paradiseImg
+			attributes.logo = thisTheme.name
+		}
+		if (thisTheme.slug == "keyhole") {
+			thisLogo=keyholeImg
+			attributes.logo = thisTheme.name
+		}			// thisLogo = thisTheme.logo;
+		// attributes.logo = thisTheme.name
+	} 
+ }
+ else {
+	isImg = false;
+}
 
-		p5.loadImage(thisLogo, thisLogo => {imagePlacement(thisLogo, p5)});
-	} else return
+		// console.log('THIS LOGO', thisLogo)
 }
 
 const imagePlacement = (thisImg, p5) => {
  //no image
-
-		if (realityCheck(95, p5)) { // stdrd image
+  //  console.log('THIS IMG', thisImg)
+		if (realityCheck(100, p5)) { // stdrd image
 			attributes.logoType = "Locked"
 			p5.image(thisImg, 0, -52, 115, 106)
 			// console.log('img height', thisImg.height, 204, 190)
@@ -439,6 +480,15 @@ function displayMoons(p5) {
 	}
 }
 
+class Plane {
+	constuctor (p5) {
+		
+	}
+	
+	display (p5) {
+	
+}
+}
 
 class Mtn {
 	constructor (mtnColors, i, p5) {
@@ -506,18 +556,40 @@ const  resetFrame = (p5) => {
 	window.location.reload(false);
 }
 
+const chooseSky = (p5) => {
+	const SKIES = ["matrix", 'stars', "none"]
+	// skyType = SKIES[ Math.floor(p5.random(SKIES.length))]
+	return SKIES[ Math.floor(p5.random(SKIES.length))]
+}
+
+const chooseGrid = (p5) => {
+	const GRIDS = ["graph", 'plane', "vertical", "horizontal", "none"]
+	if (realityCheck(10, p5)) {
+	 return "horizontal"
+	}
+	if (realityCheck(20, p5)) {
+		return "vertical"
+	 }
+	 if (realityCheck(5, p5)) {
+		return "graph"
+	 }
+	 if (realityCheck(35, p5)) {
+		return "none"
+	 }
+	 else return 'plane'
+
+}
 
 function newSky(p5) {
 	p5.translate(0,0,-1280)
   // p5.strokeWeight(25 / 15);
-   let chooseSky = p5.int(p5.random(0,9))
-	const matrixPct = isSafari ? 50 : 10
-	const skyPct = isSafari ? 50 : 10
-	console.log('STAR TWO', starColor)
+  // let chooseSky = p5.int(p5.random(0,9))
+	// const matrixPct = isSafari ? 50 : 10
+	// const skyPct = isSafari ? 50 : 10
+	console.log('STAR TWO', skyType)
 	p5.fill(starColor)
 	p5.noStroke()
-	// if (chooseSky == 0) {
-		if (realityCheck(matrixPct,p5)) {
+		if (skyType == "matrix") {
 		attributes.sky="matrix"
 		for (var i = 0; i < width*3 ; i+=30) {
 			for (var j = 0; j < height*1.5 ; j+= 15) {
@@ -527,7 +599,7 @@ function newSky(p5) {
 			}
 		}
 	} 
-	if (realityCheck(skyPct,p5)) {
+	if (skyType=="stars") {
 		attributes.sky="stars"
 		for (var i = 0; i < 2000 ; i+=1) {
 		p5.ellipse(p5.random(-width*1.5, width*1.5),p5.random(-height*1.5), 5, 5 )
@@ -536,7 +608,6 @@ function newSky(p5) {
 	else {
 		return 
 	}
-
 }
 
 
