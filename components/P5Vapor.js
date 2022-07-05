@@ -59,7 +59,7 @@ let counter;
 // let width = 3840;
 // let width = 2160;
 let height;
-let jooseImg, paradiseImg, keyholeImg;
+let jooseImg, paradiseImg, keyholeImg, redhotImg;
 
 /// REACT COMPONENT
 
@@ -116,9 +116,10 @@ border-color: red;
   const preload = (p5) => {
 		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
 		font = p5.loadFont('/fonts/Special_Elite/SpecialElite-Regular.ttf');
-		jooseImg = p5.loadImage('/vapor/moshpit.png')
-		paradiseImg = p5.loadImage('/vapor/key-og-01.png')
-		keyholeImg = p5.loadImage('/vapor/key_door.png')
+		jooseImg = p5.loadImage('/vapor/moshpit-2.png')
+		paradiseImg = p5.loadImage('/vapor/key-og-02.png')
+		keyholeImg = p5.loadImage('/vapor/key_door-2.png')
+		redhotImg = p5.loadImage('/vapor/redhot.png')
 
 		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
 	}
@@ -377,7 +378,7 @@ function getX(i, p5) {
 
 function imageDecisions(p5) {
  if (realityCheck(80, p5 )) {
-	if (!thisTheme.logo) {
+	if (!thisTheme.slug) {
 		console.log('THIS THEME IMAGE', thisTheme.logo)
 		images = [logo1, logo5];
 		const imgIndex = Math.floor(p5.random(images.length))
@@ -401,7 +402,14 @@ function imageDecisions(p5) {
 		if (thisTheme.slug == "keyhole") {
 			thisLogo=keyholeImg
 			attributes.logo = thisTheme.name
-		}			// thisLogo = thisTheme.logo;
+		}	
+		if (thisTheme.slug == "redhot") {
+			thisLogo=redhotImg
+			attributes.logo = thisTheme.name
+		}	
+		
+		
+		// thisLogo = thisTheme.logo;
 		// attributes.logo = thisTheme.name
 	} 
  }
@@ -417,7 +425,8 @@ const imagePlacement = (thisImg, p5) => {
   //  console.log('THIS IMG', thisImg)
 		if (realityCheck(100, p5)) { // stdrd image
 			attributes.logoType = "Locked"
-			p5.image(thisImg, 0, -52, 115, 106)
+			// p5.image(thisImg, 0, -52, 115, 106)
+			p5.image(thisImg, 0, -70)
 			// console.log('img height', thisImg.height, 204, 190)
 			} 
 			else { // anwhere image
