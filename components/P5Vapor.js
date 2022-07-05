@@ -60,6 +60,7 @@ let counter;
 // let width = 2160;
 let height;
 let jooseImg, paradiseImg, keyholeImg, redhotImg;
+let sunCounter;
 
 /// REACT COMPONENT
 
@@ -157,7 +158,7 @@ border-color: red;
 		p5.frameRate(15);
 		// p5.perspective(90, width/height, -10000, 0)
 
-    
+  
 	//theming
 	const themeIndex = Math.floor(p5.random(THEME_ARRAY.length))
   thisTheme = THEME_ARRAY[themeIndex]
@@ -170,6 +171,7 @@ border-color: red;
 	themeColors.splice(skyIndex, 1);
 	textColor = themeColors[ Math.floor(p5.random(themeColors.length))]
   counter = 0;
+	sunCounter = 0;
 	/// set up for sun
 	if (realityCheck(80,p5)) {
 		isSun = true;
@@ -263,7 +265,7 @@ border-color: red;
 			p5.tint(255, p5.imageTint+= .25);
 	
 			if (isSun) {
-				sun.display(p5, counter)
+				sun.display(p5, sunCounter)
 			}
 	
 			displayMoons(p5)
@@ -292,12 +294,18 @@ border-color: red;
 		}
 		setNftAttributes(attributes)
 		setIsLoading(false)
+		console.log('COUNTER', counter)
 		if (counter > 750 ) {
 			counter = 0
 		}
-		else {
-			counter += 15;
+		counter += 15;
+		if (sunCounter > 850 ) {
+			counter = 0
 		}
+		else {
+			sunCounter += 15;
+		}
+
 	
 
 	// pop()
@@ -445,7 +453,7 @@ function realityCheck(percent, p5) {
 class Sun {
 	constructor (sunColor, p5) {
 		this.circum = p5.random(145, 450)
-		this.vert =  p5.random(-height/2, 150)
+		this.startingVert =  p5.random(-height/2, 150)
 		this.sunSpot = Math.floor( p5.random(2,4))
 		this.horiz = this.sunSpot < 3 ? p5.random(-width/2,-400) :  p5.random(width/2, 400)
 		// this.horiz = random(-600,600)
@@ -453,9 +461,14 @@ class Sun {
 		// this.color.setAlpha(128 + 128 * sin(millis() / 1000)); 
 	}
   display(p5, counter){
+	  let vert = this.startingVert + counter
+		if (vert > 500) {
+			vert = -800;
+		}
+		console.log('vert', vert)
     p5.noStroke()
     p5.fill(sunColor);
-    p5.circle(this.horiz, this.vert + counter, this.circum);
+    p5.circle(this.horiz, vert, this.circum);
 	}
 }
 
