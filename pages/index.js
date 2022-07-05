@@ -1,10 +1,10 @@
 
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import styles from '../styles/Home.module.css'
 import  React, {useState} from 'react';
 // import Banner from '../components/Banner'
-import Logo from "../public/images/logo-08.svg"
+// import Logo from "../public/images/logo-08.svg"
 import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Upcoming from '../components/Upcoming'
@@ -71,7 +71,7 @@ const Home = ({events}) => {
         <Upcoming events={events} />
         <div className="landing-content-container">
         <div className={!keyholeAnimation ? "logo-wrapper" : "logo-wrapper keyhole-punch"} onClick={keyholeStart}>
-            <Image className="logo-landing glitch" src={Logo} objectFit="cover" layout="fill"/>
+            <Image className="logo-landing glitch" src="/images/logo-08.svg" objectFit="cover" layout="fill"/>
         </div>
       </div>
       </div> 
