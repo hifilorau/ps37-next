@@ -294,19 +294,19 @@ border-color: red;
 		}
 		setNftAttributes(attributes)
 		setIsLoading(false)
-		console.log('COUNTER', counter)
+		counter += 15;
 		if (counter > 750 ) {
 			counter = 0
 		}
-		counter += 15;
+
 		if (sunCounter > 850 ) {
-			counter = 0
+			sunCounter = 0
 		}
 		else {
 			sunCounter += 15;
 		}
 
-	
+
 
 	// pop()
 	}
@@ -465,7 +465,6 @@ class Sun {
 		if (vert > 500) {
 			vert = -800;
 		}
-		console.log('vert', vert)
     p5.noStroke()
     p5.fill(sunColor);
     p5.circle(this.horiz, vert, this.circum);
@@ -507,15 +506,6 @@ function displayMoons(p5) {
 	}
 }
 
-class Plane {
-	constuctor (p5) {
-		
-	}
-	
-	display (p5) {
-	
-}
-}
 
 class Mtn {
 	constructor (mtnColors, i, p5) {
