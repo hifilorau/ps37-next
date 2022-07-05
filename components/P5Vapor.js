@@ -263,7 +263,7 @@ border-color: red;
 			p5.tint(255, p5.imageTint+= .25);
 	
 			if (isSun) {
-				sun.display(p5)
+				sun.display(p5, counter)
 			}
 	
 			displayMoons(p5)
@@ -452,10 +452,10 @@ class Sun {
 		this.color = p5.color(sunColor);
 		// this.color.setAlpha(128 + 128 * sin(millis() / 1000)); 
 	}
-  display(p5){
+  display(p5, counter){
     p5.noStroke()
     p5.fill(sunColor);
-    p5.circle(this.horiz, this.vert, this.circum);
+    p5.circle(this.horiz, this.vert + counter, this.circum);
 	}
 }
 
