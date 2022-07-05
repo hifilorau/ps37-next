@@ -303,7 +303,7 @@ border-color: red;
 			sunCounter = 0
 		}
 		else {
-			sunCounter += 15;
+			sunCounter += 9;
 		}
 
 
@@ -462,7 +462,7 @@ class Sun {
 	}
   display(p5, counter){
 	  let vert = this.startingVert + counter
-		if (vert > 1400) {
+		if (vert > 150) {
 			vert =this.startingVert;
 		}
     p5.noStroke()
