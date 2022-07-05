@@ -217,15 +217,15 @@
   cursor: pointer;
   /* animation: pulsate 1.5s infinite alternate;  */
   font-size: 20px;
-  text-shadow:
+  /* text-shadow:
   0 0 4px rgb(235, 218, 218),
-  /* 0 0 11px rgb(235, 218, 218), */
+  0 0 11px rgb(235, 218, 218),
   0 0 19px rgb(235, 218, 218),
   0 0 40px #e8e222,
-  /* 0 0 80px #e8e222, */
+  0 0 80px #e8e222,
   0 0 90px #e8e222,
-  /* 0 0 100px #e8e222, */
-  0 0 150px #e8e222;
+  0 0 100px #e8e222,
+  0 0 150px #e8e222; */
 
 }
 
@@ -234,7 +234,7 @@
 
 .ucName:hover {
   color: yellow;
-  /* animation: pulsate .5s infinite alternate;  */
+  animation: pulsate .5s infinite alternate; 
 }
 
 .ucDate {

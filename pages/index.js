@@ -40,7 +40,7 @@ const Home = ({events}) => {
   return (
   <>
     <Head>
-    <title>PS37: Arthaus, Collective, and Venue</title>
+    <title>PS37: Arthaus & Venue</title>
    </Head>
   <div className="homepage-container">
     <div className="video-2">
@@ -71,7 +71,7 @@ const Home = ({events}) => {
         <Upcoming events={events} />
         <div className="landing-content-container">
         <div className={!keyholeAnimation ? "logo-wrapper" : "logo-wrapper keyhole-punch"} onClick={keyholeStart}>
-            <Image className="logo-landing glitch" src="/images/logo-08.svg" objectFit="cover" layout="fill"/>
+            <Image className="logo-landing glitch" src="/images/logo-08.svg" objectFit="cover" layout="fill" priority/>
         </div>
       </div>
       </div> 
