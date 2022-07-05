@@ -154,7 +154,7 @@ border-color: red;
     p5.pixelDensity(2)
 		gridLake = false;
 		p5.colorMode(p5.HSB, 360, 100, 100, 100);
-		p5.frameRate(5);
+		p5.frameRate(15);
 		// p5.perspective(90, width/height, -10000, 0)
 
     
