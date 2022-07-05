@@ -2,13 +2,13 @@
 import Image from 'next/image'
 // import dynamic from 'next/dynamic'
 import styles from '../styles/Home.module.css'
-import  React, {useState} from 'react';
+import  React, {useState, useEffect} from 'react';
 // import Banner from '../components/Banner'
 // import Logo from "../public/images/logo-08.svg"
 import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Upcoming from '../components/Upcoming'
-import {getResourceData} from '../lib/functions'
+// import {getResourceData} from '../lib/functions'
 import Head from 'next/head'
 
 
@@ -19,16 +19,28 @@ import Head from 'next/head'
 // )
 
 
-const Home = ({events}) => {
+const Home = () => {
 
   const [keyholeAnimation, setKeyholeAnimation] = useState(false)
   const router = useRouter();
-
+  const [events, setEvents] = useState([])
   // const rnGenerator = () => {
   //   const rarity = 10;
   //   let rng = Math.floor((Math.random() * rarity) + 1);
   //   this.setState({randomNumber: rng})
   // }
+
+  const getData = async () => {
+  const response = await fetch('/api/eventsApi')
+  const data = await response.json()
+  console.log('COMPONENT RES', data)
+  setEvents(data)
+}
+  
+  useEffect(() => {
+     getData();
+ }, []);
+
 
   const keyholeStart = () => {
     setKeyholeAnimation(true)
@@ -68,7 +80,7 @@ const Home = ({events}) => {
     </div>}
     <div className="taglineWrapper">
       <div className={!keyholeAnimation ? "tagline" : "tagline fadeout"}>
-        <Upcoming events={events} />
+       {events ? <Upcoming events={events}/> : null} 
         <div className="landing-content-container">
         <div className={!keyholeAnimation ? "logo-wrapper" : "logo-wrapper keyhole-punch"} onClick={keyholeStart}>
             <Image className="logo-landing glitch" src="/images/logo-08.svg" objectFit="cover" layout="fill"/>
@@ -93,13 +105,13 @@ const Home = ({events}) => {
 
 export default Home
 
-export async function getServerSideProps(context) {
-  const data = await getResourceData();
-    return {
-      props: {
-        events: data
-    }
-  }
-}
+// export async function getServerSideProps(context) {
+//   const data = await getResourceData();
+//     return {
+//       props: {
+//         events: data
+//     }
+//   }
+// }
 
 //
