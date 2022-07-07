@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import  React, {useState, useEffect} from 'react';
 // import Banner from '../components/Banner'
 // import Logo from "../public/images/logo-08.svg"
+import { GridLoader } from 'react-spinners';
 import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Upcoming from '../components/Upcoming'
@@ -17,7 +18,11 @@ import Head from 'next/head'
 //   () => import('../components/VidSketch'),
 //   { ssr: false }
 // )
-
+const override = `
+display: block;
+margin: 0 auto;
+border-color: red;
+`;
 
 const Home = () => {
 
@@ -80,7 +85,14 @@ const Home = () => {
     </div>}
     <div className="taglineWrapper">
       <div className={!keyholeAnimation ? "tagline" : "tagline fadeout"}>
-       {events ? <Upcoming events={events}/> : null} 
+       {events.length > 0 ? <Upcoming events={events}/> : 
+       <div style={{
+        marginTop: '80px'
+       }}>
+         <GridLoader color={'white'} isLoading={true} 
+            css={override} size={30} />
+       </div>	
+           } 
         <div className="landing-content-container">
         <div className={!keyholeAnimation ? "logo-wrapper" : "logo-wrapper keyhole-punch"} onClick={keyholeStart}>
             <Image className="logo-landing glitch" src="/images/logo-08.svg" objectFit="cover" layout="fill" priority/>
