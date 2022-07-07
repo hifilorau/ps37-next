@@ -409,8 +409,12 @@ a {
   max-width: 800px;
   margin: 0 auto;
   padding: 2em 2em 2em;
-  color: #333;
+  color: #ccc;
   min-height: 90vh;
+}
+
+.fun-fact {
+  font-size: 12px;
 }
 
 
