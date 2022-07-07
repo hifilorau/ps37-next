@@ -15,11 +15,10 @@ const About = () => {
         
         <h3>Coming to a show?</h3>
         <p>
-        We are a partially covered outdoor venue with a full bar which operates legally by making all of our events donate a percentage of our alchohol proceeds to local non-profits. Our programming is held on our covered platform and event-goers congregate in our large graveled area. The bar is next to the covered platform and offers a wide range of beer and liquor drinks in addition to NA options. Our restrooms are porta-potties located toward the back of our lot. The main entrance faces Foster Street across a short parking lot to the side of the building (adjacent to Altered Image Hair Salon). 
+        We are a partially covered outdoor venue with a full bar which operates legally by having all of our events donate a percentage of alchohol proceeds to local non-profits. Our programming is held under a covered platform and event-goers congregate in our large graveled yard. The bar is next to the covered platform and offers a wide range of drinks. Our restrooms are porta-potties located toward the back of our lot. The main entrance faces Foster Street across a short parking lot to the side of the building (adjacent to Altered Image Hair Salon). 
         </p>
-          
-          
-         <p>For booking or to rent space checkout <Link href="/rent">our rental page</Link>, contact ps37durham@gmail.com, or drop us a dm on twitter or the insta @ps37durham</p>
+           
+         <p>To rent space checkout <Link href="/rent">our rental page</Link>, contact ps37durham@gmail.com, or drop us a dm on twitter or the insta @ps37durham</p>
       </div>
       
       
