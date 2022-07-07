@@ -165,7 +165,7 @@
   padding: .25em 0;
   font-size: 34px;
   margin-top: 0;
-  color: yellow;
+  color: #c9fede;
   /* animation: pulsate 1.5s infinite alternate;  */
   background: rgba(255,255,255,.3);
   
@@ -180,11 +180,11 @@
   0 0 2px rgb(235, 218, 218),
   0 0 4px rgb(235, 218, 218),
   0 0 6px rgb(235, 218, 218),
-  0 0 10px #e8e222,
-  0 0 45px #e8e222,
-  0 0 55px #e8e222,
-  0 0 70px #e8e222,
-  0 0 80px #e8e222;
+  0 0 10px #00b130,
+  0 0 45px #00b130,
+  0 0 55px #00b130,
+  0 0 70px #016614,
+  0 0 80px #016614
 }
 
 
