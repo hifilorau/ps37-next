@@ -3,10 +3,6 @@ import '../styles/future.css'
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
-// import '../styles/art.css'
-// import { MoralisProvider } from 'react-moralis';
-// import Loading from '../components/Loading'
-// import * as ga from '../utils/ga'
 import Script from 'next/script'
 import Header from '../components/Header'
 

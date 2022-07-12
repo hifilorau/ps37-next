@@ -24,9 +24,9 @@ const About = () => {
       
       <h3>Our Mission</h3>
       <div>
-        <p>PS37 is all about providing a safe space for people in the community to gather and experience art, music, and wonder. Our goal is to keep the spirit of Durham alive and well during a massive influx of out of town money and new development. As long time citizens of Durham we feel that we have had very little voice in that development and hope that through PS37 we can provide members of our community agency in the development and evolution of at least one small part of a city we all love so much.</p>
+        <p>Our goal at PS37 is to always provide a safe space for people to gather and experience art, music, and wonder. We aim to keep the spirit of Durham alive and well as a massive influx of out of town money and new development transform the city of Durham. As long time citizens of Durham we feel that citizens have had very little voice in all of this new development and hope that through PS37 we can both keep the spirt of old Durham alive while also providing the members of our community agency in the development and evolution of at least one small part of a city we all love so much.</p>
       </div>
-      <p className="fun-fact"> Little known fact: The PS in PS37 actually stands for Paradise Spacecraft, an homage to The Mothership, an all female owned office and event space that was operated in Durham through 2020.</p>
+      <p className="fun-fact"> Little known fact: The PS in PS37 actually stands for Paradise Spacecraft, an homage to both The Mothership, an all female owned office and event space that was operated in Durham through 2020 and the Paradise Lounge, which was a Go Go & dance club that was operated out the front of the space in the 1970s.</p>
     </div>
 
   

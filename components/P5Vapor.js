@@ -415,6 +415,10 @@ function imageDecisions(p5) {
 			thisLogo=redhotImg
 			attributes.logo = thisTheme.name
 		}	
+		if (thisTheme.slug == "runaway") {
+			thisLogo=paradiseImg
+			attributes.logo = thisTheme.name
+		}	
 		
 		
 		// thisLogo = thisTheme.logo;
