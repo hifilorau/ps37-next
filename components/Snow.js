@@ -12,14 +12,15 @@ let snowflakes = [];
 
 const setup = (p5, canvasParentRef) => {
   height = p5.windowHeight
-  width=   p5.windowWidth
+  width =  p5.windowWidth
+
   cnv = p5.createCanvas(width, height).parent(canvasParentRef)
   p5.fill(144, 32, 132);
   p5.noStroke();
 }
 
 const draw = (p5, canvasParentRef) => {
-  p5.background('#111');
+  p5.background('#010002');
   let t = p5.frameCount / 60; // update time
   // create a random number of snowflakes each frame
   for (let i = 0; i < p5.random(5); i++) {
@@ -38,7 +39,7 @@ class Snowflake {
   constructor(p5) {
   // initialize coordinates
   this.posX = 0;
-  this.posY = p5.random(-50, 0);
+  this.posY = p5.random(0, 50);
   this.initialangle = p5.random(0, 2 * p5.PI);
   this.size = p5.random(1.2, 3);
   
@@ -49,9 +50,13 @@ class Snowflake {
 
   update(time, p5) {
     // x position follows a circle
+    let thisRadius = this.radius/2.5
+    if (width < 600) {
+      thisRadius = this.radius
+    }
     let w = 0.6; // angular speed
     let angle = w * time + this.initialangle;
-    this.posX = width / 2 + this.radius/2.5 * p5.sin(angle);
+    this.posX = width / 2 + thisRadius * p5.sin(angle);
 
     // different size snowflakes fall at slightly different y speeds
     this.posY += p5.pow(this.size, 0.5);
