@@ -1,0 +1,39 @@
+.supportPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ddd;
+  padding: 1em;
+}
+
+.supportPage p {
+  /* color */
+  text-align: left;
+}
+
+.supportContent {
+  position: relative;
+  z-index: 100;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.button {
+  background: #cd42c9;
+  color: white;
+  padding: .5em;
+  border-radius: .3em;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 1em;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+.button:hover {
+
+}
