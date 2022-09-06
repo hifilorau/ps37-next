@@ -2,6 +2,7 @@ import styles from '../styles/Support.module.css'
 import axios from 'axios'
 import getStripe from '../lib/get-stripe';
 import Snow from '../components/Snow';
+import { useEffect } from 'react';
 
 const Support = () => {
 
@@ -19,6 +20,14 @@ const Support = () => {
     await stripe.redirectToCheckout({ sessionId: id });
   };
 
+  useEffect(() => {
+    
+  (async() => {
+    const transactions = await axios.get('/api/stripe')
+    console.log('tran', transactions)
+  })()
+  
+  },[])
 
   return (
     <div className={styles.supportPage}>
