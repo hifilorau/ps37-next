@@ -117,7 +117,7 @@ border-color: red;
   const preload = (p5) => {
 		// font = p5.loadFont('/fonts/Ewert/Ewert-Regular.ttf');
 		font = p5.loadFont('/fonts/Special_Elite/SpecialElite-Regular.ttf');
-		jooseImg = p5.loadImage('/vapor/moshpit-2.png')
+		// jooseImg = p5.loadImage('/vapor/moshpit-2.png')
 		paradiseImg = p5.loadImage('/vapor/key-og-02.png')
 		keyholeImg = p5.loadImage('/vapor/key_door-2.png')
 		redhotImg = p5.loadImage('/vapor/redhot.png')

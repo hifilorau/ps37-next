@@ -13,12 +13,14 @@ export const config = {
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     let event;
-
+    const rawBody = await buffer(req);
+    console.log('RAW BODY',  process.env.STRIPE_WEBHOOK_SECRET)
+    const signature = req.headers['stripe-signature'];
+    const newBody =  rawBody.toString();
     try {
-      const rawBody = await buffer(req);
-      const signature = req.headers['stripe-signature'];
+   
       event = stripe.webhooks.constructEvent(
-        rawBody.toString(),
+        newBody,
         signature,
         process.env.STRIPE_WEBHOOK_SECRET
       );
@@ -28,7 +30,7 @@ export default async function handler(req, res) {
       return;
     }
     if (event.type === 'checkout.session.completed') {
-      console.log(`💰  Payment received!`);
+      console.log(`💰  Payment received!`, event);
       res.json({ event: event, message: 'SUCCESS' });
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event.type}`);

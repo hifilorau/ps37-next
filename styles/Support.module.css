@@ -9,9 +9,27 @@
   padding: 1em;
 }
 
+.supportPage h2 {
+  font-family: 'Press Start 2P';
+  color: white;
+  font-size: 15px;
+  line-height: 1.4em;
+  max-width: 800px;
+  text-align: center;
+}
+
+.supportPage h1 {
+  font-family: 'Press Start 2P';
+  color: white;
+  font-size: 24px;
+  line-height: 1.4em;
+}
+
 .supportPage p {
   /* color */
   text-align: left;
+  line-height: 2.3em;
+  font-size: 24px;
 }
 
 .supportContent {
@@ -19,21 +37,76 @@
   z-index: 100;
   text-align: center;
   font-size: 1.2em;
+  background: rgba(0,0,0,.75);
+  padding: 1em;
+}
+
+.patronName {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  font-family: 'PressStart2p';
+  font-size: 14px;
+  max-width: 430px;
+  border: 4px dotted pink;
+  padding: 1em;
+}
+
+.patronName input {
+  border: purple 4px dotted;
+  background-color: transparent;
+  color: white;
+  margin-top: 10px;
+  font-family: 'PressStart2p';
+  padding: .5em;
+  font-size: 15px;
+}
+
+.successPerson h2 {
+  color: pink !important;
+}
+
+.patronName input:focus {
+   outline: none !important;
+}
+
+.patronName button {
+  font-family: 'PressStart2p';
+  margin-top: 1em;
+  color: white;
+  background: #01aca1;
+  border: none;
+  padding: .25em 0;
+  cursor: pointer;
 }
 
 .button {
-  background: #cd42c9;
+  background: black;
   color: white;
   padding: .5em;
   border-radius: .3em;
-  width: 200px;
+  width: 400px;
   margin: 0 auto;
   margin-top: 1em;
   text-align: center;
   display: block;
   cursor: pointer;
+  font-weight: bold;
+  border: 1px solid purple;
+  font-family: 'Press Start 2P';
 }
 
 .button:hover {
 
+}
+
+.donationStats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.donationBox {
+  
 }

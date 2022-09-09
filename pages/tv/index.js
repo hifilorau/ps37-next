@@ -7,8 +7,8 @@ const TV = () => {
     const vidRef = useRef(null);
   useEffect(() => {
       vidRef.current.play()
-      setMuteVideo(false)
-  })
+      // setMuteVideo(false)
+  },[])
 
   
 
