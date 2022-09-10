@@ -23,17 +23,17 @@ export default async function handler(req, res) {
 export const postDonation = async (req, res) => {
   const client = await clientPromise;
   const database = client.db(process.env.MONGODB_DB);
-  console.log('REQ', req)
+  // console.log('REQ', req)
   // let data = req.body.data
   let data = req
-  console.log(data, 'DATA YO')
+  // console.log(data, 'DATA YO')
 
   if (data["createdAt"]) {
     data["updatedAt"] = new Date();
   } else {
     data["createdAt"] = new Date();
   }
-  console.log('DATA AFTER PARSE', data)
+  // console.log('DATA AFTER PARSE', data)
   try {
 
     //need to chekc if transaction id exists
@@ -54,6 +54,8 @@ export const postDonation = async (req, res) => {
     // res.status(200).json(donor);
   } catch (error) {
     console.log(error, "error from createAndUpdateUser in api/users");
+    return error.message
+    
   }
 }
 

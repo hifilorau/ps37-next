@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     if (event.type === 'checkout.session.completed') {
       console.log(`💰  Payment received!`, event);
       const response = postToMongo(newBody, res)
-      res.json({ received: true });
+      // res.json({ received: true });
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event.type}`);
     }
@@ -68,12 +68,7 @@ const postToMongo = async (data, res) => {
       console.log('MONGO OBJECT', obj)
       try {
         const response = await postDonation(obj)
-        if (response) {
-          // console.log('RES', response)
-          return response.value
-          // setDisplayName("")
-         
-        }
+        return response.value
       }
       catch (e) {
         console.log('ERROR', e.message)
