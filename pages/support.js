@@ -46,10 +46,10 @@ const Support = () => {
             <h2>Current Goal</h2>
             <h2>$10,000</h2>
           </div>
-          <div className={styles.donationBox}>
+          {dollars > 50000 && <div className={styles.donationBox}>
             <h2>Current Donations</h2>
             <h2>{dollars}</h2>
-          </div>
+          </div> }
         </div>
         <p>We have gotten so much positive feedback from the community and are trying to build something unique, inclusive, and wonderful here. We know we are on the right path. But for us to continue to grow and thrive in Durham we need financial support. Sadly that means money, but we also promise to spend it 100% of it on more sound, more lights, more art, more paying fair wages to those who work here - and finally just doing more amazing, wild, and weird events with and for our community.</p>
 

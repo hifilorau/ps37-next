@@ -82,10 +82,10 @@
 }
 
 .button {
-  background: black;
-  color: white;
+  background: transparent;
+  color: #01aca1;
   padding: .5em;
-  border-radius: .3em;
+  /* border-radius: .3em; */
   width: 400px;
   margin: 0 auto;
   margin-top: 1em;
@@ -93,12 +93,19 @@
   display: block;
   cursor: pointer;
   font-weight: bold;
-  border: 1px solid purple;
+  border: 4px dotted  #01aca1;
   font-family: 'Press Start 2P';
+  transition: 1s;
+  background: purple;
+  color: white;
+  border: none;
 }
 
 .button:hover {
-
+  border: 4px dotted  #01aca1;
+  background: transparent;
+   color: white;
+   /* border: none; */
 }
 
 .donationStats {
