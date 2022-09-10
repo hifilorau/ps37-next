@@ -51,7 +51,7 @@ const Support = () => {
             <h2>{dollars}</h2>
           </div> }
         </div>
-        <p>We have gotten so much positive feedback from the community and are trying to build something unique, inclusive, and wonderful here. We know we are on the right path. But for us to continue to grow and thrive in Durham we need financial support. Sadly that means money, but we also promise to spend it 100% of it on more sound, more lights, more art, more paying fair wages to those who work here - and finally just doing more amazing, wild, and weird events with and for our community.</p>
+        <p>We have gotten an enormous amount of positive feedback from the community and are so grateful. We are trying to build something unique, inclusive, wonderful, and awe inspiring in one of the last remaining pieces of undeveloped property in the DIY district. We strongly believe we are on the right path. But for us to continue to grow and thrive in Durham we need financial support. Sadly that means money, but we also promise to spend it 100% of it on more sound, more lights, more art, more paying fair wages to those who work here - and finally just doing more amazing, wild, and weird events with and for our community.</p>
 
         {/* <iframe src="/"></iframe> */}
         <p>Currently we desparately need to buy a new PA system that can live at the space. We are committed to providing great production, and are going to be purchasing a system that all told will cost us about $10,000. If you want to support the cause, please donate below. All donations over 25$ will also get you into a show of your choosing. All donatings over $50, will get you a +1. Thank you so much for your patronage.</p>
