@@ -20,10 +20,12 @@ export default async function handler(req, res) {
   }
 }
 
-const postDonation = async (req, res) => {
+export const postDonation = async (req, res) => {
   const client = await clientPromise;
   const database = client.db(process.env.MONGODB_DB);
-  let data = req.body.data
+  console.log('REQ', req)
+  // let data = req.body.data
+  let data = req
   console.log(data, 'DATA YO')
 
   if (data["createdAt"]) {
@@ -38,18 +40,18 @@ const postDonation = async (req, res) => {
     const donation = await database
       .collection("donations")
       .updateOne({
-        transactionId: req.body.data.transactionId
+        transactionId: data.transactionId
       }, {$setOnInsert: {...data}}, {upsert: true});
       console.log('DONATION', donation)
      const donor = await database
       .collection("donors").findOneAndUpdate(
-        {email : req.body.data.email}, 
+        {email : data.email}, 
         { $set: {
-        displayName: req.body.data.displayName
+        displayName: data.displayName
         }}
       )
-    console.log('YEAH?')
-    res.status(200).json(donor);
+    return donor
+    // res.status(200).json(donor);
   } catch (error) {
     console.log(error, "error from createAndUpdateUser in api/users");
   }

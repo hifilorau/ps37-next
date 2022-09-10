@@ -1,5 +1,8 @@
 import Stripe from 'stripe';
 import { buffer } from 'micro';
+import axios from 'axios';
+import clientPromise from "../../../lib/mongodb";
+import { postDonation } from '../donor';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -14,15 +17,20 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     let event;
     const rawBody = await buffer(req);
-    console.log('RAW BODY',  process.env.STRIPE_WEBHOOK_SECRET)
     const signature = req.headers['stripe-signature'];
-    const newBody =  rawBody.toString();
+    // console.log('RAW BODY', JSON.parse(rawBody))
+    const body = JSON.parse(rawBody)
+    // console.log('OTHERSTUFF', body)
+    const newBody =  body.data.object
+    // console.log('NEW BODY', newBody)
+    const secret = process.env.STRIPE_WEBHOOK_SECRET
     try {
-   
+      const response =  postToMongo(newBody, res)
+      console.log('RESPONSE', response)
       event = stripe.webhooks.constructEvent(
-        newBody,
+        rawBody,
         signature,
-        process.env.STRIPE_WEBHOOK_SECRET
+        secret
       );
     } catch (err) {
       console.log(`❌ Error message: ${err.message}`);
@@ -31,7 +39,8 @@ export default async function handler(req, res) {
     }
     if (event.type === 'checkout.session.completed') {
       console.log(`💰  Payment received!`, event);
-      res.json({ event: event, message: 'SUCCESS' });
+      const response = postToMongo(newBody, res)
+      res.status(200).json({ response, message: 'SUCCESS' });
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event.type}`);
     }
@@ -42,4 +51,30 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'POST');
     res.status(405).json({ message: 'Method not allowed' });
   }
+}
+
+
+const postToMongo = async (data, res) => {
+  const customer = data.customer_details
+      const obj = {
+        amount: data.amount_total,
+        currency: data.currency,
+        stripe_name: customer.name,
+        email: customer.email,
+        transactionId: data.id,
+        address: customer.address
+      }
+      console.log('MONGO OBJECT', obj)
+      try {
+        const response = await postDonation(obj)
+        if (response) {
+          console.log('RES', response)
+          return response.value
+          // setDisplayName("")
+          console.log('RESPONSE', response)
+        }
+      }
+      catch (e) {
+        console.log('ERROR 1', e.message)
+      }
 }
