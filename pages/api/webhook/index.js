@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     if (event.type === 'checkout.session.completed') {
       console.log(`💰  Payment received!`, event);
       const response = postToMongo(newBody, res)
-      res.status(200).json({ response, message: 'SUCCESS' });
+      res.status(200).json({ event, message: 'SUCCESS' });
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event.type}`);
     }
