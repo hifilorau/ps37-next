@@ -26,12 +26,12 @@ export default async function handler(req, res) {
     const secret = process.env.STRIPE_WEBHOOK_SECRET
     try {
       const response =  postToMongo(newBody, res)
-      console.log('RESPONSE', response)
       event = stripe.webhooks.constructEvent(
         rawBody,
         signature,
         secret
       );
+      console.log('AFTER EVENT')
     } catch (err) {
       console.log(`❌ Error message: ${err.message}`);
       res.status(400).json({ message: `Webhook Error: ${err.message}` });
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     if (event.type === 'checkout.session.completed') {
       console.log(`💰  Payment received!`, event);
       const response = postToMongo(newBody, res)
-      res.status(200).json({ event, message: 'SUCCESS' });
+      res.json({ received: true });
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event.type}`);
     }
@@ -68,10 +68,10 @@ const postToMongo = async (data, res) => {
       try {
         const response = await postDonation(obj)
         if (response) {
-          console.log('RES', response)
+          // console.log('RES', response)
           return response.value
           // setDisplayName("")
-          console.log('RESPONSE', response)
+         
         }
       }
       catch (e) {
