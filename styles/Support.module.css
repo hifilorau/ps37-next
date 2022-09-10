@@ -65,6 +65,8 @@
 
 .successPerson h2 {
   color: pink !important;
+  position: relative;
+  z-index: 200;
 }
 
 .patronName input:focus {

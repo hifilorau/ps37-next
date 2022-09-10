@@ -38,7 +38,6 @@ const Success = () => {
         transactionId: data.data.id,
         address: customer.address
       }
-      console.log('OBJECT', obj)
       setSuccessData(obj)
     } catch(e) {
       console.log('ERROR', e.message)
@@ -55,12 +54,13 @@ const Success = () => {
   },[])
   
   const submit = async () => {
-    const data = {...successData, displayName}
+    const email = successData.email
+    const data = {email, displayName}
   
     // if (session_id)
     if (successData) {
       try {
-        const response = await axios.post('/api/donor', {data})
+        const response = await axios.put('/api/donor', {data})
         if (response) {
           // setDisplayName("")
           setSuccessAdded(true)

@@ -12,10 +12,15 @@ export default async function handler(req, res) {
     return getDonors(req, res)
   }
 
+  if (req.method === 'PUT') {
+    // get donors
+    return updateDonor(req, res)
+  }
+
     // Return a response to acknowledge receipt of the event.
    
    else {
-    res.setHeader('Allow', 'POST', 'GET');
+    res.setHeader('Allow', 'POST', 'GET', 'PUT');
     res.status(405).json({ message: 'Method not allowed' });
   }
 }
@@ -42,13 +47,18 @@ export const postDonation = async (req, res) => {
       .updateOne({
         transactionId: data.transactionId
       }, {$setOnInsert: {...data}}, {upsert: true});
+
       console.log('DONATION', donation)
      const donor = await database
-      .collection("donors").findOneAndUpdate(
+      .collection("donors").updateOne(
         {email : data.email}, 
-        { $set: {
-        displayName: data.displayName
-        }}
+        { $setOnInsert: {
+        displayName: data.displayName,
+        email: data.email,
+        address: data.address,
+        stripe_name: data.stripe_name,
+        createdAt: data.createdAt
+        }}, {upsert: true}
       )
     return donor
     // res.status(200).json(donor);
@@ -116,4 +126,20 @@ const mapDonors = (donors) => {
     return newDonor
     // console.log('TOTAL', total)
   })
+}
+
+const updateDonor = async (req, res) => {
+  const client = await clientPromise;
+  const database = client.db(process.env.MONGODB_DB);
+  console.log('REQ', req.body)
+  // const email = req.body.email
+  const data = req.body.data
+  const donor = await database
+  .collection("donors").updateOne(
+    {email : data.email}, 
+    { $set: {
+    ...data,
+    }}
+  )
+  res.status(200).json(donor);
 }
