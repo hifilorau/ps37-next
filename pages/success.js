@@ -56,14 +56,15 @@ const Success = () => {
   }, [session_id, donors]);
 
   useEffect(() => {
-    (async() => {
-      const {data} = await axios.get(`/api/donor`)
-      console.log('DONORS DARTA', data)
-
-      setDonors(data)
-    })()  
+    getDonors()
   },[])
   
+  const getDonors = async () => {
+    const {data} = await axios.get(`/api/donor`)
+    console.log('DONORS DARTA', data)
+    setDonors(data)
+  }
+
   const submit = async () => {
     const email = successData.email
     const data = {email, displayName}
@@ -73,7 +74,7 @@ const Success = () => {
       try {
         const response = await axios.put('/api/donor', {data})
         if (response) {
-          // setDisplayName("")
+          getDonors()
           setSuccessAdded(true)
         }
       }
@@ -87,11 +88,11 @@ const Success = () => {
   return (
     <div className={styles.successPage}>
       <h2>THANK YOU FOR YOUR DONATION! YOU HAVE WON THE GAME AND WILL RECEIVE TOTAL ENLIGHTENMENT UPON YOUR DEATH.</h2>
-      {!successData.displayName && <div className={styles.patronName}>
+      {successData && !successData.displayName ? <div className={styles.patronName}>
         <label>How would you like to be listed in the credit scene?</label>
         <input ref={inputElement} type="text" value={displayName} onChange={(e) => setDisplayName(e.target.value)} maxLength="16"/>
         <button onClick={submit} >SUBMIT</button>
-      </div> }
+      </div> : null }
       {successAdded && <div className={styles.successPerson}>
         <h2>{displayName}, you will be forever remembered within the infinite halls of PS37.</h2>
       </div> }
