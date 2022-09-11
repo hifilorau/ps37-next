@@ -24,7 +24,7 @@ const Credits = (donors) => {
         </li>
          <li key={1}>
             <div className={styles.job}>DNGMNT</div>
-            <div className={styles.donor}>DNGMNT</div>
+            <div className={styles.donor}>The Danager</div>
           </li>
           <li key={2}>
             <div className={styles.job}>Alchemist</div>
@@ -35,15 +35,15 @@ const Credits = (donors) => {
             <div className={styles.donor}>Schamdes</div>
           </li>
           <li key={4}>
-            <div className={styles.job}>Space Freaque</div>
+            <div className={styles.job}>Non-Binary Digital Engineering</div>
             <div className={styles.donor}>Roe</div>
           </li>
           <li key={5}>
-            <div className={styles.job}>Gruffers</div>
+            <div className={styles.job}>Deep Space Dad</div>
             <div className={styles.donor}>McGruff</div>
           </li>
           <li key={6}>
-            <div className={styles.job}>Pure Stone</div>
+            <div className={styles.job}>Pure Hard Stone</div>
             <div className={styles.donor}>Stone</div>
           </li>
           <li key={7}>
