@@ -41,11 +41,11 @@ const Credits = (donors) => {
             <div className={styles.donor}>Roe</div>
           </li>
           <li key={5}>
-            <div className={styles.job}>Deep Space Dude</div>
+            <div className={styles.job}>Deep Space Logistics</div>
             <div className={styles.donor}>McGruff</div>
           </li>
           <li key={6}>
-            <div className={styles.job}>Pure Heart Stone</div>
+            <div className={styles.job}>Pure Heart Stone & Construction</div>
             <div className={styles.donor}>Stone</div>
           </li>
           <li key={7}>
@@ -53,7 +53,7 @@ const Credits = (donors) => {
             <div className={styles.donor}>G.GETS</div>
           </li>
           <li key={8}>
-            <div className={styles.job}>SPACECENTNER INSTALL</div>
+            <div className={styles.job}>SPACECENTNER INSTALLS</div>
             <div className={styles.donor}>A ME</div>
           </li>
           <li key={9}>
