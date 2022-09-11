@@ -1,6 +1,6 @@
 import styles from '../styles/Support.module.css'
 
-const JOBTITLES = ["SAUCE BOSS", "INTERPLANETARY DIETY", "BASICALLY CAP'N KIRK", "NEBULAR NIHILIST", "SPACE QUEEN", "JUKE BOX HERO"]
+const JOBTITLES = ["SAUCE BOSS", "INTERPLANETARY DIETY", "BASICALLY CAP'N KIRK", "NEBULAR NIHILIST", "JUKE BOX HERO"]
 const Credits = (donors) => {
   console.log('CREDITS PAGE', donors.donors)
   
@@ -11,6 +11,7 @@ const Credits = (donors) => {
   return (
     <div className={styles.credits}>
       <ul className={styles.donorList}>
+      <li className={styles.divider}>DONORS</li>
         {donors.donors.map((donor) => {
           return (
           <li key={donor.email}>
@@ -18,17 +19,35 @@ const Credits = (donors) => {
             <div className={styles.donor}>{donor.displayName || "Anonymous"}</div>
           </li>)
         })}
+        <li>
+        <li className={styles.divider}>STAFF</li>
+        </li>
          <li key={1}>
-            <div className={styles.job}>DNGMNT}</div>
-            <div className={styles.donor}>D. Straughn</div>
+            <div className={styles.job}>DNGMNT</div>
+            <div className={styles.donor}>DNGMNT</div>
           </li>
           <li key={2}>
-            <div className={styles.job}>JUKE BOX HERO</div>
-            <div className={styles.donor}>M ComeauOeuO</div>
+            <div className={styles.job}>Alchemist</div>
+            <div className={styles.donor}>ComeauOeuO</div>
           </li>
           <li key={3}>
             <div className={styles.job}>Alien Outreach</div>
-            <div className={styles.donor}>Schamder</div>
+            <div className={styles.donor}>Schamdes</div>
+          </li>
+          <li key={4}>
+            <div className={styles.job}>Space Freaque</div>
+            <div className={styles.donor}>Roe</div>
+          </li>
+          <li key={5}>
+            <div className={styles.job}>Gruffers</div>
+            <div className={styles.donor}>McGruff</div>
+          </li>
+          <li key={6}>
+            <div className={styles.job}>Pure Stone</div>
+            <div className={styles.donor}>Stone</div>
+          </li>
+          <li key={7}>
+            <div className={styles.job}>Sincere thanks to everyone who helps keep us in the air.</div>
           </li>
       </ul>
     </div>

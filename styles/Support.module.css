@@ -138,7 +138,7 @@
   /* width: 350px; */
   margin-left: 0;
   padding: 0 1em;
-  animation: credits infinite 60s;
+  animation: credits infinite linear 60s;
   position: absolute;
   left: 50%;
     transform: translateX(-50%);
@@ -166,12 +166,16 @@
   line-height: 1.3em;
 }
 
+.divider {
+  text-decoration: underline;
+}
+
 @keyframes credits {
   0% {
     top: 100%;
   }
   100% {
-    top: -300%;
+    top: -350%;
   }
 }
 

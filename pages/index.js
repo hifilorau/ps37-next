@@ -79,7 +79,7 @@ const Home = () => {
     
     <div className={styles.home}>
       
-      <div className="taglineWrapper">
+      {/* <div className="taglineWrapper">
         <div className="tagline">
           <div className={styles.upcomingWrapper}>
             <h1 className="text-glow">Save Our Ship</h1>
@@ -94,7 +94,7 @@ const Home = () => {
             </div>
           </div>
         </div> 
-      </div>
+      </div> */}
 
       {/* <Banner message={{
         link: 'https://www.carolinaabortionfund.org/donate',
