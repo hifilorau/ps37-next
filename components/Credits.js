@@ -1,6 +1,6 @@
 import styles from '../styles/Support.module.css'
 
-const JOBTITLES = ["SAUCE BOSS", "Governor", "Third Gaffer", "Chief Susexecutive Officer"]
+const JOBTITLES = ["SAUCE BOSS", "INTERPLANETARY DIETY", "BASICALLY CAP'N KIRK", "NEBULAR NIHILIST", "SPACE QUEEN", "JUKE BOX HERO"]
 const Credits = (donors) => {
   console.log('CREDITS PAGE', donors.donors)
   
@@ -18,6 +18,18 @@ const Credits = (donors) => {
             <div className={styles.donor}>{donor.displayName || "Anonymous"}</div>
           </li>)
         })}
+         <li key={1}>
+            <div className={styles.job}>DNGMNT}</div>
+            <div className={styles.donor}>D. Straughn</div>
+          </li>
+          <li key={2}>
+            <div className={styles.job}>JUKE BOX HERO</div>
+            <div className={styles.donor}>M ComeauOeuO</div>
+          </li>
+          <li key={3}>
+            <div className={styles.job}>Alien Outreach</div>
+            <div className={styles.donor}>Schamder</div>
+          </li>
       </ul>
     </div>
   )

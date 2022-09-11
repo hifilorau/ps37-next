@@ -94,8 +94,11 @@ const Success = () => {
       {successAdded && <div className={styles.successPerson}>
         <h2>{displayName}, you will be forever remembered within the infinite halls of PS37.</h2>
       </div> }
+      {successData.displayName && donors &&
+      <>
       <h2>THANKS FOR YOUR SUPPORT</h2>
-      {/* { successData.displayName && donors && <Credits donors={donors} /> } */}
+       <Credits donors={donors} /> 
+      </> }
       <Bike />
     </div>
   );
