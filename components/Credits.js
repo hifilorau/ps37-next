@@ -1,5 +1,7 @@
 import styles from '../styles/Support.module.css'
 
+
+
 const JOBTITLES = ["SAUCE BOSS", "INTERPLANETARY DIETY", "BASICALLY CAP'N KIRK", "NEBULAR NIHILIST", "JUKE BOX HERO"]
 const Credits = (donors) => {
   console.log('CREDITS PAGE', donors.donors)
@@ -39,11 +41,11 @@ const Credits = (donors) => {
             <div className={styles.donor}>Roe</div>
           </li>
           <li key={5}>
-            <div className={styles.job}>Deep Space Dad</div>
+            <div className={styles.job}>Deep Space Dude</div>
             <div className={styles.donor}>McGruff</div>
           </li>
           <li key={6}>
-            <div className={styles.job}>Pure Hard Stone</div>
+            <div className={styles.job}>Pure Heart Stone</div>
             <div className={styles.donor}>Stone</div>
           </li>
           <li key={7}>

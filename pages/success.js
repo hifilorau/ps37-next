@@ -4,6 +4,7 @@ import axios from "axios";
 import styles from '../styles/Support.module.css'
 import Bike from '../components/Bike';
 import Credits from '../components/Credits'
+import AudioPlayer from '../components/AudioPlayer.js'
 
 const Success = () => {
   const {
@@ -96,7 +97,8 @@ const Success = () => {
       </div> }
       {successData.displayName && donors &&
       <>
-      <h2>THANKS FOR YOUR SUPPORT</h2>
+      <h2 className={styles.audioH2}>THANKS FOR YOUR SUPPORT  <span className={styles.audio}><AudioPlayer /></span></h2>
+     
        <Credits donors={donors} /> 
       </> }
       <Bike />

@@ -1,0 +1,12 @@
+.speaker {
+  width: 30px;
+  margin-left: 10px;
+  position: relative;
+  top: -5px;
+}
+
+.speaker img {
+  width: 100%;
+  height: auto;
+  display: inline;
+}

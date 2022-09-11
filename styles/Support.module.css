@@ -170,6 +170,15 @@
   text-decoration: underline;
 }
 
+.audioH2 {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  color: '#a730a1';
+  justify-content: center;
+}
+
+
 @keyframes credits {
   0% {
     top: 100%;
