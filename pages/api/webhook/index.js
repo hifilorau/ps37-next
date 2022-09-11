@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     // console.log('NEW BODY', newBody)
     const secret = process.env.STRIPE_WEBHOOK_SECRET
     try {
-      await postToMongo(newBody, res)
+      // await postToMongo(newBody, res)
       console.log('POSTED BEFORE EVENT')
       event = stripe.webhooks.constructEvent(
         rawBody,

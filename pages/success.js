@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import styles from '../styles/Support.module.css'
 import Bike from '../components/Bike';
+import Credits from '../components/Credits'
 
 const Success = () => {
   const {
@@ -12,6 +13,7 @@ const Success = () => {
   const [displayName, setDisplayName] = useState("")
   const [successData, setSuccessData] = useState({})
   const [successAdded, setSuccessAdded] = useState(false)
+  const [donors, setDonors] = useState("")
   
   // useEffect(() => {
   //   if (data) {
@@ -38,19 +40,27 @@ const Success = () => {
         transactionId: data.data.id,
         address: customer.address
       }
-      setSuccessData(obj)
+      console.log('OBJECT', obj, donors)
+      if (donors) {
+        const thisDonor = donors.filter((i => i.email == obj.email))[0]
+        console.log('THIS DONOR', thisDonor)
+        obj.displayName = thisDonor.displayName
+        setSuccessData(obj)
+      }
+    
     } catch(e) {
       console.log('ERROR', e.message)
     }    
    })()
-  }, [session_id]);
+  }, [session_id, donors]);
 
   useEffect(() => {
     (async() => {
       const {data} = await axios.get(`/api/donor`)
       console.log('DONORS DARTA', data)
-    })()
-    
+
+      setDonors(data)
+    })()  
   },[])
   
   const submit = async () => {
@@ -74,9 +84,9 @@ const Success = () => {
   }
 
   return (
-    <div className={styles.supportPage}>
+    <div className={styles.successPage}>
       <h2>THANK YOU FOR YOUR DONATION! YOU HAVE WON THE GAME AND WILL RECEIVE TOTAL ENLIGHTENMENT UPON YOUR DEATH.</h2>
-      {!successAdded && <div className={styles.patronName}>
+      {!successData.displayName && <div className={styles.patronName}>
         <label>How would you like to be listed in the credit scene?</label>
         <input ref={inputElement} type="text" value={displayName} onChange={(e) => setDisplayName(e.target.value)} maxLength="16"/>
         <button onClick={submit} >SUBMIT</button>
@@ -84,6 +94,8 @@ const Success = () => {
       {successAdded && <div className={styles.successPerson}>
         <h2>{displayName}, you will be forever remembered within the infinite halls of PS37.</h2>
       </div> }
+      <h2>THANKS FOR YOUR SUPPORT</h2>
+      {/* { successData.displayName && donors && <Credits donors={donors} /> } */}
       <Bike />
     </div>
   );

@@ -1,9 +1,25 @@
+import styles from '../styles/Support.module.css'
 
-
-
-const Credits = () => {
+const JOBTITLES = ["SAUCE BOSS", "Governor", "Third Gaffer", "Chief Susexecutive Officer"]
+const Credits = (donors) => {
+  console.log('CREDITS PAGE', donors.donors)
+  
+  const getTitle = () => {
+    const title = JOBTITLES[Math.floor(Math.random() * JOBTITLES.length)]
+    return title
+  }
   return (
-    <div></div>
+    <div className={styles.credits}>
+      <ul className={styles.donorList}>
+        {donors.donors.map((donor) => {
+          return (
+          <li key={donor.email}>
+            <div className={styles.job}>{getTitle()}</div>
+            <div className={styles.donor}>{donor.displayName || "Anonymous"}</div>
+          </li>)
+        })}
+      </ul>
+    </div>
   )
 }
 

@@ -1,4 +1,4 @@
-.supportPage {
+.supportPage, .successPage {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,13 @@
   padding: 1em;
 }
 
-.supportPage h2 {
+.successPage {
+  flex-direction: column;
+  align-items: initial;
+  
+}
+
+.supportPage h2, .successPage h2 {
   font-family: 'Press Start 2P';
   color: white;
   font-size: 15px;
@@ -116,6 +122,42 @@
   flex-wrap: wrap;
 }
 
-.donationBox {
-  
+.credits {
+
+  position: relative;
+  z-index: 1000;
+  /* padding: 1em; */
 }
+
+.donorList {
+  list-style: none;
+  /* width: 350px; */
+  margin-left: 0;
+  padding: 0 1em;
+}
+
+.donorList li {
+  /* display: flex;
+  justify-content: space-between; */
+  font-size: 18px;
+  font-family: 'PressStart2p';
+  margin-bottom: 1em;
+  text-align: center;
+  line-height: 1.2em;
+  margin-bottom: 3em;
+}
+
+.job {
+  font-size: 14px;
+  margin-bottom: 0em;
+}
+
+.donor {
+  font-size: 24px;
+  line-height: 1.3em;
+}
+
+
+
+
+
