@@ -22,7 +22,7 @@ const Credits = (donors) => {
           </li>)
         })}
         <li>
-        <li className={styles.divider}>STAFF</li>
+        <li className={styles.divider}>STAFF & CREATIVE TEAM</li>
         </li>
          <li key={1}>
             <div className={styles.job}>DNGMNT</div>
@@ -49,6 +49,14 @@ const Credits = (donors) => {
             <div className={styles.donor}>Stone</div>
           </li>
           <li key={7}>
+            <div className={styles.job}>SPRAY GOD</div>
+            <div className={styles.donor}>G.GETS</div>
+          </li>
+          <li key={8}>
+            <div className={styles.job}>SPACECENTNER INSTALL</div>
+            <div className={styles.donor}>A ME</div>
+          </li>
+          <li key={9}>
             <div className={styles.job}>Sincere thanks to everyone who helps keep us in the air.</div>
           </li>
       </ul>
