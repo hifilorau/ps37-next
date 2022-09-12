@@ -4,7 +4,7 @@ const Cube = () => {
   return (
     <div className={styles.cube}>
     <div className={`${styles.face} ${styles.one}`}>LEARN MORE</div>
-    <div className={`${styles.face} ${styles.two}`}>SAVE OUR SHIP</div>
+    <div className={`${styles.face} ${styles.two}`}>DONATE</div>
     <div className={`${styles.face} ${styles.three}`}>Act Fast</div>
     <div className={`${styles.face} ${styles.four}`}>1-900-373-7373</div>
     <div className={`${styles.face} ${styles.five}`}>HELP!!!</div>
