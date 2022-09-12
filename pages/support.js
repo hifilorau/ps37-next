@@ -53,7 +53,7 @@ const Support = () => {
         </div>
         <p>Over the past three years we have gotten so much positive feedback from the community with regards to the space. During the pandemic people entrusted us as a place that they can go be friends, see music, bask in the lights, and feel safe.  We'd love even more of an opportunity to build on that and create something even more unique and awe inspiring in one of the last remaining undeveloped properties in Durham's DIY district.</p>
         {/* <iframe src="/"></iframe> */}
-        <p>Currently our biggest need is a new PA system that can live at the space and let us continue to provide great production. We are going to be purchasing a system that will cost about $10,000. If you want to support the cause, please donate below. All donations over 25$ will also get you into a show of your choosing. All donatings over $50, will get you a +1.</p>
+        <p>Currently our biggest need is a new PA system that can live at the space and let us continue to provide great production. We are going to be purchasing a system that will cost about $10,000. Please support the cause and donate below. Even a couple dollars can move the needle for us. Any donation will get you a free sticker. All donations over 25$ will also get you into a show of your choosing. All donatings over $50, will get you a +1. Just let us know when you are coming by</p>
         <p>Thank you so much for your patronage.</p>
         <button className={styles.button} onClick={redirectToCheckout}>DONATE NOW</button>
       </div>
