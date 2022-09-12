@@ -51,10 +51,10 @@ const Support = () => {
             <h2>{dollars}</h2>
           </div> }
         </div>
-        <p>Over the past three years we have gotten so much positive feedback from the community with regards to the space; there are no words that could ever adequately express our gratitude. People have entrusted us during a pandemic as a place that they can go be with friends, see music, bask in the lights, and just feel safe. We want to build on that, and are truly trying to build something unique, inclusive, wonderful, and awe inspiring in one of the last remaining undeveloped properties in Durham's DIY district. We strongly believe we are on the right path. But for us to continue to grow and thrive in Durham we need financial support. Sadly that means money, but we also promise to spend it 100% of it on more sound, more lights, more art, more paying fair wages to those who work here - and finally just doing more amazing, wild, and weird events with and for our community.</p>
+        <p>OOver the past three years we have gotten so much positive feedback from the community with regards to the space. During the pandemic people entrusted us as a place that they can go be friends, see music, bask in the lights, and feel safe.  We want to build on that, build something unique, wonderful, and awe inspiring in one of the last remaining undeveloped properties in Durham's DIY district.</p>
 
         {/* <iframe src="/"></iframe> */}
-        <p>Currently we desparately need to buy a new PA system that can live at the space. We are committed to providing great production, and are going to be purchasing a system that all told will cost us about $10,000. If you want to support the cause, please donate below. All donations over 25$ will also get you into a show of your choosing. All donatings over $50, will get you a +1.</p>
+        <p>Currently we need to buy a new PA system that can live at the space and let us continue to provide great production. We are going to be purchasing a system that will cost us about $10,000. If you want to support the cause, please donate below. All donations over 25$ will also get you into a show of your choosing. All donatings over $50, will get you a +1.</p>
         <p>Thank you so much for your patronage.</p>
         <button className={styles.button} onClick={redirectToCheckout}>DONATE NOW</button>
       </div>
