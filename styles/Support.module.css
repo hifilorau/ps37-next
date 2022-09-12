@@ -157,12 +157,13 @@
 }
 
 .job {
-  font-size: 14px;
+  font-size: 10px;
   margin-bottom: 0em;
+  color: pink;
 }
 
 .donor {
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.3em;
 }
 
@@ -176,6 +177,7 @@
   display: flex;
   color: '#a730a1';
   justify-content: center;
+  cursor: pointer;
 }
 
 
