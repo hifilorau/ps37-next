@@ -294,7 +294,7 @@
   opacity: 0.7;
   position: absolute;
   width: 240px;
-  border: 1px white solid;
+  border: 2px pink solid;
   display: flex;
   align-items: center;
   transition: 1s;

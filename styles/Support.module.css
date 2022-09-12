@@ -148,7 +148,7 @@
 .donorList li {
   /* display: flex;
   justify-content: space-between; */
-  font-size: 18px;
+  font-size: 14px;
   font-family: 'PressStart2p';
   margin-bottom: 1em;
   text-align: center;
@@ -157,12 +157,12 @@
 }
 
 .job {
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 0em;
 }
 
 .donor {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.3em;
 }
 
