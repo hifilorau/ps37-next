@@ -157,12 +157,21 @@
 }
 
 .job {
+<<<<<<< HEAD
   font-size: 12px;
+=======
+  font-size: 10px;
+>>>>>>> ec9608f2af883f9dff6b61e9b299089b60bc5e03
   margin-bottom: 0em;
+  color: pink;
 }
 
 .donor {
+<<<<<<< HEAD
   font-size: 18px;
+=======
+  font-size: 16px;
+>>>>>>> ec9608f2af883f9dff6b61e9b299089b60bc5e03
   line-height: 1.3em;
 }
 
@@ -176,6 +185,7 @@
   display: flex;
   color: '#a730a1';
   justify-content: center;
+  cursor: pointer;
 }
 
 

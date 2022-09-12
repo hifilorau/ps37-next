@@ -84,11 +84,12 @@ const Success = () => {
 
     }
   }
-
+  console.log('SUCCESS', successData)
   return (
     <div className={styles.successPage}>
       <h2>THANK YOU FOR YOUR DONATION! YOU HAVE WON THE GAME AND WILL RECEIVE TOTAL ENLIGHTENMENT UPON YOUR DEATH.</h2>
-      {successData && !successData.displayName ? <div className={styles.patronName}>
+      
+      {successData == {}  && !successData.displayName ? <div className={styles.patronName}>
         <label>How would you like to be listed in the credit scene?</label>
         <input ref={inputElement} type="text" value={displayName} onChange={(e) => setDisplayName(e.target.value)} maxLength="16"/>
         <button onClick={submit} >SUBMIT</button>

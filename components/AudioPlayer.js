@@ -10,7 +10,7 @@ import Link from 'next/link'
 //   ssr: false,
 // })
 const tracks = [{
-  title: 'March Again',
+  title: 'The leftovers',
   artist: 'Hifilorau',
   color: "green",
   image: '',
@@ -25,7 +25,7 @@ const AudioPlayer = () => {
   const { title, artist, color, image, artist_link} = tracks[trackIndex]
   // const song = '/'     /
   // const audioSrc = tracks[trackIndex].fields.mp3[0].url
-  const audioSrc = '/march.mp3'
+  const audioSrc = '/leftovers.mp3'
 	// Refs
   const audioRef = useRef(new Audio(audioSrc));
   
