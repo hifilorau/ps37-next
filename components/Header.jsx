@@ -26,11 +26,11 @@ return (
                 EVENTS
               </a>
             </Link>
-            <Link href="/posts">
+            {/* <Link href="/posts">
               <a className={router.pathname == "/posts" ? 'activeLink' : ""}>
               UPDATES
               </a>
-            </Link>  
+            </Link>   */}
         </li>
         <li>
         <Link href="/"> 

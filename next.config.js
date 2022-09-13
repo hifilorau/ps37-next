@@ -9,7 +9,12 @@ module.exports = {
         source: '/support',
         destination: '/be-right-back',
         permanent: false,
-      }
+      }, 
+      {
+        source: '/posts',
+        destination: '/',
+        permanent: false,
+      }, 
     ]
   },
 }
