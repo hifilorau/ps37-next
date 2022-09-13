@@ -7,7 +7,7 @@ module.exports = {
     return [
       {
         source: '/support',
-        destination: '/be-right-back',
+        destination: '/',
         permanent: false,
       }, 
       {
