@@ -13,11 +13,11 @@ const Credits = (donors) => {
   return (
     <div className={styles.credits}>
       <ul className={styles.donorList}>
-      <li className={styles.divider}>DONORS</li>
+      <li className={styles.divider}>The crew</li>
         {donors.donors.map((donor) => {
           return (
           <li key={donor.email}>
-            <div className={styles.job}>{getTitle()}</div>
+            {/* <div className={styles.job}>{getTitle()}</div> */}
             <div className={styles.donor}>{donor.displayName || "Anonymous"}</div>
           </li>)
         })}
@@ -37,7 +37,7 @@ const Credits = (donors) => {
             <div className={styles.donor}>Schamdes</div>
           </li>
           <li key={4}>
-            <div className={styles.job}>Non-Binary Digital Engineering</div>
+            <div className={styles.job}>Digital Engineering</div>
             <div className={styles.donor}>Roe</div>
           </li>
           <li key={5}>
